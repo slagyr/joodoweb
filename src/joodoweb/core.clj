@@ -10,6 +10,7 @@
   (GET "/" [] (render-template "index"))
   (GET "/about" [] (render-template "about"))
   (GET "/community" [] (render-template "community"))
+  (GET "/license" [] (render-template "license"))
   (controller-router 'joodoweb.controller)
   (not-found (render-template "not_found" :template-root "joodoweb/view" :ns `joodoweb.view.view-helpers)))
 

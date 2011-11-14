@@ -6,14 +6,15 @@
   (include-css "/stylesheets/joodoweb.css")
   (include-js "/javascript/joodoweb.js")]
  [:body
-  [:h1 "Joodo"]
-  [:h2 "Clojure Web Framework"]
+  [:a {:href "/"}
+    [:h1 "Joodo"]
+    [:h2 "Clojure Web Framework"]]
   [:ul
    [:li [:a {:href "/about"} "Why Use Joodo"]]
    [:li [:a {:href "/tutorial"} "Getting Started"]
-    (if (re-matches #"^/tutorial.*" (:uri *request*))
+    (if (re-matches #"^/tutorial.*" (or (:uri *request*) ""))
       (list
-   	    [:ul
+       	[:ul
          [:li [:a {:href "/tutorial/install"} "Installation"]]
          [:li [:a {:href "/tutorial/make-app"} "Making your first app"]]
          [:li [:a {:href "/tutorial/tour"} "The Grand Tour"]]]))]
