@@ -1,0 +1,5 @@
+[:h2 "Installation"]
+[:p "Getting started with Joodo is really easy. Since Joodo is integrated with Leiningen it only takes a few steps to get running on your system. Before you can install Joodo, you need to download Leiningen and get the Joodo plugin. To download Leiningen, go through the latest tutorial listed on https://github.com/technomancy/leiningen/blob/master/README.md"]
+[:p "Once you have Leiningen properly installed on your system, the next step is to get the Joodo plugin. If you run the command"]
+[:code "joodo/lein-joodo 0.6.0-SNAPSHOT"]
+[:p "then the Joodo command will get installed on your system in the ~/.lein/bin/ directory. If ~/.lein/bin/ is already apart of your $PATH, then you can use Joodo now. If it isn't all you have to do is edit your .profile file (in your home directory) to include $HOME/.lein/bin/ in your path."]

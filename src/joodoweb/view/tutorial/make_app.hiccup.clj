@@ -1,0 +1,7 @@
+[:h2 "Making your first app"]
+[:p "Part of the beauty of Joodo is how easy it is to build a new project. If you run the following command from your terminal (replacing _proj_name_ with the name of your project), Joodo will do all the heavy lifting and create a project for you:"]
+[:code "joodo new _proj_name_"]
+[:p "By default, Joodo projects have dependencies on external libraries. Before you run your project, you have to get those libraries. Fortunately, Leiningen makes this as easy as running the following command from your terminal when in your project's directory:"]
+[:code "lein deps"]
+[:p "Now you can run your project by running the following command:"]
+[:code "joodo server"]

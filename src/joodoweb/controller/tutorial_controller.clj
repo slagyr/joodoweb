@@ -8,6 +8,6 @@
   (GET "/tutorial" [] (redirect "tutorial/index"))
   (context "/tutorial" []
     (GET "/index" [] (render-template "tutorial/index"))
-    (GET "/install" [] (render-template "tutorial/index"))
-    (GET "/make-app" [] (render-template "tutorial/index"))
-    (GET "/tour" [] (render-template "tutorial/index"))))
+    (GET "/install" [] (render-template "tutorial/install"))
+    (GET "/make-app" [] (render-template "tutorial/make_app"))
+    (GET "/tour" [] (render-template "tutorial/tour"))))

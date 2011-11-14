@@ -1,0 +1,4 @@
+[:h2 "The Grand Tour"]
+[:p "Because of the amount of functionality that Joodo comes with out of the box, understaning how everthing works can be a little overwhelming if it is your first time seeing a Joodo project. This section will give an overview of the important parts of any Joodo project."]
+[:p "The heart of any Leiningen project is the project.clj file. This file lists information about your project. You can add descriptions, change version numbers, add dependencies, and much more in this file. More info about the project.clj file can be found here: https://github.com/technomancy/leiningen/blob/master/README.md"]
+[:p "The next most important file is the core.clj file located in your src/_proj_name_/ directory."]
