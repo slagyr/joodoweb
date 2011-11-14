@@ -10,7 +10,13 @@
   [:h2 "Clojure Web Framework"]
   [:ul
    [:li [:a {:href "/about"} "Why Use Joodo"]]
-   [:li [:a {:href "/tutorial"} "Getting Started"]]
+   [:li [:a {:href "/tutorial"} "Getting Started"]
+    (if (re-matches #"^/tutorial.*" (:uri *request*))
+      (list
+   	    [:ul
+         [:li [:a {:href "/tutorial/install"} "Installation"]]
+         [:li [:a {:href "/tutorial/make-app"} "Making your first app"]]
+         [:li [:a {:href "/tutorial/tour"} "The Grand Tour"]]]))]
    [:li [:a {:href "/docs"} "Documentation"]]
    [:li [:a {:href "/community"} "Community"]]
    [:li [:a {:href "https://github.com/slagyr/joodo/issues" :target "_blank"} "Feature Request"]]]
