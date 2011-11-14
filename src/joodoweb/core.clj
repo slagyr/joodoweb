@@ -15,4 +15,3 @@
   (->
     joodoweb-routes
     (wrap-view-context :template-root "joodoweb/view" :ns `joodoweb.view.view-helpers)))
-
