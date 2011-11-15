@@ -1,1 +1,1 @@
-[:p "docs"]
+[:h2 "Documentation"]
