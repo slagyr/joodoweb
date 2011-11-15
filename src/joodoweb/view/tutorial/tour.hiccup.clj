@@ -22,3 +22,6 @@
 [:h3 "View Directory"]
 [:p "Files in the view directory are used to create html that will be rendered in browsers and viewed by your visitors. This is done by using a markup language called " [:a {:href "https://github.com/weavejester/hiccup" :target "_blank"} "hiccup"] "."]
 [:p "If you want to make these pages dynamic, you can write clojure logic directly in the hiccup file. If you want to limit the amount of logic in your views you can extract logic into your view_helpers.clj file and access those functions in all of your views."]
+
+[:h3 "Helper Functions"]
+[:p "Joodo supplies many functions that handle the most common behaviours of a web application. They were built specifically for controllers, models, views, and tests. The best way to get familiar with these type of functions is to dive into the " [:a {:href "/docs"} "documentation"] "."]

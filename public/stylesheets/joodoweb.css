@@ -1,6 +1,39 @@
+html {
+	font-size: 14px;
+}
+
 body {
-    background: #e3b200;
-    font-family: sans-serif;
-    width: 600px;
-	margin: 30px auto 0 auto;
+    background: #99cc99;
+	font-color: #330000;
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    width: 800px;
+	margin: 0 auto 0 auto;
+}
+
+a { color: #663300; }
+a:link {}
+a:active {}
+a:visited {}
+a:hover { color: #330000; }
+
+div.sidebar {
+	float: left;
+	width: 300px;
+}
+
+div.sidebar a.title {
+	color: #330000;
+	text-decoration: none;
+	margin-top: 0px;
+}
+
+div.sidebar a.title h1 {
+	font-size: 5em;
+	margin: 0px auto 30px auto;
+}
+
+div.sidebar ul.navigation {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
