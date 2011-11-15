@@ -16,10 +16,16 @@
       (list
        	[:ul
          [:li [:a {:href "/tutorial/install"} "Installation"]]
-         [:li [:a {:href "/tutorial/make-app"} "Making your first app"]]
-         [:li [:a {:href "/tutorial/tour"} "The Grand Tour"]]]))]
+         [:li [:a {:href "/tutorial/build-skeleton"} "Build Application Skeleton"]]
+         [:li [:a {:href "/tutorial/tour"} "The Grand Tour"]]
+         [:li [:a {:href "/tutorial/sample-app"} "Sample Application"]]]))]
    [:li [:a {:href "/docs"} "Documentation"]]
    [:li [:a {:href "/community"} "Community"]]
    [:li [:a {:href "https://github.com/slagyr/joodo/issues" :target "_blank"} "Feature Request"]]]
+  [:hr]
   (eval (:template-body joodo.views/*view-context*))
-]]
+  [:hr]
+  [:a {:href "/license"} "License Info"]
+  [:span " | "]
+  [:a {:href "https://github.com/slagyr/joodo" :target "_blank"} "Git Repository"]
+  [:p "Copyright &copy; 2011 Micah Martin All Rights Reserved"]]]
