@@ -30,8 +30,12 @@
           [:li [:a {:href "/tutorial/install"} "Installation"]]
           [:li [:a {:href "/tutorial/build-skeleton"} "Build Application Skeleton"]]
           [:li [:a {:href "/tutorial/tour"} "The Grand Tour"]]
-          ; [:li [:a {:href "/tutorial/sample-app"} "Sample Application"]]
-          ]]))
+          [:li [:a {:href "/tutorial/sample-app"} "Sample Application"]]]]))
+    (if (re-matches #"^/docs.*" (or (:uri *request*) ""))
+      (list
+        [:div.drawer
+         [:ul
+          (map #(merge [:li [:a {:href (str "/docs/" (url-safe-ns %))}%]]) documented-namespaces)]]))
     (eval (:template-body joodo.views/*view-context*))]
  ]
 ]
