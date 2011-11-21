@@ -4,7 +4,7 @@
     [joodo.spec-helpers.controller]
     [joodoweb.controller.docs-controller]))
 
-(describe "joodoweb"
+(describe "Documentation Controller"
 
   (with-mock-rendering)
   (with-routes docs-controller)

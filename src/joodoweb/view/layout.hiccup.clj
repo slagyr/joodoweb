@@ -35,7 +35,7 @@
       (list
         [:div.drawer
          [:ul
-          (map #(merge [:li [:a {:href (str "/docs/" (url-safe-ns %))}%]]) documented-namespaces)]]))
+          (map #(merge [:li [:a {:href (str "/docs/" (ns->url %))} %]]) documented-namespaces)]]))
     (eval (:template-body joodo.views/*view-context*))]
  ]
 ]

@@ -24,5 +24,14 @@
 	'joodo.string
 	'joodo.views])
 
-(defn url-safe-ns [unsafe-ns]
-	(clojure.string/replace unsafe-ns #"\." "_"))
+(defn ns->url [ns-string]
+	(clojure.string/replace ns-string #"\." "_"))
+
+(defn url->ns [ns-string]
+	(symbol (clojure.string/replace ns-string #"_" ".")))
+
+(defn fn->url [fn-string]
+	(clojure.string/replace fn-string #"\?" "-q"))
+
+(defn url->fn [fn-string]
+	(symbol (clojure.string/replace fn-string #"-q" "?")))
