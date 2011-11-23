@@ -1,1 +1,1 @@
-[:h1 "Doc doesn't exist."]
+[:h3 "Function or namespace does not exist."]

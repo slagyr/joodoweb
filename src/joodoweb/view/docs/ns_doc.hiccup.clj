@@ -1,7 +1,9 @@
 (let [joodo-ns (:joodo-ns *view-context*)
+      ns-info (meta joodo-ns)
 	  ns-name (ns-name joodo-ns)]
   (list
     [:h2 ns-name]
+    [:p (:doc ns-info)]
     [:ul
       (map
 	    #(if (not= nil (:doc (meta (second %))))
