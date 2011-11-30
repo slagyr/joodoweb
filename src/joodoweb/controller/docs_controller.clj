@@ -25,7 +25,7 @@
   (if-let [joodo-ns (get-ns joodo-ns-name)]
     (if-let [joodo-fn (get-fn joodo-ns joodo-fn-name)]
       (render-template "docs/fn_doc" :joodo-ns joodo-ns :joodo-fn joodo-fn)
-      (render-template "docs/not_found"))
+      (render-template "docs/not_found" :joodo-ns joodo-ns-name :joodo-fn joodo-fn-name))
     (render-template "docs/not_found")))
 
 (defroutes docs-controller
