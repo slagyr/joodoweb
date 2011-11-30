@@ -2,26 +2,12 @@
   (:use
     [compojure.core]
     [ring.util.response :only (redirect)]
-    [joodoweb.view.view-helpers :only (url->ns url->fn documented-namespaces)]
-	[joodo.views])
-  (:require
-    [joodo.controllers]
-	[joodo.datetime]
-	[joodo.env]
-	[joodo.middleware.flash]
-	[joodo.middleware.keyword-cookies]
-	[joodo.middleware.multipart-params]
-	[joodo.middleware.refresh]
-	[joodo.middleware.request]
-	[joodo.middleware.servlet-session]
-	[joodo.middleware.verbose]
-	[joodo.middleware.view-context]
-	[joodo.spec-helpers.controller]
-	[joodo.spec-helpers.view]
-	[joodo.string]))
+    [joodo.views :only (render-template)]
+    [joodoweb.view.view-helpers :only (url->ns url->fn documented-namespaces)]))
 
 (defn- get-ns [joodo-ns-name]
   (try
+    (require joodo-ns-name)
     (find-ns joodo-ns-name)
     (catch Exception e
       nil)))
