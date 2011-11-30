@@ -2,12 +2,26 @@
   (:use
     [compojure.core]
     [ring.util.response :only (redirect)]
-    [joodo.views :only (render-template)]
-    [joodoweb.view.view-helpers :only (url->ns url->fn)]))
+    [joodoweb.view.view-helpers :only (url->ns url->fn documented-namespaces)]
+	[joodo.views])
+  (:require
+    [joodo.controllers]
+	[joodo.datetime]
+	[joodo.env]
+	[joodo.middleware.flash]
+	[joodo.middleware.keyword-cookies]
+	[joodo.middleware.multipart-params]
+	[joodo.middleware.refresh]
+	[joodo.middleware.request]
+	[joodo.middleware.servlet-session]
+	[joodo.middleware.verbose]
+	[joodo.middleware.view-context]
+	[joodo.spec-helpers.controller]
+	[joodo.spec-helpers.view]
+	[joodo.string]))
 
 (defn- get-ns [joodo-ns-name]
   (try
-    (require joodo-ns-name)
     (find-ns joodo-ns-name)
     (catch Exception e
       nil)))
@@ -26,7 +40,7 @@
     (if-let [joodo-fn (get-fn joodo-ns joodo-fn-name)]
       (render-template "docs/fn_doc" :joodo-ns joodo-ns :joodo-fn joodo-fn)
       (render-template "docs/not_found" :joodo-ns joodo-ns-name :joodo-fn joodo-fn-name))
-    (render-template "docs/not_found")))
+    (render-template "docs/not_found" :joodo-ns joodo-ns-name :joodo-fn joodo-fn-name)))
 
 (defroutes docs-controller
   (GET "/docs" [] (redirect "docs/index"))

@@ -15,7 +15,7 @@
         (should= 200 (:status result))
         (should= "docs/ns_doc" @rendered-template)))
 
-    (it "joodo.env namespace route exists"
+    (it "invalid ns route doesn't exist"
       (let [result (do-get "/docs/invalid-ns")]
         (should= 200 (:status result))
         (should= "docs/not_found" @rendered-template)))
@@ -30,8 +30,8 @@
         (should= 200 (:status result))
         (should= "docs/fn_doc" @rendered-template)))
 
-    (it "invalid route doesn't exist"
-      (let [result (do-get "/docs/invalid-ns/invalid-fn")]
+    (it "invalid function route doesn't exist"
+      (let [result (do-get "/docs/joodo_string/invalid-fn")]
         (should= 200 (:status result))
         (should= "docs/not_found" @rendered-template)))
   )
