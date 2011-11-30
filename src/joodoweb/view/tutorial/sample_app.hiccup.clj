@@ -1,22 +1,24 @@
 [:h2 "Sample Application"]
 
-[:p "
+[:p "Coming soon"]
 
-
-joodo new sample_blog
-lein deps
-joodo server
-lein spec -a
-
-Change to layout.hiccup.clj
--Replace joodo.png in public/images/
--
-
-$$$$$ Common mistake for controllers $$$$$
-not starting your route with the controller name
-not naming your defroutes macro with the correct name
-
-"]
+; [:p "
+; 
+; 
+; joodo new sample_blog
+; lein deps
+; joodo server
+; lein spec -a
+; 
+; Change to layout.hiccup.clj
+; -Replace joodo.png in public/images/
+; -
+; 
+; $$$$$ Common mistake for controllers $$$$$
+; not starting your route with the controller name
+; not naming your defroutes macro with the correct name
+; 
+; "]
 
 
 ; do a screencast
