@@ -19,7 +19,7 @@
 (defn- direct-to-ns-doc-page [joodo-ns-name]
   (if-let [joodo-ns (get-ns joodo-ns-name)]
     (render-template "docs/ns_doc" :joodo-ns joodo-ns)
-    (render-template "docs/not_found")))
+    (render-template "docs/not_found" :joodo-ns joodo-ns-name)))
 
 (defn- direct-to-fn-doc-page [joodo-ns-name joodo-fn-name]
   (if-let [joodo-ns (get-ns joodo-ns-name)]
