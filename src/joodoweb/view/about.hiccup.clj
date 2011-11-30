@@ -1,3 +1,2 @@
 [:h2 "About Joodo"]
-[:p "Born of a need to build fast, clean web applications, Joodo uniquely satisfies a need of Clojure frameworks. Taking inspiration from the self-discipline of martial arts and the attention to detail of Old World artisans, Joodo is a carefully crafted tool that will aid you in forging the best applications you can imagine."]
-[:p "Joodo is an open-source project, free for all, and constantly updated."]
+[:p "Joodo is a web application framework for Clojure."]

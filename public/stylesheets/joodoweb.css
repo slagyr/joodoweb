@@ -15,89 +15,90 @@ a:active {}
 a:visited {}
 a:hover { color: #330000; }
 
-div.sidebar {
-	position: absolute;
+html, body, table.body {
+	height: 100%;
+}
+
+td.sidebar {
 	background-color: #669966;
-	height:100%;
 	width: 270px;
 	margin: 0px;
 }
 
-div.sidebar a.title {
+td.sidebar a.title {
 	color: #330000;
 	text-decoration: none;
 }
 
-div.sidebar a.title h1 {
+td.sidebar a.title h1 {
 	font-size: 5em;
 	margin: 10px auto 10px 30px;
 }
 
-div.sidebar ul.navigation {
+td.sidebar ul.navigation {
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
 
-div.sidebar ul.navigation a {
+td.sidebar ul.navigation a {
 	text-decoration: none;
 }
 
-div.sidebar ul.navigation a li {
+td.sidebar ul.navigation a li {
 	background-color: #99cc99;
 	margin: 1px 0px 1px 0px;
 	width: 250px;
 	padding: 10px;
 }
 
-div.sidebar ul.navigation a li span {
+td.sidebar ul.navigation a li span {
 	margin-left: 20px;
 }
 
-div.sidebar span.footer {
+td.sidebar span.footer {
 	display: inline-block;
 	margin: 20px auto 20px 30px;
 }
 
-div.sidebar span.footer p {
+td.sidebar span.footer p {
 	margin: 0px auto 0px auto;
 }
 
-div.drawer {
-	margin: 0px 0px 20px 0px;
+td.drawer {
+	padding: 0px 10px 20px 10px;
+	border-right:thick ridge;
 }
 
-div.content {
-	position: relative;
-	left: 270px;
+td.content {
 	width: 600px;
 	padding: 20px;
 }
 
-div.content h1 {
+td.content h1 {
 	font-size: 5em;
 }
 
-div.content h2 {
+td.content h2 {
 	font-size: 3em;
 	margin-top: 30px;
 }
 
-div.content h3 {
+td.content h3 {
 	font-size: 1.8em;
 	margin-top: 25px;
 }
 
-div.content h4 {
+td.content h4 {
 	font-size: 1.3em;
 	margin-top: 20px;
 }
 
-div.content p {
+td.content p {
 	margin: 10px 0px 10px 0px;
 }
 
-div.content code {
+td.content code {
 	display: block;
 	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 	margin-bottom: 20px;

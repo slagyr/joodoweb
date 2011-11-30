@@ -24,6 +24,9 @@
 	'joodo.string
 	'joodo.views])
 
+(defn format-namespace [ns-string]
+	(clojure.string/replace ns-string #"joodo\." ""))
+
 (defn ns->url [ns-string]
 	(clojure.string/replace ns-string #"\." "_"))
 
