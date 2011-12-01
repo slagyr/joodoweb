@@ -1,5 +1,5 @@
-[:h2 "Joodo"]
-[:h4 "A web application framework for Clojure"]
+[:h2 "joodo"]
+[:h3 "a web application framework for Clojure"]
 
 [:br]
 [:p "Born of a need to build fast, clean web applications, Joodo uniquely satisfies a need of Clojure frameworks. Taking inspiration from the self-discipline of martial arts and the attention to detail of Old World artisans, Joodo is a carefully crafted tool that will aid you in forging the best applications you can imagine."]

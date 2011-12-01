@@ -1,4 +1,4 @@
-[:h2 "Sample Application"]
+[:h2 "sample application"]
 
 [:p "Coming soon"]
 

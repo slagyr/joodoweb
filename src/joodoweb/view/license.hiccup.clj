@@ -1,4 +1,4 @@
-[:h2 "License Info"]
+[:h2 "license info"]
 
 [:p "Copyright (C) 2011 Micah Martin All Rights Reserved."]
 [:p "Distributed under the The MIT License."]

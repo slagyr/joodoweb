@@ -3,26 +3,32 @@ html {
 }
 
 body {
-    background: #FFFFFF;
+	background-image:url('/images/background.jpg');
 	font-color: #330000;
 	/* Not getting applied in Safari */
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 
-a { color: #663300; }
+a {
+	color: #be3821;
+	text-decoration:none;
+	font-variant:small-caps;
+}
 a:link {}
 a:active {}
 a:visited {}
-a:hover { color: #330000; }
+a:hover { color:white; }
 
 html, body, table.body {
 	height: 100%;
 }
 
+/******** sidebar ********/
+
 td.sidebar {
-	background-color: #669966;
-	width: 270px;
-	margin: 0px;
+	background-image:url('/images/sidebar.png');
+	width: 213px;
+	z-index:1;
 }
 
 td.sidebar a.title {
@@ -46,60 +52,103 @@ td.sidebar ul.navigation a {
 }
 
 td.sidebar ul.navigation a li {
-	background-color: #99cc99;
-	margin: 1px 0px 1px 0px;
-	width: 250px;
-	padding: 10px;
+/*	background-color:white;*/
+	background-color: rgba(255, 255, 255, 0.50);
+	margin: 5px 0px 5px 0px;
+	width: 213px;
+	padding: 5px 0px 5px 0px;
+}
+
+td.sidebar ul.navigation a:active li {
+	background-color:rgba(211,187,150,0.8);
 }
 
 td.sidebar ul.navigation a li span {
-	margin-left: 20px;
+	margin-left: 15px;
+	font-variant:small-caps;
+	font-size:1.2em;
 }
 
 td.sidebar span.footer {
 	display: inline-block;
-	margin: 20px auto 20px 30px;
+	margin: 20px auto 20px 15px;
+	font-size:.8em;
 }
 
 td.sidebar span.footer p {
 	margin: 0px auto 0px auto;
 }
 
+/****** drawer ************/
+
 td.drawer {
-	padding: 0px 10px 20px 10px;
-	border-right:thick ridge;
+	padding: 0px 00px 0px 20px;
+	border-style:none;
+	line-height:1.2em;
+	background-image:url('/images/drawer.png');
+	height:200%;
+/*	position:absolute;*/
+	z-index:1;
+	width:280px;
 }
+
+td.drawer a {
+	color:#361711;
+	font-variant:small-caps;
+	font-size:1.2em;
+}
+
+/******* content *********/
 
 td.content {
 	width: 600px;
-	padding: 20px;
+	padding: 0px 0px 0px 20px;
+	margin:0px;
 }
 
 td.content h1 {
 	font-size: 5em;
+	color:#e09900;
 }
 
 td.content h2 {
-	font-size: 3em;
+	font-size: 2em;
+	font-variant:small-caps;
 	margin-top: 30px;
+	color:#e09900;
+	letter-spacing:0.15em;
+	padding-bottom:8px;
 }
 
 td.content h3 {
-	font-size: 1.8em;
-	margin-top: 25px;
+	font-size: 1.4em;
+	margin-top: 35px;
+	color:#e09900;
+	font-variant:small-caps;
+	letter-spacing:0.15em;
 }
 
 td.content h4 {
-	font-size: 1.3em;
+	font-size: 1em;
 	margin-top: 20px;
+	color:#e09900;
 }
 
 td.content p {
 	margin: 10px 0px 10px 0px;
+	color:white;
+	line-height:1.2em;
+	letter-spacing:0.07em;
 }
 
 td.content code {
 	display: block;
 	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
-	margin-bottom: 20px;
+	padding:12px 10px 12px 8px;
+	margin:8px;
+	background-color:rgba(211,187,150,0.2);
+	width:auto;
+	color:white;
+	line-height:1.3em;
+	font-size:0.90em;
 }
