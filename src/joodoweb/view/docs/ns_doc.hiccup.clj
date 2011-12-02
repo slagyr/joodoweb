@@ -2,7 +2,7 @@
       ns-info (meta joodo-ns)
 	  ns-name (ns-name joodo-ns)]
   (list
-    [:h2 (format-namespace ns-name)]
+    [:h2 ns-name]
     [:p (:doc ns-info)]
     [:ul
       (map
