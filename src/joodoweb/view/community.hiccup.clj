@@ -8,7 +8,7 @@
 
 [:code [:pre "git clone https://github.com/slagyr/joodo.git
 cd joodo
-lein javac
+lein compile
 lein spec"]]
 
 [:p "Submit your patches via pull requests to <a href=\"https://github.com/slagyr/joodo\" target=\"blank\">Joodo's GitHub Repo</a>."]
