@@ -3,6 +3,7 @@
  [:head
   [:meta {:http-equiv "Content-Type" :content "text/html" :charset "iso-8859-1"}]
   [:link {:rel "shortcut icon" :href "images/favicon.ico"}]
+	[:link {:href "http://fonts.googleapis.com/css?family=EB+Garamond" :rel "stylesheet" :type "text/css"}]
   [:title "Joodo | Clojure Web Framework"]
   (include-css "/stylesheets/joodoweb.css")
   (include-css "/stylesheets/reset.css")

@@ -3,24 +3,27 @@ html {
 }
 
 body {
-	background-image:url('/images/background.jpg');
-	font-color: #330000;
-	/* Not getting applied in Safari */
-	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+	background-color:#faf8f2;
 }
 
 a {
 	color: #be3821;
 	text-decoration:none;
-	font-variant:small-caps;
 }
 a:link {}
 a:active {}
 a:visited {}
-a:hover { color:white; }
+a:hover {}
+.selected {
+	display:block;
+	background-color:#3b1d0f;
+	color:#e09900;
+}
 
 html, body, table.body {
 	height: 100%;
+	margin-left:7%;
+	font-family: 'EB Garamond', serif;
 }
 
 /******** sidebar ********/
@@ -60,7 +63,7 @@ td.sidebar ul.navigation a li {
 }
 
 td.sidebar ul.navigation a:active li {
-	background-color:rgba(211,187,150,0.8);
+/*	background-color:rgba(211,187,150,0.8);*/
 }
 
 td.sidebar ul.navigation a li span {
@@ -84,71 +87,63 @@ td.sidebar span.footer p {
 td.drawer {
 	padding: 0px 00px 0px 20px;
 	border-style:none;
-	line-height:1.2em;
-	background-image:url('/images/drawer.png');
+	line-height:1.5em;
 	height:200%;
-/*	position:absolute;*/
-	z-index:1;
-	width:280px;
+	width:220px;
 }
 
 td.drawer a {
-	color:#361711;
-	font-variant:small-caps;
-	font-size:1.2em;
+	line-height:1.5em;
 }
 
 /******* content *********/
 
 td.content {
-	width: 600px;
+	width: 500px;
 	padding: 0px 0px 0px 20px;
 	margin:0px;
+	color:#e09900;
 }
 
 td.content h1 {
-	font-size: 5em;
-	color:#e09900;
+	font-size: 2em;
+	letter-spacing:0.15em;
+	margin: 1.5em 0px 8px 0px;
 }
 
 td.content h2 {
 	font-size: 2em;
-	font-variant:small-caps;
-	margin-top: 30px;
-	color:#e09900;
 	letter-spacing:0.15em;
-	padding-bottom:8px;
+	margin: 1.5em 0px 8px 0px;
+	font-variant:small-caps;
 }
 
 td.content h3 {
-	font-size: 1.4em;
-	margin-top: 35px;
-	color:#e09900;
-	font-variant:small-caps;
+	font-size: 1.5em;
 	letter-spacing:0.15em;
+	margin: 1.5em 0px 0px 0px;
+	font-variant:small-caps;
 }
 
 td.content h4 {
-	font-size: 1em;
-	margin-top: 20px;
-	color:#e09900;
+	font-size: 0.9em;
+	margin: 1.5em 0px 0px 0px;
 }
 
 td.content p {
-	margin: 10px 0px 10px 0px;
-	color:white;
+	font-size:0.9em;
 	line-height:1.2em;
 	letter-spacing:0.07em;
+	color:#3b1d0f;
+	margin: 1.5em 0px 0px 0px;
 }
 
 td.content code {
-	display: block;
-	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
-	padding:12px 10px 12px 8px;
-	margin:8px;
-	background-color:rgba(211,187,150,0.2);
-	width:auto;
-	color:white;
+	font-size:0.80em;
 	line-height:1.3em;
-	font-size:0.90em;
+	color:#3b1d0f;
+	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+	display: block;
+	padding:12px 10px 0px 8px;  /* padding:12px 10px 12px 8px; */
+	margin:8px;
 }

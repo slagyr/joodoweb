@@ -1,7 +1,7 @@
 (let [ns-info (ns-name (:joodo-ns *view-context*))
       fn-info (meta (:joodo-fn *view-context*))]
   (list
-    [:h2 (:name fn-info)]
+    [:h1 (:name fn-info)]
     [:p "Namespace: " [:a {:href (str "/docs/" (ns->url (ns-name ns-info)))} (ns-name ns-info)]]
     [:p "Source: " [:a {:href ""} ""]]
     (if (= nil (:doc fn-info))

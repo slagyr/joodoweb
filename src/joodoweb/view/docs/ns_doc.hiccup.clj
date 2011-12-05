@@ -2,7 +2,7 @@
       ns-info (meta joodo-ns)
 	  listed-fns (:joodo-fns *view-context*)]
   (list
-    [:h2 (ns-name joodo-ns)]
+    [:h1 (ns-name joodo-ns)]
     [:p "Source: " [:a {:href (str "https://github.com/slagyr/joodo/blob/master/joodo/src/" ns-info)} (meta (first listed-fns))]]
     [:p (:doc ns-info)]
     [:ul

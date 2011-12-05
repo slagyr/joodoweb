@@ -1,0 +1,9 @@
+ul {
+	list-style-type:none;
+	float:left;
+}
+
+.highlighted {
+/*	color:red;*/
+	background-color:red;
+}
