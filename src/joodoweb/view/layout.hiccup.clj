@@ -35,7 +35,12 @@
      (list
        [:td.drawer
         [:ul
-         (map #(merge [:li [:a {:href (str "/docs/" (ns->url %))} (format-namespace %)]]) documented-namespaces)]]))
+         (map
+           #(merge [:li
+	         (if (= (str "/docs/" (ns->url %)) (or (:uri *request*) ""))
+               [:a.selected {:href (str "/docs/" (ns->url %))} (format-namespace %)]
+               [:a {:href (str "/docs/" (ns->url %))} (format-namespace %)])])
+           documented-namespaces)]]))
    [:td.content
     (eval (:template-body joodo.views/*view-context*))]
   ]]

@@ -1,1 +1,1 @@
-[:h3 "Function \"" (:joodo-fn *view-context*) "\" or namespace \"" (:joodo-ns *view-context*) "\" does not exist."]
+[:h3 "Documentation for namespace \"" (:joodo-ns *view-context*) "\" does not exist."]

@@ -33,8 +33,11 @@
 (defn url->ns [ns-string]
 	(symbol (clojure.string/replace ns-string #"_" ".")))
 
-(defn fn->url [fn-string]
-	(clojure.string/replace fn-string #"\?" "-q"))
+(defn url->github-url [ns-string]
+	(str "https://github.com/slagyr/joodo/blob/master/joodo/src/" ns-string))
 
-(defn url->fn [fn-string]
-	(symbol (clojure.string/replace fn-string #"-q" "?")))
+; (defn fn->url [fn-string]
+; 	(clojure.string/replace fn-string #"\?" "-q"))
+; 
+; (defn url->fn [fn-string]
+; 	(symbol (clojure.string/replace fn-string #"-q" "?")))
