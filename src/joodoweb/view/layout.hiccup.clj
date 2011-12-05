@@ -7,7 +7,8 @@
   [:title "Joodo | Clojure Web Framework"]
   (include-css "/stylesheets/joodoweb.css")
   (include-css "/stylesheets/reset.css")
-  (include-js "/javascript/joodoweb.js")]
+  (include-js "/javascript/joodoweb.js")
+  (include-js "/javascript/jquery-1.7.1.min.js")]
  [:body
   [:table.body [:tr
    [:td.sidebar
