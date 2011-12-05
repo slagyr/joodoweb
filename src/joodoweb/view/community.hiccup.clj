@@ -1,9 +1,9 @@
-[:h2 "community"]
+[:h2 "Community"]
 
-[:h3 "mailing list"]
+[:h3 "Mailing List"]
 [:p "We invite you to join our <a href=\"https://groups.google.com/group/joodo?pli=1\" target=\"blank\">mailing list</a> for news, updates, and cookies. (Well, photos of cookies.)"]
 
-[:h3 "contributing"]
+[:h3 "Contributing"]
 [:p "If you have <a href=\"https://github.com/technomancy/leiningen\" target=\"_blank\">Leiningen</a> and <a href=\"http://git-scm.com\" target=\"_blank\">Git</a>, it is easy to contribute to the Joodo project. Start by inputting these commands in your terminal:"]
 
 [:code [:pre "git clone https://github.com/slagyr/joodo.git
@@ -13,5 +13,8 @@ lein spec"]]
 
 [:p "Submit your patches via pull requests to <a href=\"https://github.com/slagyr/joodo\" target=\"blank\">Joodo's GitHub Repo</a>."]
 
-[:h3 "chat"]
+[:h3 "Chat"]
 [:p "We're always happy to answer any questions or provide any help we can. Join the Joodo channel using <a href=\"http://webchat.freenode.net\">freenode's</a> browser based IRC chat client."]
+
+[:h3 "Feature Request"]
+[:p "As you use Joodo, you might get ideas for how to make it better. If you don't know have the technical knowledge to contribute the feature yourself but want to share your idea, submit it through " [:a {:href "https://github.com/slagyr/joodo/issues" :target "_blank"} "Joodo's GitHub account"] "."]

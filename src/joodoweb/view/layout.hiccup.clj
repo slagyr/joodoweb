@@ -16,8 +16,7 @@
      [:a {:href "/docs"} [:li [:span "documentation"]]]
      [:a {:href "/about"} [:li [:span "why joodo?"]]]
      [:a {:href "/tutorial"} [:li [:span "getting started"]]]
-     [:a {:href "/community"} [:li [:span "community"]]]
-     [:a {:href "https://github.com/slagyr/joodo/issues" :target "_blank"} [:li [:span "feature request"]]]]
+     [:a {:href "/community"} [:li [:span "community"]]]]
     [:span.footer
      [:a {:href "/license"} "License Info"]
      " | "

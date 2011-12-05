@@ -9,7 +9,7 @@
 [:p "The first section declares the file's namespace and lists all of the file's dependencies. If you want a deeper look into what core.clj does you can find the method/macro definitions that are being used in this section."]
 [:p "The second section calls a macro called defroutes. This macro is responsible for defining the routes of the website. By default it sets a GET request on the '/' route to render a pre-made index page. It also tells the application to render a pre-made 404 page if a non-existent route is accessed."]
 [:p "The most interesting part of the second section tells Joodo to look for any files with namespaces starting with '_project_name_.controller and add the routes they define to the list of routes. More about controllers can be found in the controllers section below."]
-[:p "The third section wraps information around the routes. By default, the only property being wrapped is the view context. It sets the template root to the view directory and sets all of the view's namespaces to a view-helper."]
+[:p "The third section wraps information around the request. By default, the only property being wrapped is the view context. It sets the template root to the view directory and sets all of the view's namespaces to a view-helper."]
 
 [:h3 "controller directory"]
 [:p "By default this directory is empty. However as your project grows, this directory will become more and more important. The files that go here contain additional routes that are related to each other. For example, in this website there is a controller called tutorial_controller.clj that holds the routes for all of the tutorial pages."]
