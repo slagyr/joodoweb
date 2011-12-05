@@ -16,8 +16,9 @@ a:visited {}
 a:hover {}
 .selected {
 	display:block;
-	background-color:#3b1d0f;
-	color:#e09900;
+/*	color:#e09900;*/
+/*	background-color:#3b1d0f;*/
+	background-color:#f2e5ce;
 }
 
 html, body, table.body {
@@ -29,9 +30,7 @@ html, body, table.body {
 /******** sidebar ********/
 
 td.sidebar {
-	background-image:url('/images/sidebar.png');
 	width: 213px;
-	z-index:1;
 }
 
 td.sidebar a.title {
@@ -55,15 +54,12 @@ td.sidebar ul.navigation a {
 }
 
 td.sidebar ul.navigation a li {
-/*	background-color:white;*/
-	background-color: rgba(255, 255, 255, 0.50);
-	margin: 5px 0px 5px 0px;
 	width: 213px;
+	margin: 5px 0px 5px 0px;
 	padding: 5px 0px 5px 0px;
 }
 
 td.sidebar ul.navigation a:active li {
-/*	background-color:rgba(211,187,150,0.8);*/
 }
 
 td.sidebar ul.navigation a li span {
@@ -75,11 +71,12 @@ td.sidebar ul.navigation a li span {
 td.sidebar span.footer {
 	display: inline-block;
 	margin: 20px auto 20px 15px;
-	font-size:.8em;
+	font-size:0.9em;
 }
 
 td.sidebar span.footer p {
 	margin: 0px auto 0px auto;
+	line-height:1.3em;
 }
 
 /****** drawer ************/
@@ -94,6 +91,7 @@ td.drawer {
 
 td.drawer a {
 	line-height:1.5em;
+	font-size:0.9em;
 }
 
 /******* content *********/
@@ -103,6 +101,10 @@ td.content {
 	padding: 0px 0px 0px 20px;
 	margin:0px;
 	color:#e09900;
+}
+
+td.content a {
+	font-size:0.9em;
 }
 
 td.content h1 {
@@ -128,6 +130,7 @@ td.content h3 {
 td.content h4 {
 	font-size: 0.9em;
 	margin: 1.5em 0px 0px 0px;
+	color:#be3821;
 }
 
 td.content p {
