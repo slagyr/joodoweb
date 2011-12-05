@@ -5,18 +5,13 @@
 	
 (describe "View Helper"
 	(it "converts a namespace to a url friendly string"
-		(should= "joodo_env" (ns->url 'joodo.env)))
+		(should= "joodo_env" (ns->url-safe 'joodo.env)))
 	
 	(it "converts a url friendly string to a namespace symbol"
-		(should= 'joodo.env (url->ns "joodo_env")))
-	
-	; (it "converts a function to a url friendly string"
-	; 	(should= "development-env-q" (fn->url 'development-env?)))
-	; 
-	; (it "converts a url friendly string to a function symbol"
-	; 	(should= 'development-env? (url->fn "development-env-q")))
+		(should= 'joodo.env (url-safe->ns "joodo_env")))
 
 	(it "gets the url for the source code of a given namespace"
-		; (should= "" (ns->github-url 'joodo.env))
-		)
+		(should=
+			"https://github.com/slagyr/joodo/blob/master/joodo/src/joodo/keyword_cookies.clj"
+			(ns->github-url 'joodo.keyword-cookies)))
 )

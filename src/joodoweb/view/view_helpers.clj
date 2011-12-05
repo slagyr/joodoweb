@@ -5,6 +5,7 @@
     [hiccup.page-helpers]
     [hiccup.form-helpers]
     [joodo.middleware.request :only (*request*)]
+    [clojure.string :as string :only (replace)]
 ))
 
 (def documented-namespaces [
@@ -25,19 +26,16 @@
 	'joodo.views])
 
 (defn format-namespace [ns-string]
-	(clojure.string/replace ns-string #"joodo\." ""))
+	(string/replace ns-string #"joodo\." ""))
 
-(defn ns->url [ns-string]
-	(clojure.string/replace ns-string #"\." "_"))
+(defn ns->url-safe [ns-string]
+	(string/replace ns-string #"\." "_"))
 
-(defn url->ns [ns-string]
-	(symbol (clojure.string/replace ns-string #"_" ".")))
+(defn ns->github-url [ns-string]
+	(str "https://github.com/slagyr/joodo/blob/master/joodo/src/"
+	(string/replace 
+		(string/replace ns-string #"-" "_")
+		#"\." "/") ".clj"))
 
-(defn url->github-url [ns-string]
-	(str "https://github.com/slagyr/joodo/blob/master/joodo/src/" ns-string))
-
-; (defn fn->url [fn-string]
-; 	(clojure.string/replace fn-string #"\?" "-q"))
-; 
-; (defn url->fn [fn-string]
-; 	(symbol (clojure.string/replace fn-string #"-q" "?")))
+(defn url-safe->ns [ns-string]
+	(symbol (string/replace ns-string #"_" ".")))

@@ -3,12 +3,12 @@
 	  listed-fns (:joodo-fns *view-context*)]
   (list
     [:h2 (ns-name joodo-ns)]
-    [:p "Source: " [:a {:href (str "https://github.com/slagyr/joodo/blob/master/joodo/src/" ns-info)} (meta (first listed-fns))]]
     [:p (:doc ns-info)]
+    [:a {:href (ns->github-url joodo-ns)} "Source Code"]
+    [:br][:br]
     [:ul
-      (map
-	    #(if (not= nil (:doc (meta (second %))))
-	      (merge [:li [:a {:href (str "/docs/" (ns->url ns-name) "/" (fn->url (first %)))} (first %)]]))
-        (ns-publics joodo-ns))]
-  )
-)
+      (for [current-fn (ns-publics joodo-ns)]
+        (if-let [fn-doc (:doc (meta (second current-fn)))]
+        (list [:li
+          [:h4 (first current-fn)]
+          [:p.hideable fn-doc]])))]))

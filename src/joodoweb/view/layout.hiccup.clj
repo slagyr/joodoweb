@@ -37,9 +37,9 @@
         [:ul
          (map
            #(merge [:li
-	         (if (= (str "/docs/" (ns->url %)) (or (:uri *request*) ""))
-               [:a.selected {:href (str "/docs/" (ns->url %))} (format-namespace %)]
-               [:a {:href (str "/docs/" (ns->url %))} (format-namespace %)])])
+	         (if (= (str "/docs/" (ns->url-safe %)) (or (:uri *request*) ""))
+               [:a.selected {:href (str "/docs/" (ns->url-safe %))} (format-namespace %)]
+               [:a {:href (str "/docs/" (ns->url-safe %))} (format-namespace %)])])
            documented-namespaces)]]))
    [:td.content
     (eval (:template-body joodo.views/*view-context*))]

@@ -3,7 +3,7 @@
     [compojure.core]
     [ring.util.response :only (redirect)]
     [joodo.views :only (render-template)]
-    [joodoweb.view.view-helpers :only (url->ns documented-namespaces)]))
+    [joodoweb.view.view-helpers :only (url-safe->ns documented-namespaces)]))
 
 (defn- get-ns [joodo-ns-name]
   (try
@@ -24,4 +24,4 @@
   (GET "/docs" [] (redirect "docs/index"))
   (context "/docs" []
     (GET "/index" [] (render-template "docs/index"))
-    (GET "/:joodo-ns-name" [joodo-ns-name] (direct-to-doc-page (url->ns joodo-ns-name)))))
+    (GET "/:joodo-ns-name" [joodo-ns-name] (direct-to-doc-page (url-safe->ns joodo-ns-name)))))
