@@ -2,7 +2,7 @@
       ns-info (meta joodo-ns)
 	  listed-fns (:joodo-fns *view-context*)]
   (list
-    [:h2 (ns-name joodo-ns)]
+    [:h1 (ns-name joodo-ns)]
     [:p (:doc ns-info)]
     [:a {:href (ns->github-url joodo-ns)} "Source Code"]
     [:br][:br]
