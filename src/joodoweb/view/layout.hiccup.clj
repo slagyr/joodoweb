@@ -13,9 +13,9 @@
     [:a.title {:href "/"}
      [:img {:src "/images/logo.png" :alt "Joodo"}]]
     [:ul.navigation
-     [:a {:href "/docs"} [:li [:span "documentation"]]]
-     [:a {:href "/about"} [:li [:span "why joodo?"]]]
-     [:a {:href "/tutorial"} [:li [:span "getting started"]]]
+     [:a {:href "/docs"} [:li [:span "api documentation"]]]
+     [:a {:href "/tutorial"} [:li [:span "sample application"]]]
+     [:a {:href "/about"} [:li [:span "about"]]]
      [:a {:href "/community"} [:li [:span "community"]]]]
     [:span.footer
      [:a {:href "/license"} "License Info"]
