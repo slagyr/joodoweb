@@ -11,4 +11,6 @@
         (if-let [fn-doc (:doc (meta (second current-fn)))]
         (list [:li
           [:h4.toggle (first current-fn)
-          [:p.hideable fn-doc]]])))]))
+            [:p.hideable fn-doc]
+            [:h5 {:class "toggle hideable"} "Source"
+              [:p.hideable (first current-fn)]]]])))]))
