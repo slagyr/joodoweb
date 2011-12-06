@@ -41,3 +41,8 @@
 
 (defn url-safe->ns [ns-string]
 	(symbol (string/replace ns-string #"_" ".")))
+
+(defn get-source-code [ns-string fn-string]
+	(source-fn (symbol (str ns-string "/" fn-string))))
+	
+	;(source-fn 'joodo.string/gsub)

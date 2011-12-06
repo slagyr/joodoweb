@@ -15,6 +15,15 @@
 			"https://github.com/slagyr/joodo/blob/master/joodo/src/joodo/keyword_cookies.clj"
 			(ns->github-url 'joodo.keyword-cookies)))
 
-	(it "makes the usage documentation available to all views"
-		)
+	(context "gets the source code of the specified function in the specified namespace"
+		(it "returns nil when it doesn't find anything"
+			(should= nil (get-source-code "invalid-ns" "invalid-fn")))
+
+		(it "returns the source code of joodo.string's gsub function"
+			(should= "(defn seconds\n  \"Converts seconds to milliseconds\"\n  [n] (* n 1000))"
+				(get-source-code "joodo.datetime" "seconds")))
+	)
+
+	; (it "makes the usage documentation available to all views"
+	; 	)
 )
