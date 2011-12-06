@@ -10,5 +10,5 @@
       (for [current-fn (ns-publics joodo-ns)]
         (if-let [fn-doc (:doc (meta (second current-fn)))]
         (list [:li
-          [:h4.toggle (first current-fn)]
-          [:p.hideable fn-doc]])))]))
+          [:h4.toggle (first current-fn)
+          [:p.hideable fn-doc]]])))]))
