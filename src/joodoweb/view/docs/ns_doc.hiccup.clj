@@ -10,7 +10,9 @@
       (for [current-fn (ns-publics joodo-ns)]
         (if-let [fn-doc (:doc (meta (second current-fn)))]
         (list [:li
-          [:h4.toggle (first current-fn)
-            [:p.hideable fn-doc]
-            [:h5 {:class "toggle hideable"} "Source"
-              [:p.hideable (first current-fn)]]]])))]))
+					[:div.toggle_description
+						[:h4 (first current-fn)]
+						[:p.description fn-doc]]
+					[:div.toggle_source
+						[:h5 "Source"]
+						[:p.source (first current-fn)]]])))]))

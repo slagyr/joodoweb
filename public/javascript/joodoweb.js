@@ -1,9 +1,16 @@
 $(document).ready(function(){
 	
-	$('.hideable').hide();
+	$('.description').hide();
+	$('.toggle_source').hide();
+	$('.source').hide();
 	
-	$('.toggle').click(function() {
-		$(this).children('p').toggle('normal');
+	$('.toggle_description').click(function() {
+		$(this).children('.description').toggle('normal');
+		$(this).siblings('.toggle_source').toggle('normal');
   });
+
+	$('.toggle_source').click(function() {
+		$(this).children('.source').toggle('normal');
+	})
 	
 });

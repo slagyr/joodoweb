@@ -145,17 +145,13 @@ td.content h4 {
 	color:#be3821;
 }
 
-.hideable p {
-	font-size:0.9em;
-	line-height:1.2em;
-	letter-spacing:0.07em;
-	color:#3b1d0f;
-	margin: -1em 0px 0px 0px;
+td.content p.hideable {
+	margin: 0.4em 0px 0px 0px;
 	
 }
 
 td.content p {
-	font-size:3.9em;
+	font-size:0.9em;
 	line-height:1.2em;
 	letter-spacing:0.07em;
 	color:#3b1d0f;
