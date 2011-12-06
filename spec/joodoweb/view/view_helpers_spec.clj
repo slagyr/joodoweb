@@ -21,9 +21,8 @@
 
 		(it "returns the source code of joodo.string's gsub function"
 			(should= "(defn seconds\n  \"Converts seconds to milliseconds\"\n  [n] (* n 1000))"
-				(get-source-code "joodo.datetime" "seconds")))
-	)
+				(get-source-code "joodo.datetime" "seconds"))))
 
-	; (it "makes the usage documentation available to all views"
-	; 	)
+	(it "makes the usage documentation available to all views"
+		(should-not= nil (get (ns-map 'joodoweb.view.view-helpers) (symbol "usage-docs"))))
 )

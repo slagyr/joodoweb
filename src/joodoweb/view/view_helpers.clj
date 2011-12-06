@@ -43,6 +43,10 @@
 	(symbol (string/replace ns-string #"_" ".")))
 
 (defn get-source-code [ns-string fn-string]
-	(source-fn (symbol (str ns-string "/" fn-string))))
+	(try
+		(require (symbol ns-string))
+		(source-fn (symbol (str ns-string "/" fn-string)))
+		(catch Exception e
+			nil)))
 	
 	;(source-fn 'joodo.string/gsub)
