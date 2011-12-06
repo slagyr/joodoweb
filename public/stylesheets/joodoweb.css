@@ -119,6 +119,11 @@ td.content h4:hover {
 	color:#e09900;
 }
 
+td.content h5:hover {
+	cursor:pointer;
+	color:#e09900;
+}
+
 td.content h1 {
 	font-size: 2em;
 	letter-spacing:0.15em;
@@ -145,9 +150,22 @@ td.content h4 {
 	color:#be3821;
 }
 
-td.content p.hideable {
+td.content .toggle_source {
+	margin: 0px 0px 2em 0px;
+}
+
+td.content h5 {
+	font-size: 0.9em;
+	margin: 0.4em 0px 0px 0.4em;
+	color:#be3821;
+}
+
+td.content p.description {
 	margin: 0.4em 0px 0px 0px;
-	
+}
+
+td.content pre {
+	margin: 0.4em 0px 0px 0.4em;	
 }
 
 td.content p {
@@ -164,6 +182,7 @@ td.content code {
 	color:#3b1d0f;
 	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 	display: block;
-	padding:12px 10px 0px 8px;  /* padding:12px 10px 12px 8px; */
+	padding:9px 15px 9px 4px;  /* padding:12px 10px 12px 8px; */
 	margin:8px;
+	background-color:#f2e5ce;
 }
