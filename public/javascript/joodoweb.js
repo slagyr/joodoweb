@@ -10,7 +10,7 @@ $(document).ready(function(){
   });
 
 	$('.toggle_source').click(function() {
-		$(this).children('.source').toggle('normal');
+		$(this).siblings('.source').toggle('normal');
 	})
 	
 });

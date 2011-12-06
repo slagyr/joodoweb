@@ -150,7 +150,7 @@ td.content h4 {
 	color:#be3821;
 }
 
-td.content .toggle_source {
+td.content .source {
 	margin: 0px 0px 2em 0px;
 }
 
@@ -165,7 +165,7 @@ td.content p.description {
 }
 
 td.content pre {
-	margin: 0.4em 0px 0px 0.4em;	
+	margin: 0.4em 0px 0px 0.4em;
 }
 
 td.content p {
