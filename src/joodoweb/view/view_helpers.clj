@@ -48,5 +48,3 @@
 		(source-fn (symbol (str ns-string "/" fn-string)))
 		(catch Exception e
 			nil)))
-	
-	;(source-fn 'joodo.string/gsub)
