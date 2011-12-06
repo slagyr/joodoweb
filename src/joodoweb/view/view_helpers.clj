@@ -6,6 +6,7 @@
     [hiccup.form-helpers]
     [joodo.middleware.request :only (*request*)]
     [clojure.string :as string :only (replace)]
+    [clojure.repl :only (source-fn)]
     [joodoweb.docs.usage_docs :only (usage-docs)]
 ))
 

@@ -14,4 +14,7 @@
 		(should=
 			"https://github.com/slagyr/joodo/blob/master/joodo/src/joodo/keyword_cookies.clj"
 			(ns->github-url 'joodo.keyword-cookies)))
+
+	(it "makes the usage documentation available to all views"
+		)
 )
