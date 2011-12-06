@@ -13,7 +13,9 @@ a {
 a:link {}
 a:active {}
 a:visited {}
-a:hover {}
+a:hover {
+	color:#e09900;
+}
 .selected {
 	display:block;
 /*	color:#e09900;*/
@@ -30,7 +32,9 @@ html, body, table.body {
 /******** sidebar ********/
 
 td.sidebar {
-	width: 213px;
+	width: 220px;
+	background-image:url('/images/menu_1.png');
+	background-repeat:no-repeat;
 }
 
 td.sidebar a.title {
@@ -59,7 +63,8 @@ td.sidebar ul.navigation a li {
 	padding: 5px 0px 5px 0px;
 }
 
-td.sidebar ul.navigation a:active li {
+td.sidebar ul.navigation a:hover li {
+	color:#e09900;
 }
 
 td.sidebar ul.navigation a li span {
@@ -82,11 +87,13 @@ td.sidebar span.footer p {
 /****** drawer ************/
 
 td.drawer {
-	padding: 0px 00px 0px 20px;
+	padding: 0px 20px 0px 20px;
 	border-style:none;
 	line-height:1.5em;
 	height:200%;
-	width:220px;
+	width:200px;
+	background-image:url('/images/menu_2.png');
+	background-repeat:no-repeat;
 }
 
 td.drawer a {
@@ -105,6 +112,11 @@ td.content {
 
 td.content a {
 	font-size:0.9em;
+}
+
+td.content h4:hover {
+	cursor:pointer;
+	color:#e09900;
 }
 
 td.content h1 {
@@ -133,8 +145,17 @@ td.content h4 {
 	color:#be3821;
 }
 
-td.content p {
+.hideable p {
 	font-size:0.9em;
+	line-height:1.2em;
+	letter-spacing:0.07em;
+	color:#3b1d0f;
+	margin: -1em 0px 0px 0px;
+	
+}
+
+td.content p {
+	font-size:3.9em;
 	line-height:1.2em;
 	letter-spacing:0.07em;
 	color:#3b1d0f;

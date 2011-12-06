@@ -15,7 +15,7 @@
     [:a.title {:href "/"}
      [:img {:src "/images/logo.png" :alt "Joodo"}]]
     [:ul.navigation
-     [:a {:href "/docs"} [:li [:span "api documentation"]]]
+     [:a {:href "/docs"} [:li [:span "api"]]]
      [:a {:href "/tutorial"} [:li [:span "sample application"]]]
      [:a {:href "/about"} [:li [:span "about"]]]
      [:a {:href "/community"} [:li [:span "community"]]]]
