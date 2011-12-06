@@ -15,4 +15,4 @@
 						[:p.description fn-doc]]
 					[:div.toggle_source
 						[:h5 "Source"]
-						[:p.source (get-source-code (ns-name joodo-ns) (first current-fn))]]])))]))
+						[:pre.source (get-source-code (ns-name joodo-ns) (first current-fn))]]])))]))
