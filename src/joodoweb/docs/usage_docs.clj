@@ -31,6 +31,46 @@
 		"(months 5)"
 		:years
 		"(years 5)"
+		:to-calendar
+		"(to-calendar (Date.))"
+		:before
+		"(before (now) (seconds 5))"
+		:after
+		"(after (now) (seconds 5))"
+		:seconds-ago
+		"(seconds-ago 5)"
+		:seconds-from-now
+		"(seconds-from-now 5)"
+		:minutes-ago
+		"(minutes-ago 5)"
+		:minutes-from-now
+		"(minutes-from-now 5)"
+		:hours-ago
+		"(hours-ago 5)"
+		:hours-from-now
+		"(hours-from-now 5)"
+		:days-ago
+		"(days-ago 5)"
+		:days-from-now
+		"(days-from-now 5)"
+		:months-ago
+		"(months-ago 5)"
+		:months-from-now
+		"(months-from-now 5)"
+		:years-ago
+		"(years-ago 5)"
+		:years-from-now
+		"(years-from-now 5)"
+		:parse-datetime
+		"(parse-datetime :http \"Sun, 06 Nov 1994 08:49:37 GMT\")\n(parse-datetime :rfc1123 \"Sun, 06 Nov 1994 08:49:37 GMT\")\n(parse-datetime :iso8601 \"1994-11-06 08:49:12 GMT\")\n(parse-datetime :dense \"19941106084912\")\n(parse-datetime (SimpleDateFormat. \"MMM d, yyyy HH:mm\") \"Nov 6, 1994 08:49\")\n(parse-datetime \"MMM d, yyyy HH:mm\" \"Nov 6, 1994 08:49\")"
+		:format-datetime
+		"(format-datetime :http (Date.))\n(format-datetime :rfc1123 (Date.))\n(format-datetime :iso8601 (Date.))\n(format-datetime :dense (Date.))\n(format-datetime (SimpleDateFormat. \"MMM d, yyyy HH:mm\") (Date.))\n(format-datetime \"MMM d, yyyy HH:mm\" (Date.))"
+		:year
+		"(year (now))"
+		:month
+		"(month (now))"
+		:day
+		"(day (now))"
 	}
 	
 	:joodo.env {}
