@@ -118,7 +118,7 @@
 	
 	:joodo.middleware.verbose {
 		:wrap-verbose
-		"" ;is this needed? This gets used by joodo.kake.servlet. People don't need to use this.
+		";Include wrap-verbose in your app-handler:\n(def app-handler (-> app-routes wrap-verbose))"
 	}
 	
 	:joodo.middleware.view-context {
@@ -151,9 +151,40 @@
 		"(with-mock-rendering)"
 		:should-redirect-to
 		"(should-redirect-to (do-get \"/uri\") \"/other-uri\")"
-		
 	}
-	:joodo.spec-helpers.view {}
-	:joodo.string {}
-	:joodo.views {}
+	
+	:joodo.spec-helpers.view {
+		:tag-matches?
+		"(tag-matches? {:tag \"match\" :other \"tag\"} {:tag \"match\"})"
+		:find-tag
+		"(find-tag (rendered-template \"template\") {:id \"something\"})"
+		:rendered-html
+		"(rendered-html \"template\")"
+		:rendered-hiccup
+		"(rendered-hiccup \"template\")"
+		:rendered-template
+		"(rendered-template \"template\")"
+		:should-have-tag
+		"(should-have-tag (rendered-template \"template\") {:tag :h1, :content [\"Welcome To My Site!\"]})"
+		:with-view-context
+		"(with-view-context :template-root \"sample_app/view\" :ns `sample_app.view.view-helpers)"
+	}
+	
+	:joodo.string {
+		:gsub
+		"(gsub \"1-2-3\" #\"\\-\\\" (fn [_] \".\"))"
+	}
+	
+	:joodo.views {
+		:*view-context*
+		";Use it like any old map:\n(:template-root *veiw-context*)"
+		:render-hiccup
+		"(render-hiccup `[:p foo])"
+		:render-html
+		"(render-html \"<html><body><p>Sup Bro?</p></body></html>\")"
+		:render-template
+		"(render-template \"template\")"
+		:render-partial
+		"(render-partial \"partial\")"
+	}
 })
