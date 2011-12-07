@@ -4,8 +4,9 @@ html {
 
 body {
 	background-color:#faf8f2;
-	background-image:url('/images/header.png');
+	background-image:url('/images/header_2.png');
 	background-repeat:repeat-x;
+	background-attachment:fixed;
 }
 
 a {
@@ -22,6 +23,7 @@ a:hover {
 html, body, table.body {
 	height: 100%;
 	margin-left:7%;
+	margin-top:3%;
 	font-family: 'EB Garamond', serif;
 }
 

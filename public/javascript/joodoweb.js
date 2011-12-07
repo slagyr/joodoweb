@@ -1,7 +1,5 @@
 $(document).ready(function(){
 	
-	// $('.description').hide();
-	// $('.toggle_source').hide();
 	$('.documentation').hide();
 	$('.source').hide();
 	
