@@ -10,10 +10,12 @@
       (for [current-fn (ns-publics joodo-ns)]
         (if-let [fn-doc (:doc (meta (second current-fn)))]
         (list [:li
-					[:div.toggle_description
-						[:h4 (first current-fn)]
-						[:p.description fn-doc]]
-					[:div.toggle_source
-						[:h5 "Source"]]
-					[:div.source
-						[:pre [:code(get-source-code (ns-name joodo-ns) (first current-fn))]]]])))]))
+					[:div.toggle_documentation
+						[:h4 (first current-fn)]]
+					[:div.documentation
+						[:div.description
+							[:p fn-doc]]
+						[:div.toggle_source
+							[:h5 "Source"]]
+						[:div.source
+							[:pre [:code(get-source-code (ns-name joodo-ns) (first current-fn))]]]]])))]))

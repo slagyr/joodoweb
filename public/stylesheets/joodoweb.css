@@ -4,6 +4,8 @@ html {
 
 body {
 	background-color:#faf8f2;
+	background-image:url('/images/header.png');
+	background-repeat:repeat-x;
 }
 
 a {
@@ -15,12 +17,6 @@ a:active {}
 a:visited {}
 a:hover {
 	color:#e09900;
-}
-.selected {
-	display:block;
-/*	color:#e09900;*/
-/*	background-color:#3b1d0f;*/
-	background-color:#f2e5ce;
 }
 
 html, body, table.body {
@@ -101,6 +97,14 @@ td.drawer a {
 	font-size:0.9em;
 }
 
+.selected {
+	display:inline-block;
+/*	color:#e09900;*/
+/*	background-color:#3b1d0f;*/
+	background-color:#f2e5ce;
+	width:100%;
+}
+
 /******* content *********/
 
 td.content {
@@ -160,7 +164,7 @@ td.content h5 {
 	color:#be3821;
 }
 
-td.content p.description {
+td.content .description p {
 	margin: 0.4em 0px 0px 0px;
 }
 

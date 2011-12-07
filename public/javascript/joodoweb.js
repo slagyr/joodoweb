@@ -1,12 +1,12 @@
 $(document).ready(function(){
 	
-	$('.description').hide();
-	$('.toggle_source').hide();
+	// $('.description').hide();
+	// $('.toggle_source').hide();
+	$('.documentation').hide();
 	$('.source').hide();
 	
-	$('.toggle_description').click(function() {
-		$(this).children('.description').toggle('normal');
-		$(this).siblings('.toggle_source').toggle('normal');
+	$('.toggle_documentation').click(function() {
+		$(this).siblings('.documentation').toggle('normal');
   });
 
 	$('.toggle_source').click(function() {
