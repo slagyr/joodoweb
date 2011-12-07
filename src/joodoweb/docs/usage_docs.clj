@@ -73,16 +73,86 @@
 		"(day (now))"
 	}
 	
-	:joodo.env {}
-	:joodo.middleware.flash {}
-	:joodo.middleware.keyword-cookies {}
-	:joodo.middleware.multipart-params {}
-	:joodo.middleware.refresh {}
-	:joodo.middleware.request {}
-	:joodo.middleware.servlet-session {}
-	:joodo.middleware.verbose {}
-	:joodo.middleware.view-context {}
-	:joodo.spec-helpers.controller {}
+	:joodo.env {
+		:*env*
+		"(get @*env* :joodo-env)"
+		:env
+		"(env :joodo-env)"
+		:development-env?
+		"(development-env?)"
+		:production-env?
+		"(production-env?)"
+	}
+	
+	:joodo.middleware.flash {
+		:wrap-flash
+		";Include wrap-flash in your app-handler:\n(def app-handler (-> app-routes wrap-flash))\n;Then you can append flash messages with the following syntax:\n(assoc (redirect \"/route\") :flash {:errors [\"Error Message 1\" \"Error Message 2\"]})"
+	}
+	
+	:joodo.middleware.keyword-cookies {
+		:wrap-keyword-cookies
+		";Include wrap-keyword-cookies in your app-handler:\n(def app-handler (-> app-routes wrap-keyword-cookies))\n;Then you can create a cookie with the following syntax:\nTODO"
+	}
+	
+	:joodo.middleware.multipart-params {
+		:wrap-multipart-params
+		";Include wrap-multipart-params in your app-handler:\n(def app-handler (-> app-routes wrap-multipart-params))"
+	}
+	
+	:joodo.middleware.refresh {
+		:wrap-refresh
+		";To use, include wrap-refresh in your app-handler:\n(def app-handler (-> app-routes wrap-refresh))"
+	}
+	
+	:joodo.middleware.request {
+		:*request*
+		"(:params *request*)"
+		:wrap-bind-request
+		";Include wrap-bind-request in your app-handler:\n(def app-handler (-> app-routes wrap-bind-request))\n;Then all request information gets loaded in the *request* var."
+	}
+	
+	:joodo.middleware.servlet-session {
+		:wrap-servlet-session
+		";Include wrap-servlet-session in your app-handler:\n(def app-handler (-> app-routes wrap-servlet-session))\n;To access session info, use the following syntax:\n(:session *request*)"
+	}
+	
+	:joodo.middleware.verbose {
+		:wrap-verbose
+		"" ;is this needed? This gets used by joodo.kake.servlet. People don't need to use this.
+	}
+	
+	:joodo.middleware.view-context {
+		:wrap-view-context
+		";Include wrap-view-context in your app-handler:\n(def app-handler (-> app-routes (wrap-view-context :template-root \"app_name/view\" :ns `app_name.view.view-helpers)))\n;To bind information to *view-request* use the following syntax:\n(render-template \"template_name\" :data data)\n;Then access that information in the view pages like it were a map:\n(:data *view-context*)"
+	}
+	
+	:joodo.spec-helpers.controller {
+		:*routes*
+		"(*routes* {:request-method :get :uri \"/uri\"})"
+		:with-routes
+		"(with-routes sample-controller)"
+		:request
+		"(request :get \"/uri\")"
+		:do-get
+		"(do-get \"/uri\")"
+		:do-post
+		"(do-get \"/uri\")"
+		:rendered-template
+		"@rendered-template"
+		:rendered-html
+		"@rendered-html"
+		:rendered-context
+		"@rendered-context"
+		:mock-render-template
+		"(mock-render-template \"template_name\" :optional-data \"additional data\")"
+		:mock-render-html
+		"(mock-render-html \"<html><body><p>Sup Bro?</p></body></html>\" :optional-data \"additional data\")"
+		:with-mock-rendering
+		"(with-mock-rendering)"
+		:should-redirect-to
+		"(should-redirect-to (do-get \"/uri\") \"/other-uri\")"
+		
+	}
 	:joodo.spec-helpers.view {}
 	:joodo.string {}
 	:joodo.views {}
