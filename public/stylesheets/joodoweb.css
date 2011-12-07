@@ -1,5 +1,5 @@
 html {
-	font-size: 14px;
+	font-size:17px;
 }
 
 body {
@@ -22,15 +22,15 @@ a:hover {
 
 html, body, table.body {
 	height: 100%;
-	margin-left:7%;
-	margin-top:3%;
+	margin-left:2%;
+	margin-top:2%;
 	font-family: 'EB Garamond', serif;
 }
 
 /******** sidebar ********/
 
 td.sidebar {
-	width: 220px;
+	width: 235px;
 	background-image:url('/images/menu_1.png');
 	background-repeat:no-repeat;
 }
@@ -80,6 +80,7 @@ td.sidebar span.footer {
 td.sidebar span.footer p {
 	margin: 0px auto 0px auto;
 	line-height:1.3em;
+	color:#3b1d0f;
 }
 
 /****** drawer ************/

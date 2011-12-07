@@ -5,8 +5,8 @@
   [:link {:rel "shortcut icon" :href "images/favicon.ico"}]
 	[:link {:href "http://fonts.googleapis.com/css?family=EB+Garamond" :rel "stylesheet" :type "text/css"}]
   [:title "Joodo | Clojure Web Framework"]
-  (include-css "/stylesheets/joodoweb.css")
   (include-css "/stylesheets/reset.css")
+  (include-css "/stylesheets/joodoweb.css")
   (include-js "/javascript/jquery-1.7.1.min.js")
   (include-js "/javascript/joodoweb.js")]
  [:body
