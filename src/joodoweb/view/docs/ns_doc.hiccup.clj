@@ -18,4 +18,5 @@
 						[:div.toggle_source
 							[:h5 "Source"]]
 						[:div.source
-							[:pre [:code(get-source-code (ns-name joodo-ns) (first current-fn))]]]]])))]))
+							[:pre {:class "brush: clojure"} 
+							(get-source-code (ns-name joodo-ns) (first current-fn))]]]])))]))

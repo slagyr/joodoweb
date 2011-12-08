@@ -6,9 +6,11 @@ $(document).ready(function(){
 	$('.toggle_documentation').click(function() {
 		$(this).siblings('.documentation').toggle('normal');
   });
-
 	$('.toggle_source').click(function() {
 		$(this).siblings('.source').toggle('normal');
 	})
+
+	SyntaxHighlighter.all();
 	
+
 });

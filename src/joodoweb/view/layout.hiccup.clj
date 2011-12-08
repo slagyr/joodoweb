@@ -1,25 +1,29 @@
 (doctype :html5)
 [:html
  [:head
-  [:meta {:http-equiv "Content-Type" :content "text/html" :charset "iso-8859-1"}]
+  [:meta {:http-equiv "Content-Type" :content "text/html;charset=utf-8"}]
   [:link {:rel "shortcut icon" :href "images/favicon.ico"}]
 	[:link {:href "http://fonts.googleapis.com/css?family=EB+Garamond" :rel "stylesheet" :type "text/css"}]
   [:title "Joodo | Clojure Web Framework"]
   (include-css "/stylesheets/reset.css")
   (include-css "/stylesheets/joodoweb.css")
+  (include-css "/stylesheets/shCore.css")
+  (include-css "/stylesheets/shThemeDefault.css")
   (include-js "/javascript/jquery-1.7.1.min.js")
-  (include-js "/javascript/joodoweb.js")]
+  (include-js "/javascript/joodoweb.js")
+  (include-js "/javascript/shCore.js")
+  (include-js "/javascript/shBrushClojure.js")]
  [:body
   [:table.body [:tr
    [:td.sidebar
     [:a.title {:href "/"}
      [:img {:src "/images/logo.png" :alt "Joodo"}]]
     [:ul.navigation
-     [:a {:href "/docs"} [:li [:span "api"]]]
-     [:a {:href "/tutorial"} [:li [:span "sample application"]]]
-     [:a {:href "/about"} [:li [:span "about"]]]
-     [:a {:href "/community"} [:li [:span "community"]]]]
-    [:span.footer
+     [:li [:a {:href "/docs"}      [:span "api"]]]
+     [:li [:a {:href "/tutorial"}  [:span "sample application"]]]
+     [:li [:a {:href "/about"}     [:span "about"]]]
+     [:li [:a {:href "/community"} [:span "community"]]]]
+    [:div.footer
      [:a {:href "/license"} "License Info"]
      " | "
      [:a {:href "https://github.com/slagyr/joodo" :target "_blank"} "Git Repository"]
