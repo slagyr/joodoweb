@@ -4,7 +4,6 @@
   (list
     [:h1 (ns-name joodo-ns)]
     [:p (:doc ns-info)]
-    [:a {:href (ns->github-url joodo-ns)} "Source Code"]
     [:br][:br]
     [:ul
       (for [current-fn (ns-publics joodo-ns)]
@@ -15,6 +14,9 @@
 					[:div.documentation
 						[:div.description
 							[:p fn-doc]]
+						[:div.usage
+							[:pre {:class "brush: clojure"}
+							((keyword (first current-fn)) ((keyword (ns-name joodo-ns)) usage-docs))]]
 						[:div.toggle_source
 							[:h5 "Source"]]
 						[:div.source
