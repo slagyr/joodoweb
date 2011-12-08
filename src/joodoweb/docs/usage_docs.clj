@@ -106,7 +106,7 @@
 	
 	:joodo.middleware.request {
 		:*request*
-		"(:params *request*)"
+		";Use it like any old map:\n(:params *request*)"
 		:wrap-bind-request
 		";Include wrap-bind-request in your app-handler:\n(def app-handler (-> app-routes wrap-bind-request))\n;Then all request information gets loaded in the *request* var."
 	}
@@ -172,7 +172,7 @@
 	
 	:joodo.string {
 		:gsub
-		"(gsub \"1-2-3\" #\"\\-\\\" (fn [_] \".\"))"
+		"(gsub \"1-2-3\" #\"\\-\" (fn [_] \".\"))"
 	}
 	
 	:joodo.views {
