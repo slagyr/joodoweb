@@ -16,6 +16,7 @@ body {
 	background-attachment:fixed;
 }
 
+
 a {
 	color: #be3821;
 	text-decoration:none;
@@ -97,6 +98,7 @@ td.sidebar div.footer p {
 /****** drawer ************/
 
 td.drawer {
+	margin: 0px 0px 20px 0px;
 	padding: 0px 20px 0px 20px;
 	border-style:none;
 	line-height:1.5em;
@@ -124,7 +126,7 @@ td.drawer a {
 td.content {
 	width: 500px;
 	padding: 0px 0px 0px 20px;
-	margin:0px;
+	margin:0px 0px 2em 0px;
 	color:#e09900;
 }
 
@@ -213,3 +215,8 @@ td.content p {
 	margin:8px;
 	background-color:#f2e5ce;
 }*/
+
+/********** faux footer *************/
+.faux_footer {
+	height:80px;
+}

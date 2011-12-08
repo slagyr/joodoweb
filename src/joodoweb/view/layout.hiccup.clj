@@ -50,5 +50,6 @@
    [:td.content
     (eval (:template-body joodo.views/*view-context*))]
   ]]
+	[:div.faux_footer]
  ]
 ]
