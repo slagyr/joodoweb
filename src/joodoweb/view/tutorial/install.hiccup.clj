@@ -1,6 +1,6 @@
 [:h2 "installation"]
 [:p "Installing Joodo is as easy as your favorite pie (eating, not baking): all you need is Leiningen and the Joodo plugin. Follow the " [:a {:href "https://github.com/technomancy/leiningen/blob/master/README.md" :target "_blank"} "latest tutorial"] " on Leiningen's github account to acquire the latest version, then visit your terminal to install the Joodo plugin:"]
-[:code "joodo/lein-joodo 0.6.0-SNAPSHOT"]
+[:pre {:class "brush: clojure"} "joodo/lein-joodo 0.6.0-SNAPSHOT"]
 [:p "The 'joodo' command will be installed on your system in the '~/.lein/bin/' directory. Next, edit the '.profile' (found in your home directory) to include '$HOME/.lein/bin/' in your path. Run the following in your terminal:"]
-[:code "export PATH=$PATH:~/.lein/bin"]
+[:pre {:class "brush: clojure"} "export PATH=$PATH:~/.lein/bin"]
 [:p "Restart your terminal to apply these changes, and consider your pie eaten. Delicious, wasn't it?"]

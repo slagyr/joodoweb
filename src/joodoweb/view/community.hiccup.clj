@@ -6,10 +6,11 @@
 [:h3 "Contributing"]
 [:p "If you have <a href=\"https://github.com/technomancy/leiningen\" target=\"_blank\">Leiningen</a> and <a href=\"http://git-scm.com\" target=\"_blank\">Git</a>, it is easy to contribute to the Joodo project. Start by inputting these commands in your terminal:"]
 
-[:code [:pre "git clone https://github.com/slagyr/joodo.git
+[:pre {:class "brush: clojure"}
+"git clone https://github.com/slagyr/joodo.git
 cd joodo
 lein compile
-lein spec"]]
+lein spec"]
 
 [:p "Submit your patches via pull requests to <a href=\"https://github.com/slagyr/joodo\" target=\"blank\">Joodo's GitHub Repo</a>."]
 

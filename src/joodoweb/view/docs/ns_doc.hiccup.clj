@@ -18,7 +18,7 @@
 							[:pre {:class "brush: clojure"}
 							((keyword (first current-fn)) ((keyword (ns-name joodo-ns)) usage-docs))]]
 						[:div.toggle_source
-							[:h5 "Source"]]
+							[:h5 "source"]]
 						[:div.source
-							[:pre {:class "brush: clojure"} 
+							[:pre {:class "brush: clojure"}
 							(get-source-code (ns-name joodo-ns) (first current-fn))]]]])))]))

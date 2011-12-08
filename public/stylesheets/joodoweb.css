@@ -2,6 +2,13 @@ html {
 	font-size:17px;
 }
 
+html, body, table.body {
+	height: 100%;
+	margin-left:2%;
+	margin-top:2%;
+	font-family: 'EB Garamond', serif;
+}
+
 body {
 	background-color:#faf8f2;
 	background-image:url('/images/header_2.png');
@@ -20,11 +27,13 @@ a:hover {
 	color:#e09900;
 }
 
-html, body, table.body {
-	height: 100%;
-	margin-left:2%;
-	margin-top:2%;
-	font-family: 'EB Garamond', serif;
+@font-face{ 
+	font-family: 'museo';
+	src: url('/fonts/Museo_Slab_500-webfont.eot');
+	src: url('/fonts/Museo_Slab_500-webfont.eot?iefix') format('eot'),
+	     url('/fonts/Museo_Slab_500-webfont.woff') format('woff'),
+	     url('/fonts/Museo_Slab_500-webfont.ttf') format('truetype'),
+	     url('/fonts/Museo_Slab_500-webfont.svg#webfont') format('svg');
 }
 
 /******** sidebar ********/
@@ -70,6 +79,7 @@ td.sidebar ul.navigation li a span {
 	margin-left: 15px;
 	font-variant:small-caps;
 	font-size:1.2em;
+	font-family: 'museo';
 }
 
 td.sidebar div.footer {
@@ -122,34 +132,33 @@ td.content a {
 	font-size:0.9em;
 }
 
-td.content h4:hover {
-	cursor:pointer;
-	color:#e09900;
-}
-
-td.content h5:hover {
-	cursor:pointer;
-	color:#e09900;
-}
-
 td.content h1 {
-	font-size: 2em;
+/*	font-size: 2em;*/
+	font-size:1.5em;
 	letter-spacing:0.15em;
 	margin: 1.5em 0px 8px 0px;
+	font-family: 'museo';
 }
 
 td.content h2 {
-	font-size: 2em;
+/*	font-size: 2em;*/
+	font-size:1.5em;
+	line-height:1.5em; /*new*/
 	letter-spacing:0.15em;
 	margin: 1.5em 0px 8px 0px;
-	font-variant:small-caps;
+/*	font-variant:small-caps;*/
+/*	font-family: 'oblik';*/
+	font-family: 'museo';
 }
 
 td.content h3 {
-	font-size: 1.5em;
+/*	font-size: 1.5em;*/
+	font-size:1.5em;
 	letter-spacing:0.15em;
 	margin: 1.5em 0px 0px 0px;
 	font-variant:small-caps;
+	font-family: 'museo';
+
 }
 
 td.content h4 {
@@ -158,14 +167,24 @@ td.content h4 {
 	color:#be3821;
 }
 
-td.content .source {
-	margin: 0px 0px 2em 0px;
+td.content h4:hover {
+	cursor:pointer;
+	color:#e09900;
 }
 
 td.content h5 {
 	font-size: 0.9em;
-	margin: 0.4em 0px 0px 0.4em;
+	margin: 0.4em 0px 0px 0.9em;
 	color:#be3821;
+}
+
+td.content h5:hover {
+	cursor:pointer;
+	color:#e09900;
+}
+
+td.content .source {
+	margin: 0px 0px 2em 0px;
 }
 
 td.content .description p {

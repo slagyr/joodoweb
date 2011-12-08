@@ -33,6 +33,7 @@
   color: black !important;
 }
 .syntaxhighlighter .gutter {
+	 /******** comment out the line below to add line numbers to code sections *********/
   color: #f2e5ce !important;
 }
 .syntaxhighlighter .gutter .line {
@@ -89,7 +90,7 @@
   color: #aa7700 !important;
 }
 .syntaxhighlighter .value {
-  color: #6d9347 !important;
+  color: #6fae00 !important;
 }
 .syntaxhighlighter .functions {
   color: #006699 !important;
