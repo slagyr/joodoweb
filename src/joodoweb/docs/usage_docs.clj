@@ -86,12 +86,12 @@
 	
 	:joodo.middleware.flash {
 		:wrap-flash
-		";Include wrap-flash in your app-handler:\n(def app-handler (-> app-routes wrap-flash))\n;Then you can append flash messages with the following syntax:\n(assoc (redirect \"/route\") :flash {:errors [\"Error Message 1\" \"Error Message 2\"]})"
+		";Include wrap-flash in your app-handler:\n(def app-handler (-> app-routes wrap-flash))\n;Then you can append flash messages with the following syntax:\n(assoc (redirect \"/route\") :flash {:errors [\"Error Message 1\" \"Error Message 2\"]})\n;To access the flash data, do the following:\n(:flash *request*)"
 	}
 	
 	:joodo.middleware.keyword-cookies {
 		:wrap-keyword-cookies
-		";Include wrap-keyword-cookies in your app-handler:\n(def app-handler (-> app-routes wrap-keyword-cookies))\n;Then you can create a cookie with the following syntax (replace RESPONSE with your response [ex. (redirect \"/uri\")]):\n(assoc RESPONSE :cookies {:cookie-name {:value \"stuff\" :path \"/\"}})\n;To access the cookie info, do the following:\n(:cookie-name (:cookies *request*))"
+		";Include wrap-keyword-cookies in your app-handler:\n(def app-handler (-> app-routes wrap-keyword-cookies))\n;Then you can create a cookie with the following syntax:\n(assoc (redirect \"/route\") :cookies {:cookie-name {:value \"stuff\" :path \"/\" :expires (days-from-now 30)}})\n;To access the cookie info, do the following:\n(:cookie-name (:cookies *request*))"
 	}
 	
 	:joodo.middleware.multipart-params {
@@ -113,7 +113,7 @@
 	
 	:joodo.middleware.servlet-session {
 		:wrap-servlet-session
-		";Include wrap-servlet-session in your app-handler:\n(def app-handler (-> app-routes wrap-servlet-session))\n;To access session info, use the following syntax:\n(:session *request*)"
+		";Include wrap-servlet-session in your app-handler:\n(def app-handler (-> app-routes wrap-servlet-session))\n;Then you can create a session with the following syntax\n(assoc (redirect \"/route\") :session {:session-name {:value \"stuff\" :expires (hours-from-now 1)}})\n;To access session info, use the following syntax:\n(:session *request*)"
 	}
 	
 	:joodo.middleware.verbose {
