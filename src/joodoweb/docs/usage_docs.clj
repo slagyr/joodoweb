@@ -91,7 +91,7 @@
 	
 	:joodo.middleware.keyword-cookies {
 		:wrap-keyword-cookies
-		";Include wrap-keyword-cookies in your app-handler:\n(def app-handler (-> app-routes wrap-keyword-cookies))\n;Then you can create a cookie with the following syntax:\nTODO"
+		";Include wrap-keyword-cookies in your app-handler:\n(def app-handler (-> app-routes wrap-keyword-cookies))\n;Then you can create a cookie with the following syntax (replace RESPONSE with your response [ex. (redirect \"/uri\")]):\n(assoc RESPONSE :cookies {:cookie-name {:value \"stuff\" :path \"/\"}})\n;To access the cookie info, do the following:\n(:cookie-name (:cookies *request*))"
 	}
 	
 	:joodo.middleware.multipart-params {
