@@ -31,6 +31,7 @@ html, body, table.body {
 
 td.sidebar {
 	width: 235px;
+	min-width:235px;
 	background-image:url('/images/menu_1.png');
 	background-repeat:no-repeat;
 }
@@ -55,29 +56,29 @@ td.sidebar ul.navigation a {
 	text-decoration: none;
 }
 
-td.sidebar ul.navigation a li {
+td.sidebar ul.navigation li {
 	width: 213px;
 	margin: 5px 0px 5px 0px;
 	padding: 5px 0px 5px 0px;
 }
 
-td.sidebar ul.navigation a:hover li {
+td.sidebar ul.navigation li a:hover  {
 	color:#e09900;
 }
 
-td.sidebar ul.navigation a li span {
+td.sidebar ul.navigation li a span {
 	margin-left: 15px;
 	font-variant:small-caps;
 	font-size:1.2em;
 }
 
-td.sidebar span.footer {
+td.sidebar div.footer {
 	display: inline-block;
 	margin: 20px auto 20px 15px;
 	font-size:0.9em;
 }
 
-td.sidebar span.footer p {
+td.sidebar div.footer p {
 	margin: 0px auto 0px auto;
 	line-height:1.3em;
 	color:#3b1d0f;
@@ -171,9 +172,9 @@ td.content .description p {
 	margin: 0.4em 0px 0px 0px;
 }
 
-td.content pre {
+/*td.content pre {
 	margin: 0.4em 0px 0px 0.4em;
-}
+}*/
 
 td.content p {
 	font-size:0.9em;
@@ -183,13 +184,13 @@ td.content p {
 	margin: 1.5em 0px 0px 0px;
 }
 
-td.content code {
+/*td.content code {
 	font-size:0.80em;
 	line-height:1.3em;
 	color:#3b1d0f;
 	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 	display: block;
-	padding:9px 15px 9px 4px;  /* padding:12px 10px 12px 8px; */
+	padding:9px 15px 9px 4px;
 	margin:8px;
 	background-color:#f2e5ce;
-}
+}*/
