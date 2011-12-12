@@ -1,12 +1,24 @@
 html {
-	font-size:17px;
+	font-size:18px;
 }
 
 html, body, table.body {
 	height: 100%;
 	margin-left:2%;
 	margin-top:2%;
-	font-family: 'EB Garamond', serif;
+	color:#3b1d0f;
+	
+
+	/************ asdfsafd ***********/
+/*	font-family: 'EB Garamond', sans-serif;*/
+	
+/*	font-family: 'Varela', sans-serif;*/
+/*	font-family: 'Lato', sans-serif;*/
+/*	font-family: 'Muli', sans-serif;*/
+	font-family: 'Open Sans', sans-serif;
+/*	font-family: 'Questrial', sans-serif;*/
+/*	font-family: 'Didact Gothic', sans-serif;*/
+/*	font-family: 'Cabin', sans-serif;*/
 }
 
 body {
@@ -16,28 +28,17 @@ body {
 	background-attachment:fixed;
 }
 
-
 a {
+	font-family: 'EB Garamond', sans-serif;
 	color: #be3821;
 	text-decoration:none;
 }
-a:link {}
-a:active {}
-a:visited {}
+
 a:hover {
 	color:#e09900;
 }
 
-@font-face{ 
-	font-family: 'museo';
-	src: url('/fonts/Museo_Slab_500-webfont.eot');
-	src: url('/fonts/Museo_Slab_500-webfont.eot?iefix') format('eot'),
-	     url('/fonts/Museo_Slab_500-webfont.woff') format('woff'),
-	     url('/fonts/Museo_Slab_500-webfont.ttf') format('truetype'),
-	     url('/fonts/Museo_Slab_500-webfont.svg#webfont') format('svg');
-}
-
-/******** sidebar ********/
+/********** sidebar **********/
 
 td.sidebar {
 	width: 235px;
@@ -46,82 +47,47 @@ td.sidebar {
 	background-repeat:no-repeat;
 }
 
-td.sidebar a.title {
-	color: #330000;
-	text-decoration: none;
-}
-
-td.sidebar a.title h1 {
-	font-size: 5em;
-	margin: 10px auto 10px 30px;
-}
-
-td.sidebar ul.navigation {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-}
-
-td.sidebar ul.navigation a {
-	text-decoration: none;
-}
-
 td.sidebar ul.navigation li {
-	width: 213px;
+	list-style: none;
 	margin: 5px 0px 5px 0px;
 	padding: 5px 0px 5px 0px;
-}
-
-td.sidebar ul.navigation li a:hover  {
-	color:#e09900;
-}
-
-td.sidebar ul.navigation li a span {
 	margin-left: 15px;
 	font-variant:small-caps;
 	font-size:1.2em;
-	font-family: 'museo';
 }
 
 td.sidebar div.footer {
 	display: inline-block;
-	margin: 20px auto 20px 15px;
+	margin: 20px 15px 20px 15px;
+	line-height:1.3em;
 	font-size:0.9em;
 }
 
 td.sidebar div.footer p {
-	margin: 0px auto 0px auto;
-	line-height:1.3em;
-	color:#3b1d0f;
+	font-size:0.8em;
 }
 
-/****** drawer ************/
+/********** drawer ************/
 
 td.drawer {
 	margin: 0px 0px 20px 0px;
 	padding: 0px 20px 0px 20px;
 	border-style:none;
-	line-height:1.5em;
 	width:200px;
+	min-width:200px;
 	background-image:url('/images/menu_2.png');
 	background-repeat:no-repeat;
-	min-width:200px;
-}
-
-td.drawer a {
 	line-height:1.5em;
 	font-size:0.9em;
 }
 
-.selected {
+td.drawer a.selected {
 	display:inline-block;
-/*	color:#e09900;*/
-/*	background-color:#3b1d0f;*/
 	background-color:#f2e5ce;
 	width:100%;
 }
 
-/******* content *********/
+/********** content ***********/
 
 td.content {
 	width: 500px;
@@ -130,42 +96,33 @@ td.content {
 	color:#e09900;
 }
 
-td.content a {
-	font-size:0.9em;
-}
-
 td.content h1 {
-/*	font-size: 2em;*/
-	font-size:1.5em;
-	letter-spacing:0.15em;
 	margin: 1.5em 0px 8px 0px;
-	font-family: 'museo';
+	font-size:1.5em;
+	font-family: 'EB Garamond', serif;
 }
 
 td.content h2 {
-/*	font-size: 2em;*/
-	font-size:1.5em;
-	line-height:1.5em; /*new*/
-	letter-spacing:0.15em;
 	margin: 1.5em 0px 8px 0px;
-/*	font-variant:small-caps;*/
-/*	font-family: 'oblik';*/
-	font-family: 'museo';
+	font-size:2em;
+	letter-spacing:0.1em;
+	line-height:1.5em;
+	font-family: 'EB Garamond', serif;
+	font-variant:small-caps;
 }
 
 td.content h3 {
-/*	font-size: 1.5em;*/
-	font-size:1.5em;
-	letter-spacing:0.15em;
 	margin: 1.5em 0px 0px 0px;
+	font-size:1.5em;
+	letter-spacing:0.1em;
+	font-family: 'EB Garamond', serif;
 	font-variant:small-caps;
-	font-family: 'museo';
-
 }
 
 td.content h4 {
-	font-size: 0.9em;
 	margin: 1.5em 0px 0px 0px;
+	font-size: 0.9em;
+	font-family: 'EB Garamond', serif;
 	color:#be3821;
 }
 
@@ -175,8 +132,9 @@ td.content h4:hover {
 }
 
 td.content h5 {
-	font-size: 0.9em;
 	margin: 0.4em 0px 0px 0.9em;
+	font-family: 'EB Garamond', serif;
+	font-size: 0.9em;
 	color:#be3821;
 }
 
@@ -193,30 +151,20 @@ td.content .description p {
 	margin: 0.4em 0px 0px 0px;
 }
 
-/*td.content pre {
-	margin: 0.4em 0px 0px 0.4em;
-}*/
-
 td.content p {
-	font-size:0.9em;
-	line-height:1.2em;
-	letter-spacing:0.07em;
-	color:#3b1d0f;
 	margin: 1.5em 0px 0px 0px;
+	font-size:0.8em;
+	line-height:1.5em;
+	color:#3b1d0f;
 }
 
-/*td.content code {
-	font-size:0.80em;
-	line-height:1.3em;
-	color:#3b1d0f;
-	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
-	display: block;
-	padding:9px 15px 9px 4px;
-	margin:8px;
-	background-color:#f2e5ce;
-}*/
+td.content p a {
+	font-size:1.25em;
+}
+
 
 /********** faux footer *************/
+
 .faux_footer {
 	height:80px;
 }
