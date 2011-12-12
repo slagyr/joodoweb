@@ -1,2 +1,0 @@
-[:h2 "getting started with joodo"]
-[:p "In this section we will outline the installation process and take you through the important parts of Joodo. Once you are familiar with the concepts in this section, you will be able to create powerful web applications in Clojure. Click the links listed under 'Getting Started' to start learning."]

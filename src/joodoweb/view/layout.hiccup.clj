@@ -34,10 +34,10 @@
      (list
        [:td.drawer
         [:ul
-         [:li [:a {:href "/tutorial/install"} "installation"]]
-         [:li [:a {:href "/tutorial/build-skeleton"} "build application skeleton"]]
-         [:li [:a {:href "/tutorial/tour"} "the grand tour"]]
-         [:li [:a {:href "/tutorial/sample-app"} "sample application"]]]]))
+         [:li [:a {:href "/tutorial/basics"} "Getting Started"]]
+         [:li [:a {:href "/tutorial/controllers"} "Controllers"]]
+         [:li [:a {:href "/tutorial/views"} "Views"]]
+         [:li [:a {:href "/tutorial/reference"} "Reference"]]]]))
    (if (re-matches #"^/docs.*" (or (:uri *request*) ""))
      (list
        [:td.drawer
