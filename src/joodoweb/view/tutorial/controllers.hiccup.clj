@@ -43,7 +43,11 @@
 [:p "A common mistake for controllers is not starting your route with the controller name. For example, we can't list routes in our post controller that start with anything other than post. Another important thing to note is that if we don't include a var named post-controller, none of our routes will get loaded. So if you had a controller named happy_controller.clj, Joodo will expect a var called happy-controller to exist and contain all of the routes from that controller."]
 [:p "Now that we have our first passing test, it is time to create a route that will display the specified blog post. But first, let's write the tests for that code in our existing post-controller-spec:"]
 [:pre {:class "brush: clojure"}
-"(around [it]
+";***Make sure to create your test_post directory like
+;***the instructions above describe in order to make
+;***these tests to pass.
+
+(around [it]
   (binding [blog-post-directory (clojure.java.io/file (str
              (. (java.io.File. \".\") getCanonicalPath)
              \"/spec/sample_app/view/test_posts\"))]

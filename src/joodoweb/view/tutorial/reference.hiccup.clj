@@ -16,6 +16,10 @@
 ]]"]
 [:h4 "public/images/logo.png"]
 [:img {:src "/images/logo.png"}]
+[:h4 "spec/sample_app/view/test_posts/20111215_test-post.hiccup.clj"]
+[:pre {:class "brush: clojure"}
+"[:h1 \"Test Post\"]
+[:p \"This is my test post.\"]"]
 [:h4 "spec/sample_app/controller/post_controller_spec.clj"]
 [:pre {:class "brush: clojure"}
 "(ns sample_app.controller.post-controller-spec
