@@ -20,6 +20,10 @@
 [:pre {:class "brush: clojure"} "joodo server"]
 
 [:h3 "deployment"]
-[:p "If you use git and want to deploy on Heroku, pushing your project to production is as easy as creating a git repo, making a commit, then running the following commands:"]
-[:pre {:class "brush: clojure"} "heroku create --stack cedar
+[:p "If you use git and want to deploy on Heroku, pushing your project to production is as easy as creating a git repo, making a commit, creating a repo on heroku, and pushing to it:"]
+[:pre {:class "brush: clojure"}
+"git init
+git add .
+git commit -m \"Initial Commit\"
+heroku create --stack cedar
 git push heroku master"]
