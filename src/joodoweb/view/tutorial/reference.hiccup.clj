@@ -14,6 +14,8 @@
   [:img {:src \"/images/logo.png\"}]
   (eval (:template-body joodo.views/*view-context*))
 ]]"]
+[:h4 "public/images/logo.png"]
+[:img {:src "/images/logo.png"}]
 [:h4 "spec/sample_app/controller/post_controller_spec.clj"]
 [:pre {:class "brush: clojure"}
 "(ns sample_app.controller.post-controller-spec
