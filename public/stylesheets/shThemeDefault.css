@@ -61,15 +61,15 @@
   color: red !important;
 }
 .syntaxhighlighter .toolbar {
-  color: white !important;
-  background: #6ce26c !important;
-  border: none !important;
+/*  color: white !important;*/
+/*  background: #6ce26c !important;*/
+/*  border: none !important;*/
 }
 .syntaxhighlighter .toolbar a {
-  color: white !important;
+  color: #f2e5ce !important;
 }
 .syntaxhighlighter .toolbar a:hover {
-  color: black !important;
+/*  color: black !important;*/
 }
 .syntaxhighlighter .plain, .syntaxhighlighter .plain a {
   color: black !important;
