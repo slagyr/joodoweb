@@ -3,7 +3,7 @@
 	  listed-fns (:joodo-fns *view-context*)]
   (list
 		[:br]
-		[:center[:img {:src "/images/throw_01.png" :alt "A Judo Throw"}]]
+		[:center (get-random-icon)]
     [:h1 (ns-name joodo-ns)]
     [:p (:doc ns-info)]
     [:br][:br]

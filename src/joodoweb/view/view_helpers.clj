@@ -48,3 +48,6 @@
 		(source-fn (symbol (str ns-string "/" fn-string)))
 		(catch Exception e
 			nil)))
+
+(defn get-random-icon []
+	[:img {:src (str "/images/throw_" (+ 1 (rand-int 15)) ".png") :alt "A Joodo Throw"}])

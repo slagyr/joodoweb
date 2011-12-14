@@ -3,6 +3,13 @@
 	    [speclj.core]
 	    [joodoweb.view.view-helpers]))
 	
+(defn get-10-random-icons []
+	(loop [icon-list []
+		   n 0]
+		(if (= n 10)
+			icon-list
+			(recur (conj icon-list (get-random-icon)) (inc n)))))
+	
 (describe "View Helper"
 	(it "converts a namespace to a url friendly string"
 		(should= "joodo_env" (ns->url-safe 'joodo.env)))
@@ -25,4 +32,9 @@
 
 	(it "makes the usage documentation available to all views"
 		(should-not= nil (get (ns-map 'joodoweb.view.view-helpers) (symbol "usage-docs"))))
+
+	(it "gets a hiccup tag loaded with a random joodo icon (will fail [very rarely] because it is testing randomness)"
+		(let [icon (get-random-icon)]
+			(should= :img (first icon)))
+		(should-not= 1 (count (set (get-10-random-icons)))))
 )
