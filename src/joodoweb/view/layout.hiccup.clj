@@ -49,6 +49,8 @@
                [:a {:href (str "/docs/" (ns->url-safe %))} (format-namespace %)])])
            documented-namespaces)]]))
    [:td.content
+		[:br]
+		[:center (get-random-icon)]
     (eval (:template-body joodo.views/*view-context*))]
   ]]
 	[:div.faux_footer]

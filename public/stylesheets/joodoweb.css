@@ -96,14 +96,19 @@ td.content {
 	color:#e09900;
 }
 
+td.content .icon {
+	width:80px;
+	height:50px;
+}
+
 td.content h1 {
-	margin: 1.5em 0px 8px 0px;
+	margin: 0.9em 0px 8px 0px;
 	font-size:1.5em;
 	font-family: 'EB Garamond', serif;
 }
 
 td.content h2 {
-	margin: 1.5em 0px 8px 0px;
+	margin: 0.4em 0px 8px 0px;
 	font-size:2em;
 	letter-spacing:0.1em;
 	line-height:1.5em;

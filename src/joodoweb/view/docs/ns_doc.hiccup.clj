@@ -2,8 +2,6 @@
       ns-info (meta joodo-ns)
 	  listed-fns (:joodo-fns *view-context*)]
   (list
-		[:br]
-		[:center (get-random-icon)]
     [:h1 (ns-name joodo-ns)]
     [:p (:doc ns-info)]
     [:br][:br]
