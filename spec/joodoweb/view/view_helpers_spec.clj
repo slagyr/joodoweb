@@ -35,6 +35,6 @@
 
 	(it "gets a hiccup tag loaded with a random joodo icon (will fail [very rarely] because it is testing randomness)"
 		(let [icon (get-random-icon)]
-			(should= :img (first icon)))
+			(should= :img.icon (first icon)))
 		(should-not= 1 (count (set (get-10-random-icons)))))
 )
