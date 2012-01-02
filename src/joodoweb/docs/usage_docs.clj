@@ -136,7 +136,7 @@
 		:do-get
 		"(do-get \"/uri\")"
 		:do-post
-		"(do-get \"/uri\")"
+		"(do-post \"/uri\")"
 		:rendered-template
 		"@rendered-template"
 		:rendered-html
