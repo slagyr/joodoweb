@@ -12,6 +12,7 @@
 
 (defroutes joodoweb-routes
   (GET "/" [] (render-template "index"))
+  (GET "/install" [] (render-template "install"))
   (GET "/about" [] (render-template "about"))
   (GET "/community" [] (render-template "community"))
   (GET "/license" [] (render-template "license"))

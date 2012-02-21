@@ -38,6 +38,10 @@ a:hover {
 	color:#e09900;
 }
 
+small {
+  font-size:14px;
+}
+
 /********** sidebar **********/
 
 td.sidebar {
