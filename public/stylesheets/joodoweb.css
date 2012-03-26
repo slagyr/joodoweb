@@ -7,18 +7,7 @@ html, body, table.body {
 	margin-left:2%;
 	margin-top:2%;
 	color:#3b1d0f;
-	
-
-	/************ asdfsafd ***********/
-/*	font-family: 'EB Garamond', sans-serif;*/
-	
-/*	font-family: 'Varela', sans-serif;*/
-/*	font-family: 'Lato', sans-serif;*/
-/*	font-family: 'Muli', sans-serif;*/
 	font-family: 'Open Sans', sans-serif;
-/*	font-family: 'Questrial', sans-serif;*/
-/*	font-family: 'Didact Gothic', sans-serif;*/
-/*	font-family: 'Cabin', sans-serif;*/
 }
 
 body {
@@ -35,8 +24,25 @@ a {
 }
 
 a:hover {
-	color:#e09900;
+	color:white;
+	-webkit-transition: color 2s linear;
+	transition: color 2s linear;
+	/*	color:#e09900;*/
+/*	animation-duration:3s;
+	animation-name:colorize;
 }
+
+@keyframes colorize {
+	from {
+		color:white;
+	}
+	
+	to {
+		color:black;
+	}*/
+}
+
+
 
 /********** sidebar **********/
 

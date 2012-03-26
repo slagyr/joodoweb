@@ -4,7 +4,7 @@
   [:meta {:http-equiv "Content-Type" :content "text/html;charset=utf-8"}]
   [:link {:rel "shortcut icon" :href "images/favicon.ico"}]
 	[:link {:href "http://fonts.googleapis.com/css?family=EB+Garamond" :rel "stylesheet" :type "text/css"}]
-	[:link {:href "http://fonts.googleapis.com/css?family=Varela|Lato|Muli|Open+Sans|Questrial|Didact+Gothic|Cabin" :rel "stylesheet" :type "text/css"}]
+	[:link {:href "http://fonts.googleapis.com/css?family=Open+Sans:300" :rel "stylesheet" :type "text/css"}]
   [:title "Joodo | Clojure Web Framework"]
   (include-css "/stylesheets/reset.css")
   (include-css "/stylesheets/joodoweb.css")
