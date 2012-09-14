@@ -173,6 +173,14 @@ td.content p a {
 	font-size:1.25em;
 }
 
+td.content p b {
+  font-size:0.9em;
+  font-weight: bold;
+}
+
+.body-image {
+  padding-top: 10px;
+}
 
 /********** faux footer *************/
 

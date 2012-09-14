@@ -7,45 +7,42 @@
 [:html
  [:head
   [:meta {:http-equiv \"Content-Type\" :content \"text/html\" :charset \"iso-8859-1\"}]
-  [:title \"sample_app\"]
+  [:title \"sample-app\"]
   (include-css \"/stylesheets/sample_app.css\")
   (include-js \"/javascript/sample_app.js\")]
  [:body
-  [:img {:src \"/images/logo.png\"}]
   (eval (:template-body joodo.views/*view-context*))
 ]]"]
 [:h4 "public/images/logo.png"]
 [:img {:src "/images/logo.png"}]
-[:h4 "spec/sample_app/view/test_posts/20111215_test-post.hiccup.clj"]
+[:h4 "spec/sample_app/view/test_posts/20111215_test-post.hiccup"]
 [:pre {:class "brush: clojure"}
 "[:h1 \"Test Post\"]
 [:p \"This is my test post.\"]"]
 [:h4 "spec/sample_app/controller/post_controller_spec.clj"]
 [:pre {:class "brush: clojure"}
 "(ns sample_app.controller.post-controller-spec
-  (:use
-    [speclj.core
-      :only (describe around it should= run-specs)]
-    [joodo.spec-helpers.controller
-      :only (do-get rendered-template rendered-context with-mock-rendering with-routes)]
-    [sample_app.controller.post-controller]))
+  (:require [speclj.core :refer [describe around it should= run-specs]]
+            [joodo.spec-helpers.controller :refer [do-get rendered-template rendered-context 
+                                                   with-mock-rendering with-routes]]
+            [sample_app.controller.post-controller :refer [post-controller blog-post-directory]]))
 
 (describe \"post-controller\"
   (with-mock-rendering)
   (with-routes post-controller)
-
-  (around [it]
-    (binding [blog-post-directory (clojure.java.io/file (str
-               (. (java.io.File. \".\") getCanonicalPath)
-               \"/spec/sample_app/view/test_posts\"))]
-      (it)))
-
+  
   (it \"directs to the not_found page if the blog post isn't specified\"
     (let [result (do-get \"/post\")]
       (should= 404 (:status result))
       (should= \"not_found\" @rendered-template)
       (should= \"You must specify a blog post.\" (:error @rendered-context))))
-
+  
+  (around [it]
+    (binding [blog-post-directory (clojure.java.io/file (str
+              (. (java.io.File. \".\") getCanonicalPath)
+              \"/spec/sample_app/view/test_posts\"))]
+      (it)))
+  
   (it \"directs to the blog post if the post exists\"
     (let [result (do-get \"/post/20111215_test-post\")]
       (should= 200 (:status result))
@@ -55,21 +52,17 @@
     (let [result (do-get \"/post/20111215_invalid\")]
       (should= 404 (:status result))
       (should= \"not_found\" @rendered-template)
-      (should= \"Blog post does not exist.\" (:error @rendered-context))))
-)
- 
-(run-specs)"]
+      (should= \"Blog post does not exist.\" (:error @rendered-context)))))"]
 [:h4 "src/sample_app/controller/post_controller.clj"]
 [:pre {:class "brush: clojure"}
 "(ns sample_app.controller.post-controller
-  (:use
-    [compojure.core :only (GET context defroutes)]
-    [joodo.views :only (render-template)]))
- 
+  (:require [compojure.core :refer [GET context defroutes]]
+            [joodo.views :refer [render-template]]))
+
 (def ^{:private true} current-path
   (. (java.io.File. \".\") getCanonicalPath))
  
-(def blog-post-directory
+(def ^:dynamic blog-post-directory
   (clojure.java.io/file (str current-path \"/src/sample_app/view/posts\")))
  
 (defn blog-post-filenames []
@@ -80,18 +73,18 @@
       (file-seq blog-post-directory))))
  
 (defn- blog-post-exists? [post-route]
-  (some #(= % (str post-route \".hiccup.clj\")) (blog-post-filenames)))
- 
+  (some #(= % (str post-route \".hiccup\")) (blog-post-filenames)))
+
 (defn- render-not-found [error-msg]
   {:status 404
    :headers {}
    :body (render-template \"not_found\" :error error-msg)})
- 
+
 (defn- render-post [post-route]
   (if (blog-post-exists? post-route)
     (render-template (str \"posts/\" post-route))
     (render-not-found \"Blog post does not exist.\")))
- 
+
 (defroutes post-controller
   (GET \"/post\" [] (render-not-found \"You must specify a blog post.\"))
   (context \"/post\" []
@@ -99,59 +92,55 @@
 [:h4 "spec/sample_app/view/view_helpers_spec.clj"]
 [:pre {:class "brush: clojure"}
 "(ns sample_app.view.view-helpers-spec
-  (:use
-    [speclj.core :only (describe it should= run-specs around with)]
-    [joodo.datetime :only (parse-datetime)]
-    [sample_app.view.view-helpers]))
- 
+  (:require [speclj.core :refer [describe it should= run-specs around with]]
+            [sample_app.view.view-helpers :refer [get-post-name get-post-date order-posts
+                                                get-post-route]]
+            [chee.datetime :refer [parse-datetime]]))
+
 (describe \"view_helpers\"
-  (with test-post-1 \"20111215_test-post-1.hiccup.clj\")
-  (with test-post-2 \"20111216_test-post-2.hiccup.clj\")
-  (with test-post-3 \"20111217_test-post-3.hiccup.clj\")
- 
+  (with test-post-1 \"20111215_test-post-1.hiccup\")
+  (with test-post-2 \"20111216_test-post-2.hiccup\")
+  (with test-post-3 \"20111217_test-post-3.hiccup\")
+
   (it \"gets the title of a post\"
-    (should= \"test post 1\" (get-post-name @test-post-1)))
- 
+    (should= \"test post 1\"
+             (get-post-name \"20111215_test-post-1.hiccup\")))
+
   (it \"gets the date of a post\"
-    (should=
-      (parse-datetime :dense \"20111215000000\")
-      (get-post-date @test-post-1)))
- 
+    (should= (parse-datetime :dense \"20111215000000\")
+             (get-post-date \"20111215_test-post-1.hiccup\")))
+
   (it \"orders posts from most recent to oldest\"
     (should= [@test-post-3 @test-post-2 @test-post-1]
              (order-posts [@test-post-2 @test-post-1 @test-post-3])))
-
+  
   (it \"gets the route for a specified post\"
     (should= \"/post/20111215_test-post-1\"
-             (get-post-route @test-post-1)))
-)
- 
-(run-specs)"]
+             (get-post-route @test-post-1))))"]
 [:h4 "src/sample_app/view/view_helpers.clj"]
 [:pre {:class "brush: clojure"}
 "(ns sample_app.view.view-helpers
-  \"Put helper functions for views in this namespace.\"
-  (:use
-    [joodo.views :only (render-partial *view-context*)]
-    [joodo.string :only (gsub)]
-    [joodo.datetime :only (parse-datetime)]
-    [hiccup.page-helpers]
-    [hiccup.form-helpers]
-    [sample_app.controller.post-controller :only (blog-post-filenames)]
-    [clojure.string :as string :only (split)]))
- 
+  (:require
+    [joodo.views :refer [render-partial *view-context*]]
+    [chee.string :refer [gsub]]
+    [chee.datetime :refer [parse-datetime]]
+    [hiccup.page-helpers :refer :all]
+    [hiccup.form-helpers :refer :all]
+    [sample_app.controller.post-controller :refer [blog-post-filenames]]
+    [clojure.string :as string :refer [split]]))
+
 (defn- post-parts [post-file-name]
   (string/split post-file-name #\"(\\.)|(_)\"))
- 
+
 (defn get-post-name [post-file-name]
   (gsub
-    (second (post-parts post-file-name))
+    (second (string/split post-file-name #\"(\\.)|(_)\"))
     #\"-\"
     (fn [_] \" \")))
- 
+
 (defn get-post-date [post-file-name]
   (parse-datetime :dense
-    (str (first (post-parts post-file-name)) \"000000\")))
+                  (str (first (post-parts post-file-name)) \"000000\")))
 
 (defn order-posts [post-file-names]
   (sort-by
@@ -166,13 +155,14 @@
     (str \"/post/\" date \"_\" title)))"]
 [:h4 "src/sample_app/view/index.hiccup.clj"]
 [:pre {:class "brush: clojure"}
-"[:h1 \"Posts\"]
-(for [current-post-filename (order-posts (blog-post-filenames))]
-  (list
-    [:a {:href (get-post-route current-post-filename)}
-        (get-post-name current-post-filename)]
-    [:span \" - \" (.toString (get-post-date current-post-filename))]
-    [:br]))"]
+"[:div
+ [:h1 \"Posts\"]
+  (for [current-post-filename (order-posts (blog-post-filenames))]
+    (list
+      [:a {:href (get-post-route current-post-filename)}
+          (get-post-name current-post-filename)]
+      [:span \" - \" (.toString (get-post-date current-post-filename))]
+      [:br]))]"]
 [:h4 "src/sample_app/view/not_found.hiccup.clj"]
 [:pre {:class "brush: clojure"}
 "[:h1 \"Not Found\"]
