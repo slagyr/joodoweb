@@ -1,2 +1,6 @@
 lib/
+target/
 *.DS_Store
+.lein-failures
+
+speclj.main
