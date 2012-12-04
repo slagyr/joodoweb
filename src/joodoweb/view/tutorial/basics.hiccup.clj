@@ -22,23 +22,23 @@
 [:h3 "The Basics"]
 [:p "The most important file in your project is the " [:b "src/root.clj"] "."] 
 [:pre {:class "brush: clojure"}
-"(ns joodo_sample.core
+"(ns sample_app.core
   (:require [compojure.core :only (defroutes GET)]
             [compojure.route :only (not-found)]
             [joodo.middleware.view-context :only (wrap-view-context)]
             [joodo.views :only (render-template render-html)]
             [joodo.controllers :only (controller-router)]))
 
-(defroutes joodo_sample-routes
+(defroutes sample_app-routes
   (GET \"/\" [] (render-template \"index\"))
-  (controller-router 'joodo_sample.controller)
-  (not-found (render-template \"not_found\" :template-root \"joodo_sample/view\" 
-                                          :ns `joodo_sample.view.view-helpers)))
+  (controller-router 'sample_app.controller)
+  (not-found (render-template \"not_found\" :template-root \"sample_app/view\" 
+                                          :ns `sample_app.view.view-helpers)))
 
 (def app-handler
   (->
-    joodo_sample-routes
-    (wrap-view-context :template-root \"joodo_sample/view\" :ns `joodo_sample.view.view-helpers)))"
+    sample_app-routes
+    (wrap-view-context :template-root \"sample_app/view\" :ns `sample_app.view.view-helpers)))"
 ]
 
 [:p "By default there are three sections of root.clj. It is important to keep in mind that you can modify/add sections to fit your project's needs. These are just there to get you started."]
