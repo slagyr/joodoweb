@@ -5,7 +5,7 @@
 [:pre {:class "brush: clojure"}
 "(ns sample_app.controller.post-controller-spec
   (:require [speclj.core :refer [describe around it should= run-specs]]
-            [joodo.spec-helpers.controller :refer [do-get rendered-template rendered-context 
+            [joodo.spec-helpers.controller :refer [do-get rendered-template rendered-context
                                                    with-mock-rendering with-routes]]
             [sample_app.controller.post-controller :refer [post-controller]]))
 
@@ -64,23 +64,23 @@
 [:p "Our new tests assert that if a blog post exists, a route will be created for it. This test fails because there is no such var called blog-post-directory. The around function binds any calls to blog-post-directory to a test_posts directory that we use to create mock blog posts."]
 [:p "Let's make a file called " [:b "20111215_test-post.hiccup"] " in the " [:b "/spec/sample_app/view/test_posts"] " directory. After we do that, we are ready to write the controller logic to make those tests pass. Update the code in your post-controller so that it now looks like this:"]
 [:pre {:class "brush: clojure"}
-"(ns test_app.controller.post-controller
+"(ns sample_app.controller.post-controller
   (:require [compojure.core :refer [GET context defroutes]]
             [joodo.views :refer [render-template]]))
 
 (def ^{:private true} current-path
   (. (java.io.File. \".\") getCanonicalPath))
- 
+
 (def ^:dynamic blog-post-directory
   (clojure.java.io/file (str current-path \"/src/sample_app/view/posts\")))
- 
+
 (defn blog-post-filenames []
   (map
     #(.getName %)
     (remove
       #(.isDirectory %)
       (file-seq blog-post-directory))))
- 
+
 (defn- blog-post-exists? [post-route]
   (some #(= % (str post-route \".hiccup\")) (blog-post-filenames)))
 
