@@ -8,7 +8,7 @@
 
 [:pre {:class "brush: clojure"}
 "git clone https://github.com/slagyr/joodo.git
-cd joodo
+cd joodo/joodo
 lein compile
 lein spec"]
 
