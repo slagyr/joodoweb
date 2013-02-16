@@ -71,8 +71,8 @@
 [:p "Lastly, lets add a helper function that orders puts our posts in order of most recent to oldest. Here is the code that tests our new feature:"]
 [:pre {:class "brush: clojure"}
 "(ns sample_app.view.view-helpers-spec
-  (:require [speclj.core :only (describe it should= run-specs around with)]
-            [joodo.datetime :only (parse-datetime)]
+  (:require speclj.core :refer (describe it should= run-specs around with)
+            [joodo.datetime :refer (parse-datetime)]
             [sample_app.view.view-helpers :refer [get-post-name get-post-date
                                                   order-posts]]))
 
