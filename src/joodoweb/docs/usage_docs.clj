@@ -93,6 +93,11 @@
 		:wrap-keyword-cookies
 		";Include wrap-keyword-cookies in your app-handler:\n(def app-handler (-> app-routes wrap-keyword-cookies))\n;Then you can create a cookie with the following syntax:\n(assoc\n  (redirect \"/route\")\n  :cookies {:cookie-name {:value \"stuff\" :path \"/\" :expires (days-from-now 30)}})\n;To access the cookie info, do the following:\n(:cookie-name (:cookies *request*))"
 	}
+
+  :joodo.middleware.locale {
+    :wrap-locale
+    ";Include wrap-locale in your app-handler:\n(def app-handler (-> app-routes wrap-locale))"
+  }
 	
 	:joodo.middleware.multipart-params {
 		:wrap-multipart-params
@@ -101,7 +106,7 @@
 	
 	:joodo.middleware.refresh {
 		:wrap-refresh
-		";To use, include wrap-refresh in your app-handler:\n(def app-handler (-> app-routes wrap-refresh))"
+		";Include wrap-refresh in your app-handler:\n(def app-handler (-> app-routes wrap-refresh))"
 	}
 	
 	:joodo.middleware.request {
