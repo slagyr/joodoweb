@@ -2,8 +2,8 @@
   "Put helper functions for views in this namespace."
   (:use
     [joodo.views :only (render-partial *view-context*)]
-    [hiccup.page-helpers]
-    [hiccup.form-helpers]
+    [hiccup.page]
+    [hiccup.form]
     [joodo.middleware.request :only (*request*)]
     [clojure.string :as string :only (replace)]
     [clojure.repl :only (source-fn)]

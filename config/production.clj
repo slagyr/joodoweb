@@ -1,7 +1,3 @@
-(use 'joodo.env)
-
-(def environment {
+(alter-env! assoc
   :joodo-env "production"
-  })
-
-(swap! *env* merge environment)
+  )
