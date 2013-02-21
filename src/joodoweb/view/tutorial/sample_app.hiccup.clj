@@ -148,8 +148,8 @@ joodo server"]
   (:use
     [joodo.views :only (render-partial *view-context*)]
     [joodo.string :only (gsub)]
-    [hiccup.page-helpers]
-    [hiccup.form-helpers]
+    [hiccup.page]
+    [hiccup.form]
     [sample_app.controller.post-controller :only (blog-post-filenames)]
     [clojure.string :as string :only (split)]))
 
@@ -158,7 +158,7 @@ joodo server"]
     (second (string/split post-file-name #\"(\\.)|(_)\"))
     #\"-\"
     (fn [_] \" \")))"]
-[:p "With that code, we created our get-post-name function and told it to split up the post's file name at any periods or underscores. If the file name is formatted correctly, we will extract our post title. Then with that post title, we use Joodo's gsub function to replace all dashes with empty spaces. Addionally we listed the blog-post-filenames function in our ns use section so that when we make our view, it will have acces to that function. The hiccup.page-helpers and hiccup.form-helpers are included by default to allow your views to use their convenient helper functions. A list of those functions can be found on " [:a {:href "http://weavejester.github.com/hiccup/" :target "_blank"} "hiccup's documentation website"] "."]
+[:p "With that code, we created our get-post-name function and told it to split up the post's file name at any periods or underscores. If the file name is formatted correctly, we will extract our post title. Then with that post title, we use Joodo's gsub function to replace all dashes with empty spaces. Addionally we listed the blog-post-filenames function in our ns use section so that when we make our view, it will have acces to that function. The hiccup.page and hiccup.form are included by default to allow your views to use their convenient helper functions. A list of those functions can be found on " [:a {:href "http://weavejester.github.com/hiccup/" :target "_blank"} "hiccup's documentation website"] "."]
 [:p "Next we want to extract the date from our post's file name. So let's adjust the view-helper file to look like the following:"]
 [:pre {:class "brush: clojure"}
 "(ns sample_app.view.view-helpers-spec
@@ -186,8 +186,8 @@ joodo server"]
     [joodo.views :only (render-partial *view-context*)]
     [joodo.string :only (gsub)]
     [joodo.datetime :only (parse-datetime)]
-    [hiccup.page-helpers]
-    [hiccup.form-helpers]
+    [hiccup.page]
+    [hiccup.form]
     [sample_app.controller.post-controller :only (blog-post-filenames)]
     [clojure.string :as string :only (split)]))
 
@@ -399,8 +399,8 @@ joodo server"]
     [joodo.views :only (render-partial *view-context*)]
     [joodo.string :only (gsub)]
     [joodo.datetime :only (parse-datetime)]
-    [hiccup.page-helpers]
-    [hiccup.form-helpers]
+    [hiccup.page]
+    [hiccup.form]
     [sample_app.controller.post-controller :only (blog-post-filenames)]
     [clojure.string :as string :only (split)]))
  
