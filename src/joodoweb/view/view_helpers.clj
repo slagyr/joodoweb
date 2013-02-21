@@ -12,11 +12,9 @@
 
 (def documented-namespaces [
 	'joodo.controllers
-	'joodo.datetime
 	'joodo.env
-	'joodo.middleware.flash
 	'joodo.middleware.keyword-cookies
-	'joodo.middleware.multipart-params
+  'joodo.middleware.locale
 	'joodo.middleware.refresh
 	'joodo.middleware.request
 	'joodo.middleware.servlet-session
@@ -24,7 +22,6 @@
 	'joodo.middleware.view-context
 	'joodo.spec-helpers.controller
 	'joodo.spec-helpers.view
-	'joodo.string
 	'joodo.views])
 
 (defn format-namespace [ns-string]
