@@ -23,8 +23,8 @@
         (should= "docs/not_found" @rendered-template)))
 
     (it "passes all information the view needs to populate itself with documentation."
-      (let [result (do-get "/docs/joodo_string")]
-        (should= "{gsub #'joodo.string/gsub}" (str (:joodo-fns @rendered-context)))))
+      (let [result (do-get "/docs/joodo_middleware_view-context")]
+        (should= "{wrap-view-context #'joodo.middleware.view-context/wrap-view-context}" (str (:joodo-fns @rendered-context)))))
   )
 )
 
