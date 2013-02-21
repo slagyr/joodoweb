@@ -16,8 +16,8 @@
   \"Put helper functions for views in this namespace.\"
   (:require [joodo.views :refer [render-partial *view-context*]]
             [chee.string :refer [gsub]]
-            [hiccup.page-helpers :refer :all]
-            [hiccup.form-helpers :refer :all]
+            [hiccup.page :refer :all]
+            [hiccup.form :refer :all]
             [sample_app.controller.post-controller :refer [blog-post-filenames]]
             [clojure.string :as string :refer [split]]))
 
@@ -26,7 +26,7 @@
     (second (string/split post-file-name #\"(\\.)|(_)\"))
     #\"-\"
     (fn [_] \" \")))"]
-[:p "With that code, we created our " [:b "get-post-name"] " function and told it to split up the post's file name at any periods or underscores. If the file name is formatted correctly, we will extract our post title. Then with that post title, we use chee's gsub function ("[:a {:href "https://github.com/slagyr/joodo"} "chee"] " is a component of Joodo) to replace all dashes with empty spaces. Addionally we listed the blog-post-filenames function in our " [:b "ns :require" ] " section so that when we make our view, it will have access to that function. The " [:b "hiccup.page-helpers"] " and " [:b "hiccup.form-helpers"] " are included by default to allow your views to use their convenient helper functions. A list of those functions can be found on " [:a {:href "http://weavejester.github.com/hiccup/" :target "_blank"} "hiccup's documentation website"] "."]
+[:p "With that code, we created our " [:b "get-post-name"] " function and told it to split up the post's file name at any periods or underscores. If the file name is formatted correctly, we will extract our post title. Then with that post title, we use chee's gsub function ("[:a {:href "https://github.com/slagyr/joodo"} "chee"] " is a component of Joodo) to replace all dashes with empty spaces. Addionally we listed the blog-post-filenames function in our " [:b "ns :require" ] " section so that when we make our view, it will have access to that function. The " [:b "hiccup.page"] " and " [:b "hiccup.form"] " are included by default to allow your views to use their convenient helper functions. A list of those functions can be found on " [:a {:href "http://weavejester.github.com/hiccup/" :target "_blank"} "hiccup's documentation website"] "."]
 [:p "Next we want to extract the date from our post's file name. So let's adjust the view_helper_spec file to look like the following, adding " [:b "get-post-date"] " to the " [:b "sample_app.view.view-helpers"] " 'refer' vector:"]
 [:pre {:class "brush: clojure"}
 "(ns sample_app.view.view-helpers-spec
@@ -50,8 +50,8 @@
   (:require [joodo.views :refer [render-partial *view-context*]]
             [chee.string :refer [gsub]]
             [chee.datetime :refer [parse-datetime]]
-            [hiccup.page-helpers :refer :all]
-            [hiccup.form-helpers :refer :all]
+            [hiccup.page :refer :all]
+            [hiccup.form :refer :all]
             [sample_app.controller.post-controller :refer [blog-post-filenames]]
             [clojure.string :as string :refer [split]]))
 

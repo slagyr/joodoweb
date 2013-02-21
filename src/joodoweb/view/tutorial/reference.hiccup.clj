@@ -124,8 +124,8 @@
     [joodo.views :refer [render-partial *view-context*]]
     [chee.string :refer [gsub]]
     [chee.datetime :refer [parse-datetime]]
-    [hiccup.page-helpers :refer :all]
-    [hiccup.form-helpers :refer :all]
+    [hiccup.page :refer :all]
+    [hiccup.form :refer :all]
     [sample_app.controller.post-controller :refer [blog-post-filenames]]
     [clojure.string :as string :refer [split]]))
 
