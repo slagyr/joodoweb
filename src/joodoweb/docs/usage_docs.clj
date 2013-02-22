@@ -25,16 +25,16 @@
 	}
 
 	:joodo.middleware.locale {
-    :uri
-    ";locale augmenter that accepts a request map and returns a request map with locale data in it"
-    :cookie
-    ";locale augmenter that accepts a request map and returns a request map with locale data in it"
+		:uri
+		";Using the defroutes macro from Compojure\n(defroutes app-routes\n  (GET \"/\" [] \"<h1>Hello world</h1>\")\n  (route/not-found \"<h1>not found</h1>\"))\n\n(def app-handler\n  (->\n    app-routes\n    (wrap-locale\n      :locale-augmenters [joodo.middleware.locale/uri]\n      :accepted-locales #{\"en-us\" \"fr\"})))"
+		:cookie
+		";Using the defroutes macro from Compojure\n(defroutes app-routes\n  (GET \"/\" [] \"<h1>Hello world</h1>\")\n  (route/not-found \"<h1>not found</h1>\"))\n\n(def app-handler\n  (->\n    app-routes\n    (wrap-locale\n      :locale-augmenters [joodo.middleware.locale/cookie]\n      :accepted-locales #{\"en-us\"})))"
 		:wrap-locale
 		";Include wrap-locale in your app-handler:\n(def app-handler (-> app-routes wrap-locale))"
-    :accept-header
-    ";locale augmenter that accepts a request map and returns a request map with locale data in it"
-    :query-param
-    ";locale augmenter that accepts a request map and returns a request map with locale data in it"
+		:accept-header
+		";Using the defroutes macro from Compojure\n(defroutes app-routes\n  (GET \"/\" [] \"<h1>Hello world</h1>\")\n  (route/not-found \"<h1>not found</h1>\"))\n\n(def app-handler\n  (->\n    app-routes\n    (wrap-locale\n      :locale-augmenters [joodo.middleware.locale/accept-header]\n      :accepted-locales #{\"en-us\"})))"
+		:query-param
+		";Using the defroutes macro from Compojure\n(defroutes app-routes\n  (GET \"/\" [] \"<h1>Hello world</h1>\")\n  (route/not-found \"<h1>not found</h1>\"))\n\n(def app-handler\n  (->\n    app-routes\n    (wrap-locale\n      :locale-augmenters [joodo.middleware.locale/query-param]\n      :accepted-locales #{\"en-us\" \"fr\"})))"
 	}
 	
 	:joodo.middleware.refresh {
