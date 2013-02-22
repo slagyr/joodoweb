@@ -1,13 +1,13 @@
 (ns joodoweb.view.view-helpers
   "Put helper functions for views in this namespace."
-  (:use
-    [joodo.views :only (render-partial *view-context*)]
-    [hiccup.page]
-    [hiccup.form]
-    [joodo.middleware.request :only (*request*)]
-    [clojure.string :as string :only (replace)]
-    [clojure.repl :only (source-fn)]
-    [joodoweb.docs.usage_docs :only (usage-docs)]
+  (:require
+    [joodo.views :refer (render-partial *view-context*)]
+    [hiccup.page :refer :all]
+    [hiccup.form :refer :all]
+    [joodo.middleware.request :refer (*request*)]
+    [clojure.string :as string]
+    [clojure.repl :refer (source-fn)]
+    [joodoweb.docs.usage_docs :refer (usage-docs)]
 ))
 
 (def documented-namespaces [
