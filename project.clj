@@ -4,6 +4,7 @@
                  [joodo "1.1.2"]
                  [speclj "2.5.0"]]
   :dev-dependencies [[speclj "2.5.0"]]
+  :min-lein-version "2.0.0"
   :test-paths ["spec/"]
   :java-source-paths ["src/"]
   :repl-init-script "config/development/repl_init.clj"
