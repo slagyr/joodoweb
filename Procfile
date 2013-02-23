@@ -1,1 +1,1 @@
-web: lein run -m joodo.main production -a 0.0.0.0 -p $PORT
+web: lein run -m joodo.main -e production -a 0.0.0.0 -p $PORT
