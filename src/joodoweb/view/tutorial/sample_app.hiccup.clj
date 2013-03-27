@@ -20,7 +20,7 @@ joodo server"]
 [:p "The most important file in your project is the src/core.clj. By default there are three sections of core.clj. It is important to keep in mind that you can modify/add sections to fit your project's needs. These are just there to get you started."]
 [:p "The first section declares the file's namespace and lists all of the file's dependencies. If you want a deeper look into what core.clj does you can find the method/macro definitions that are being used in this section."]
 [:p "The second section calls a macro called defroutes. This macro is responsible for defining the routes of the website. By default it sets a GET request on the '/' route to render a pre-made index page. It also tells the application to render a pre-made 404 page if a non-existent route is accessed."]
-[:p "The most interesting part of the second section tells Joodo to look for any files with namespaces starting with 'sample_app.controller and add the routes they define to the list of routes. We'll cover this more deeply in a later section."]
+[:p "The most interesting part of the second section tells Joodo to look for any files with namespaces starting with 'sample-app.controller and add the routes they define to the list of routes. We'll cover this more deeply in a later section."]
 [:p "The third section wraps information around the request. By default, the only property explicitly being wrapped is the view context. It sets the template root to the view directory and sets all of the view's namespaces to a view-helper. It is important to note that the template-root represents the location of view pages with a relative path starting at your project's src directory."]
 [:p "Since our sample application will be pretty standard, we don't need to modify this file."]
 
@@ -29,13 +29,13 @@ joodo server"]
 [:p "By default our controller directory is empty. However as projects grow, this directory becomes more and more important. The files that go here contain additional routes that are related to each other. For our purposes, we will want to create a posts controller that has all of the routing information for our blog posts."]
 [:p "To make our posts controller and posts controller tester, create the files src/sample_app/controller/post_controller.clj and spec/sample_app/controller/post_controller_spec.clj. In that controller tester paste the following code:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.controller.post-controller-spec
+"(ns sample-app.controller.post-controller-spec
   (:use
     [speclj.core
       :only (describe around it should= run-specs)]
     [joodo.spec-helpers.controller
       :only (do-get rendered-template rendered-context with-mock-rendering with-routes)]
-    [sample_app.controller.post-controller]))
+    [sample-app.controller.post-controller]))
 
 (describe \"post-controller\"
   (with-mock-rendering)
@@ -52,9 +52,9 @@ joodo server"]
 [:p "This file uses Speclj along with Joodo spec helpers to test out the post controller page. The call to the with-mock-rendering function tells Joodo to keep track of all files rendered without actually rendering them. The with-routes function tells Joodo to use the routes listed in the specified var (in our case it is post-controller). Within our test we are asserting that if a client sends a get request to the /post uri, they will get a response with a status of 404, the not_found page will display, and an error message will get passed."]
 [:p "Now run your tests from your terminal by using the following command:"]
 [:pre {:class "brush: clojure"} "lein spec -a"]
-[:p "You should get an error message stating that no namespace called sample_app.controller.post-controller exists. Let's remedy that by pasting the following code into the src/sample_app/controller/post_controller.clj file we created:"]
+[:p "You should get an error message stating that no namespace called sample-app.controller.post-controller exists. Let's remedy that by pasting the following code into the src/sample_app/controller/post_controller.clj file we created:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.controller.post-controller
+"(ns sample-app.controller.post-controller
   (:use
     [compojure.core :only (GET defroutes)]
     [joodo.views :only (render-template)]))
@@ -88,7 +88,7 @@ joodo server"]
     (should= \"Blog post does not exist.\" (:error @rendered-context))))"]
 [:p "Our new tests assert that if a blog post exists, a route will be created for it. This test fails because there is no such var called blog-post-directory. The around function binds any calls to blog-post-directory to a test_posts directory that we use to create mock blog posts. So let's make a file called 20111215_test-post.hiccup.clj in the /spec/sample_app/view/test_posts directory. After we do that, we are ready to write the controller logic to make those tests pass:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.controller.post-controller
+"(ns sample-app.controller.post-controller
   (:use
     [compojure.core :only (GET context defroutes)]
     [joodo.views :only (render-template)]))
@@ -129,10 +129,10 @@ joodo server"]
 [:h3 "Working With Our Views"]
 [:p "Next thing we want to do is list all of the blog posts on the index page. To do that, we will interact with our view_helpers file. Before we add any functionality, let's create a view_helpers_spec.clj file in the spec/sample_app/view directory, and fill it with our first test:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers-spec
+"(ns sample-app.view.view-helpers-spec
   (:use
     [speclj.core :only (describe it should= run-specs around)]
-    [sample_app.view.view-helpers]))
+    [sample-app.view.view-helpers]))
 
 (describe \"view_helpers\"
   (it \"gets the title of a post\"
@@ -143,14 +143,14 @@ joodo server"]
 (run-specs)"]
 [:p "In this test we are asserting that, given the proper file name, the get-post-name function can extract the title of a given post. Simple enough, let's make that test pass by adjusting our view-helpers file:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers
+"(ns sample-app.view.view-helpers
   \"Put helper functions for views in this namespace.\"
   (:use
     [joodo.views :only (render-partial *view-context*)]
     [joodo.string :only (gsub)]
     [hiccup.page]
     [hiccup.form]
-    [sample_app.controller.post-controller :only (blog-post-filenames)]
+    [sample-app.controller.post-controller :only (blog-post-filenames)]
     [clojure.string :as string :only (split)]))
 
 (defn get-post-name [post-file-name]
@@ -161,11 +161,11 @@ joodo server"]
 [:p "With that code, we created our get-post-name function and told it to split up the post's file name at any periods or underscores. If the file name is formatted correctly, we will extract our post title. Then with that post title, we use Joodo's gsub function to replace all dashes with empty spaces. Addionally we listed the blog-post-filenames function in our ns use section so that when we make our view, it will have acces to that function. The hiccup.page and hiccup.form are included by default to allow your views to use their convenient helper functions. A list of those functions can be found on " [:a {:href "http://weavejester.github.com/hiccup/" :target "_blank"} "hiccup's documentation website"] "."]
 [:p "Next we want to extract the date from our post's file name. So let's adjust the view-helper file to look like the following:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers-spec
+"(ns sample-app.view.view-helpers-spec
   (:use
     [speclj.core :only (describe it should= run-specs around)]
     [joodo.datetime :only (parse-datetime)]
-    [sample_app.view.view-helpers]))
+    [sample-app.view.view-helpers]))
 
 (describe \"view_helpers\"
   (it \"gets the title of a post\"
@@ -180,7 +180,7 @@ joodo server"]
 (run-specs)"]
 [:p "In this test, we are assuming proper file name formatting as well. However, instead of expecting a string we are expecting a Java Date Object. We are doing this by using the parse-datetime function from Joodo. We are passing it the value of dense and a string that has the date December 15, 2011 formatted like \"YYYYMMDDHHMMSS\". To make our test pass, let's adjust our view-helper file to match the following:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers
+"(ns sample-app.view.view-helpers
   \"Put helper functions for views in this namespace.\"
   (:use
     [joodo.views :only (render-partial *view-context*)]
@@ -188,7 +188,7 @@ joodo server"]
     [joodo.datetime :only (parse-datetime)]
     [hiccup.page]
     [hiccup.form]
-    [sample_app.controller.post-controller :only (blog-post-filenames)]
+    [sample-app.controller.post-controller :only (blog-post-filenames)]
     [clojure.string :as string :only (split)]))
 
 (defn- post-parts [post-file-name]
@@ -206,11 +206,11 @@ joodo server"]
 [:p "As you can see, we added the joodo.datetime namespace to our list of namespaces that we are using. Then we extracted the post-parts logic into its own function to avoid duplication. And finally, we created the get-post-date function and set it to return a date object with the extracted year, month, and day with zero for the hour, minute, and second values."]
 [:p "Lastly, lets add a helper function that orders puts our posts in order of most recent to oldest. Here is the code that tests our new feature:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers-spec
+"(ns sample-app.view.view-helpers-spec
   (:use
     [speclj.core :only (describe it should= run-specs around with)]
     [joodo.datetime :only (parse-datetime)]
-    [sample_app.view.view-helpers]))
+    [sample-app.view.view-helpers]))
 
 (describe \"view_helpers\"
   (with test-post-1 \"20111215_test-post-1.hiccup.clj\")
@@ -286,13 +286,13 @@ joodo server"]
 ]]"]
 [:h4 "spec/sample_app/controller/post_controller_spec.clj"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.controller.post-controller-spec
+"(ns sample-app.controller.post-controller-spec
   (:use
     [speclj.core
       :only (describe around it should= run-specs)]
     [joodo.spec-helpers.controller
       :only (do-get rendered-template rendered-context with-mock-rendering with-routes)]
-    [sample_app.controller.post-controller]))
+    [sample-app.controller.post-controller]))
 
 (describe \"post-controller\"
   (with-mock-rendering)
@@ -325,7 +325,7 @@ joodo server"]
 (run-specs)"]
 [:h4 "src/sample_app/controller/post_controller.clj"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.controller.post-controller
+"(ns sample-app.controller.post-controller
   (:use
     [compojure.core :only (GET context defroutes)]
     [joodo.views :only (render-template)]))
@@ -362,11 +362,11 @@ joodo server"]
     (GET \"/:post-route\" [post-route] (render-post post-route))))"]
 [:h4 "spec/sample_app/view/view_helpers_spec.clj"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers-spec
+"(ns sample-app.view.view-helpers-spec
   (:use
-    [speclj.core :only (describe it should= run-specs around with)]
-    [joodo.datetime :only (parse-datetime)]
-    [sample_app.view.view-helpers]))
+    [speclj.core :only [describe it should= run-specs around with]
+    [chee.datetime :only [parse-datetime]
+    [sample-app.view.view-helpers]))
  
 (describe \"view_helpers\"
   (with test-post-1 \"20111215_test-post-1.hiccup.clj\")
@@ -393,7 +393,7 @@ joodo server"]
 (run-specs)"]
 [:h4 "src/sample_app/view/view_helpers.clj"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers
+"(ns sample-app.view.view-helpers
   \"Put helper functions for views in this namespace.\"
   (:use
     [joodo.views :only (render-partial *view-context*)]
@@ -401,7 +401,7 @@ joodo server"]
     [joodo.datetime :only (parse-datetime)]
     [hiccup.page]
     [hiccup.form]
-    [sample_app.controller.post-controller :only (blog-post-filenames)]
+    [sample-app.controller.post-controller :only (blog-post-filenames)]
     [clojure.string :as string :only (split)]))
  
 (defn- post-parts [post-file-name]
