@@ -14,7 +14,7 @@
 [:p "If you are using Leiningen 2.0 or later you can install the lein-joodo plugin by updating (or creating) your profiles.clj file located inside ~/.lein with the following:"]
 [:pre {:class "brush: clojure"}
 "{
-  :user {:plugins [[joodo/lein-joodo \"0.10.0\"]]}
+  :user {:plugins [[joodo/lein-joodo \"1.1.2\"]]}
 }"]
 
 [:h4 "Leiningen 1"]

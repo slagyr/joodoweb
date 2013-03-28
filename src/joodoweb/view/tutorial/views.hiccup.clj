@@ -1,9 +1,9 @@
 [:h3 "Working With Our Views"]
 [:p "Next thing we want to do is list all of the blog posts on the index page. To do that, we will interact with our view_helpers file. Before we add any functionality, let's create a " [:b "view_helpers_spec.clj"] " file in the " [:b "spec/sample_app/view"] " directory, and fill it with our first test:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers-spec
+"(ns sample-app.view.view-helpers-spec
   (:require [speclj.core :refer [describe it should= run-specs around]]
-            [sample_app.view.view-helpers :refer [get-post-name]]))
+            [sample-app.view.view-helpers :refer [get-post-name]]))
 
 (describe \"view_helpers\"
   (it \"gets the title of a post\"
@@ -12,13 +12,13 @@
 
 [:p "In this test we are asserting that, given the proper file name, the " [:b "get-post-name"] " function can extract the title of a given post. Simple enough, let's make that test pass by adjusting our view-helpers file:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers
+"(ns sample-app.view.view-helpers
   \"Put helper functions for views in this namespace.\"
   (:require [joodo.views :refer [render-partial *view-context*]]
             [chee.string :refer [gsub]]
             [hiccup.page :refer :all]
             [hiccup.form :refer :all]
-            [sample_app.controller.post-controller :refer [blog-post-filenames]]
+            [sample-app.controller.post-controller :refer [blog-post-filenames]]
             [clojure.string :as string :refer [split]]))
 
 (defn get-post-name [post-file-name]
@@ -27,12 +27,12 @@
     #\"-\"
     (fn [_] \" \")))"]
 [:p "With that code, we created our " [:b "get-post-name"] " function and told it to split up the post's file name at any periods or underscores. If the file name is formatted correctly, we will extract our post title. Then with that post title, we use chee's gsub function ("[:a {:href "https://github.com/slagyr/joodo"} "chee"] " is a component of Joodo) to replace all dashes with empty spaces. Addionally we listed the blog-post-filenames function in our " [:b "ns :require" ] " section so that when we make our view, it will have access to that function. The " [:b "hiccup.page"] " and " [:b "hiccup.form"] " are included by default to allow your views to use their convenient helper functions. A list of those functions can be found on " [:a {:href "http://weavejester.github.com/hiccup/" :target "_blank"} "hiccup's documentation website"] "."]
-[:p "Next we want to extract the date from our post's file name. So let's adjust the view_helper_spec file to look like the following, adding " [:b "get-post-date"] " to the " [:b "sample_app.view.view-helpers"] " 'refer' vector:"]
+[:p "Next we want to extract the date from our post's file name. So let's adjust the view_helper_spec file to look like the following, adding " [:b "get-post-date"] " to the " [:b "sample-app.view.view-helpers"] " 'refer' vector:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers-spec
+"(ns sample-app.view.view-helpers-spec
   (:require [speclj.core :refer [describe it should= run-specs around]]
             [chee.datetime :refer [parse-datetime]]
-            [sample_app.view.view-helpers :refer [get-post-name get-post-date]]))
+            [sample-app.view.view-helpers :refer [get-post-name get-post-date]]))
 
 (describe \"view_helpers\"
   (it \"gets the title of a post\"
@@ -45,14 +45,14 @@
 "]
 [:p "In this test, we are assuming proper file name formatting as well. However, instead of expecting a string we are expecting a Java Date Object. We are doing this by using the parse-datetime function from " [:a {:href "https://github.com/slagyr/joodo/tree/master/chee"} "Chee"]". We are passing it the value of dense and a string that has the date December 15, 2011 formatted like \"YYYYMMDDHHMMSS\". To make our test pass, let's adjust our view-helper file to match the following:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers
+"(ns sample-app.view.view-helpers
   \"Put helper functions for views in this namespace.\"
   (:require [joodo.views :refer [render-partial *view-context*]]
             [chee.string :refer [gsub]]
             [chee.datetime :refer [parse-datetime]]
             [hiccup.page :refer :all]
             [hiccup.form :refer :all]
-            [sample_app.controller.post-controller :refer [blog-post-filenames]]
+            [sample-app.controller.post-controller :refer [blog-post-filenames]]
             [clojure.string :as string :refer [split]]))
 
 (defn- post-parts [post-file-name]
@@ -70,10 +70,10 @@
 [:p "As you can see, we added the " [:b "chee.datetime"] " namespace to our list of namespaces that we are using. Then we extracted the post-parts logic into its own function to avoid duplication. And finally, we created the get-post-date function and set it to return a date object with the extracted year, month, and day with zero for the hour, minute, and second values."]
 [:p "Lastly, lets add a helper function that orders puts our posts in order of most recent to oldest. Here is the code that tests our new feature:"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers-spec
-  (:require speclj.core :refer (describe it should= run-specs around with)
-            [joodo.datetime :refer (parse-datetime)]
-            [sample_app.view.view-helpers :refer [get-post-name get-post-date
+"(ns sample-app.view.view-helpers-spec
+  (:require [speclj.core :refer [describe it should= run-specs around with]]
+            [chee.datetime :refer [parse-datetime]]
+            [sample-app.view.view-helpers :refer [get-post-name get-post-date
                                                   order-posts]]))
 
 (describe \"view_helpers\"
@@ -92,9 +92,7 @@
   (it \"orders posts from most recent to oldest\"
     (should= [@test-post-3 @test-post-2 @test-post-1]
              (order-posts [@test-post-2 @test-post-1 @test-post-3])))
-)
-
-(run-specs)"]
+)"]
 [:p "As you can see, I refactored the test post string into its own variable to make testing easier. I also added the " [:b "with"] " function to the speclj.core 'refer' vector. Then I created an assertion that tests the order-posts function. The code to make this test pass is pretty simple too:"]
 [:pre {:class "brush: clojure"}
 "(defn order-posts [post-file-names]
