@@ -5,7 +5,7 @@
 [:p "If you have followed our " [:a {:href "/"} "installation instructions"] " creating our starting point is as simple as running the following command, where sample_app is the name you'd like to give your application:"]
 [:pre {:class "brush: clojure"} "lein joodo new sample_app"]
 [:p "To see what that made for us, change into the sample_app's directory in terminal (" [:b "cd sample_app"] ") and download the project's dependencies:"]
-[:pre {:class "brush: clojure"} 
+[:pre {:class "brush: clojure"}
  "lein deps"]
 [:p "Now, start the local server with the following command:"]
 [:pre {:class "brush: clojure"} "lein joodo server"]
@@ -20,9 +20,9 @@
 
 
 [:h3 "The Basics"]
-[:p "The most important file in your project is the " [:b "src/root.clj"] "."] 
+[:p "The most important file in your project is the " [:b "src/root.clj"] "."]
 [:pre {:class "brush: clojure"}
-"(ns sample-app.core
+"(ns sample-app.root
   (:require [compojure.core :only (defroutes GET)]
             [compojure.route :only (not-found)]
             [joodo.middleware.view-context :only (wrap-view-context)]
@@ -31,20 +31,20 @@
 
 (defroutes sample-app-routes
   (GET \"/\" [] (render-template \"index\"))
-  (controller-router 'sample_app.controller)
-  (not-found (render-template \"not_found\" :template-root \"sample_app/view\" 
+  (controller-router 'sample-app.controller)
+  (not-found (render-template \"not_found\" :template-root \"sample_app/view\"
                                           :ns `sample-app.view.view-helpers)))
 
 (def app-handler
   (->
-    sample_app-routes
+    sample-app-routes
     (wrap-view-context :template-root \"sample_app/view\" :ns `sample-app.view.view-helpers)))"
 ]
 
 [:p "By default there are three sections of root.clj. It is important to keep in mind that you can modify/add sections to fit your project's needs. These are just there to get you started."]
 [:p "The " [:b "first section"] " declares the file's namespace and lists all of the file's dependencies. If you want a deeper look into what root.clj does you can find the method/macro definitions that are being used in this section."]
 [:p "The " [:b "second section"] " calls a macro called defroutes. This macro is responsible for defining the routes of the website. By default it sets a GET request on the '/' route to render a pre-made index page. It also tells the application to render a pre-made 404 page if a non-existent route is accessed."]
-[:p "The most interesting part of the second section tells Joodo to look for any files with namespaces starting with 'sample_app.controller and add the routes that they define to the list of routes. We'll cover this more deeply in a later section."]
+[:p "The most interesting part of the second section tells Joodo to look for any files with namespaces starting with 'sample-app.controller and add the routes that they define to the list of routes. We'll cover this more deeply in a later section."]
 [:p "The " [:b "third section"] " wraps information around the request. By default, the only property explicitly being wrapped is the view context. It sets the template root to the view directory and sets all of the view's namespaces to a view-helper. It is important to note that the template-root represents the location of view pages with a relative path starting at your project's src directory."]
 [:p "Since our sample application will be pretty standard, we don't need to modify this file."]
 [:br][:br]

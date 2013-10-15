@@ -3,9 +3,9 @@
 (def usage-docs {
   	:joodo.controllers {
 		:resolve-controller
-		"(resolve-controller 'sample_app.the-missing-controller)"
+		"(resolve-controller 'sample-app.the-missing-controller)"
 		:controller-router
-		"(controller-router 'sample_app.controller)"
+		"(controller-router 'sample-app.controller)"
 	}
 
 	:joodo.env {
@@ -18,7 +18,7 @@
 		:production-env?
 		"(production-env?)"
 	}
-	
+
 	:joodo.middleware.keyword-cookies {
 		:wrap-keyword-cookies
 		";Include wrap-keyword-cookies in your app-handler:\n(def app-handler (-> app-routes wrap-keyword-cookies))\n;Then you can create a cookie with the following syntax:\n(assoc\n  (redirect \"/route\")\n  :cookies {:cookie-name {:value \"stuff\" :path \"/\" :expires (days-from-now 30)}})\n;To access the cookie info, do the following:\n(:cookie-name (:cookies *request*))"
@@ -36,34 +36,34 @@
 		:query-param
 		";Using the defroutes macro from Compojure\n(defroutes app-routes\n  (GET \"/\" [] \"<h1>Hello world</h1>\")\n  (route/not-found \"<h1>not found</h1>\"))\n\n(def app-handler\n  (->\n    app-routes\n    (wrap-locale\n      :locale-augmenters [joodo.middleware.locale/query-param]\n      :accepted-locales #{\"en-us\" \"fr\"})))"
 	}
-	
+
 	:joodo.middleware.refresh {
 		:wrap-refresh
 		";Include wrap-refresh in your app-handler:\n(def app-handler (-> app-routes wrap-refresh))"
 	}
-	
+
 	:joodo.middleware.request {
 		:*request*
 		";Use it like any old map:\n(:params *request*)"
 		:wrap-bind-request
 		";Include wrap-bind-request in your app-handler:\n(def app-handler (-> app-routes wrap-bind-request))\n;Then all request information gets loaded in the *request* var."
 	}
-	
+
 	:joodo.middleware.servlet-session {
 		:wrap-servlet-session
 		";Include wrap-servlet-session in your app-handler:\n(def app-handler (-> app-routes wrap-servlet-session))\n;Then you can create a session with the following syntax\n(assoc\n  (redirect \"/route\")\n  :session {:session-name {:value \"stuff\" :expires (hours-from-now 1)}})\n;To access session info, use the following syntax:\n(:session *request*)"
 	}
-	
+
 	:joodo.middleware.verbose {
 		:wrap-verbose
 		";Include wrap-verbose in your app-handler:\n(def app-handler (-> app-routes wrap-verbose))"
 	}
-	
+
 	:joodo.middleware.view-context {
 		:wrap-view-context
 		";Include wrap-view-context in your app-handler:\n(def app-handler (-> app-routes (wrap-view-context :template-root \"app_name/view\" :ns `app_name.view.view-helpers)))\n;To bind information to *view-request* use the following syntax:\n(render-template \"template_name\" :data data)\n;Then access that information in the view pages like it were a map:\n(:data *view-context*)"
 	}
-	
+
 	:joodo.spec-helpers.controller {
 		:*routes*
 		"(*routes* {:request-method :get :uri \"/uri\"})"
@@ -90,7 +90,7 @@
 		:should-redirect-to
 		"(should-redirect-to (do-get \"/uri\") \"/other-uri\")"
 	}
-	
+
 	:joodo.spec-helpers.view {
 		:tag-matches?
 		"(tag-matches? {:tag \"match\" :other \"tag\"} {:tag \"match\"})"
@@ -107,7 +107,7 @@
 		:with-view-context
 		"(with-view-context :template-root \"sample_app/view\" :ns `sample_app.view.view-helpers)"
 	}
-	
+
 	:joodo.views {
 		:*view-context*
 		";Use it like any old map:\n(:template-root *veiw-context*)"

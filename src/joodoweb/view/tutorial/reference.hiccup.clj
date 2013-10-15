@@ -19,30 +19,49 @@
 [:pre {:class "brush: clojure"}
 "[:h1 \"Test Post\"]
 [:p \"This is my test post.\"]"]
+[:h4 "src/sample_app/root.clj"]
+[:pre {:class "brush: clojure"}
+"(ns sample-app.root
+  (:require [compojure.core :only (defroutes GET)]
+            [compojure.route :only (not-found)]
+            [joodo.middleware.view-context :only (wrap-view-context)]
+            [joodo.views :only (render-template render-html)]
+            [joodo.controllers :only (controller-router)]))
+
+(defroutes sample-app-routes
+  (GET \"/\" [] (render-template \"index\"))
+  (controller-router 'sample-app.controller)
+  (not-found (render-template \"not_found\" :template-root \"sample_app/view\"
+                                          :ns `sample-app.view.view-helpers)))
+
+(def app-handler
+  (->
+    sample-app-routes
+    (wrap-view-context :template-root \"sample_app/view\" :ns `sample-app.view.view-helpers)))"]
 [:h4 "spec/sample_app/controller/post_controller_spec.clj"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.controller.post-controller-spec
+"(ns sample-app.controller.post-controller-spec
   (:require [speclj.core :refer [describe around it should= run-specs]]
-            [joodo.spec-helpers.controller :refer [do-get rendered-template rendered-context 
+            [joodo.spec-helpers.controller :refer [do-get rendered-template rendered-context
                                                    with-mock-rendering with-routes]]
-            [sample_app.controller.post-controller :refer [post-controller blog-post-directory]]))
+            [sample-app.controller.post-controller :refer [post-controller blog-post-directory]]))
 
 (describe \"post-controller\"
   (with-mock-rendering)
   (with-routes post-controller)
-  
+
   (it \"directs to the not_found page if the blog post isn't specified\"
     (let [result (do-get \"/post\")]
       (should= 404 (:status result))
       (should= \"not_found\" @rendered-template)
       (should= \"You must specify a blog post.\" (:error @rendered-context))))
-  
+
   (around [it]
     (binding [blog-post-directory (clojure.java.io/file (str
               (. (java.io.File. \".\") getCanonicalPath)
               \"/spec/sample_app/view/test_posts\"))]
       (it)))
-  
+
   (it \"directs to the blog post if the post exists\"
     (let [result (do-get \"/post/20111215_test-post\")]
       (should= 200 (:status result))
@@ -55,23 +74,23 @@
       (should= \"Blog post does not exist.\" (:error @rendered-context)))))"]
 [:h4 "src/sample_app/controller/post_controller.clj"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.controller.post-controller
+"(ns sample-app.controller.post-controller
   (:require [compojure.core :refer [GET context defroutes]]
             [joodo.views :refer [render-template]]))
 
 (def ^{:private true} current-path
   (. (java.io.File. \".\") getCanonicalPath))
- 
+
 (def ^:dynamic blog-post-directory
   (clojure.java.io/file (str current-path \"/src/sample_app/view/posts\")))
- 
+
 (defn blog-post-filenames []
   (map
     #(.getName %)
     (remove
       #(.isDirectory %)
       (file-seq blog-post-directory))))
- 
+
 (defn- blog-post-exists? [post-route]
   (some #(= % (str post-route \".hiccup\")) (blog-post-filenames)))
 
@@ -91,9 +110,9 @@
     (GET \"/:post-route\" [post-route] (render-post post-route))))"]
 [:h4 "spec/sample_app/view/view_helpers_spec.clj"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers-spec
+"(ns sample-app.view.view-helpers-spec
   (:require [speclj.core :refer [describe it should= run-specs around with]]
-            [sample_app.view.view-helpers :refer [get-post-name get-post-date order-posts
+            [sample-app.view.view-helpers :refer [get-post-name get-post-date order-posts
                                                 get-post-route]]
             [chee.datetime :refer [parse-datetime]]))
 
@@ -113,20 +132,20 @@
   (it \"orders posts from most recent to oldest\"
     (should= [@test-post-3 @test-post-2 @test-post-1]
              (order-posts [@test-post-2 @test-post-1 @test-post-3])))
-  
+
   (it \"gets the route for a specified post\"
     (should= \"/post/20111215_test-post-1\"
              (get-post-route @test-post-1))))"]
 [:h4 "src/sample_app/view/view_helpers.clj"]
 [:pre {:class "brush: clojure"}
-"(ns sample_app.view.view-helpers
+"(ns sample-app.view.view-helpers
   (:require
     [joodo.views :refer [render-partial *view-context*]]
     [chee.string :refer [gsub]]
     [chee.datetime :refer [parse-datetime]]
     [hiccup.page :refer :all]
     [hiccup.form :refer :all]
-    [sample_app.controller.post-controller :refer [blog-post-filenames]]
+    [sample-app.controller.post-controller :refer [blog-post-filenames]]
     [clojure.string :as string :refer [split]]))
 
 (defn- post-parts [post-file-name]
