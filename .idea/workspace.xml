@@ -1,109 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2382a87-15c7-4ccb-8a00-006a1028a2e2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/background.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/directory.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/drawer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/header_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/menu_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/menu_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/images/throw_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__chee_chee_2_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__clj_stacktrace_clj_stacktrace_0_2_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__clj_time_clj_time_0_3_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__clojure_complete_clojure_complete_0_2_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__clout_clout_1_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_taoensso_timbre_2_6_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__compojure_compojure_1_1_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__digest_digest_1_4_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__fresh_fresh_1_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__hiccup_hiccup_1_0_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__joda_time_joda_time_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__joodo_joodo_2_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mmargs_mmargs_1_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_core_incubator_0_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_tools_macro_0_1_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_tools_nrepl_0_2_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ring_ring_core_1_1_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/config/development.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/config/environment.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/stylesheets/joodoweb.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/joodoweb.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/javascript/joodoweb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/javascript/jquery-1.7.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/config/production.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/stylesheets/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/javascript/shBrushClojure.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/stylesheets/shCore.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/javascript/shCore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/public/stylesheets/shThemeDefault.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/config/development.clj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/config/environment.clj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/config/production.clj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/directory.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/drawer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/header.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/header_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/menu_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/menu_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/images/throw_9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/javascript/joodoweb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/javascript/jquery-1.7.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/javascript/shBrushClojure.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/javascript/shCore.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/stylesheets/joodoweb.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/stylesheets/reset.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/stylesheets/shCore.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/joodoweb/resources/public/stylesheets/shThemeDefault.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/joodoweb/view/tutorial/basics.hiccup.clj" afterPath="$PROJECT_DIR$/src/joodoweb/view/tutorial/basics.hiccup.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/joodoweb/view/tutorial/controllers.hiccup.clj" afterPath="$PROJECT_DIR$/src/joodoweb/view/tutorial/controllers.hiccup.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/joodoweb/core.clj" afterPath="$PROJECT_DIR$/src/joodoweb/core.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/joodoweb/view/index.hiccup.clj" afterPath="$PROJECT_DIR$/src/joodoweb/view/index.hiccup.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/joodoweb/view/layout.hiccup.clj" afterPath="$PROJECT_DIR$/src/joodoweb/view/layout.hiccup.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/joodoweb/view/docs/ns_doc.hiccup.clj" afterPath="$PROJECT_DIR$/src/joodoweb/view/docs/ns_doc.hiccup.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/joodoweb/view/view_helpers.clj" afterPath="$PROJECT_DIR$/src/joodoweb/view/view_helpers.clj" />
-    </list>
+    <list default="true" id="f2382a87-15c7-4ccb-8a00-006a1028a2e2" name="Default" comment="" />
     <ignored path="joodoweb.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="f2382a87-15c7-4ccb-8a00-006a1028a2e2" time="1384379893486" ignored="false" />
@@ -128,6 +26,8 @@
     <file path="$PROJECT_DIR$/../temp/8thlight.com/src/eighthlight/view/_webfontloader.hiccup" changelist="f2382a87-15c7-4ccb-8a00-006a1028a2e2" time="1384206217280" ignored="false" />
     <file path="$PROJECT_DIR$/../../../dojo_dashboard/dojo-dashboard/.idea/workspace.xml" changelist="f2382a87-15c7-4ccb-8a00-006a1028a2e2" time="1384378950631" ignored="false" />
     <file path="/ns_doc.hiccup.clj" changelist="f2382a87-15c7-4ccb-8a00-006a1028a2e2" time="1384380188656" ignored="false" />
+    <file path="/usage_docs.clj" changelist="f2382a87-15c7-4ccb-8a00-006a1028a2e2" time="1384445731269" ignored="false" />
+    <file path="/docs_controller.clj" changelist="f2382a87-15c7-4ccb-8a00-006a1028a2e2" time="1384445725078" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,15 +88,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.hiccup.clj" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/joodoweb/view/docs/index.hiccup.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="docs_controller.clj" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/joodoweb/controller/docs_controller.clj">
           <provider selected="true" editor-type-id="text-editor">
@@ -206,73 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ns_doc.hiccup.clj" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/joodoweb/view/docs/ns_doc.hiccup.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="78" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="keyword_cookies.clj" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/joodo/joodo/2.0.0/joodo-2.0.0.jar!/joodo/middleware/keyword_cookies.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="88" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="usage_docs.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/joodoweb/docs/usage_docs.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="5" selection-start="434" selection-end="434" vertical-scroll-proportion="-0.2723971">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="asset_fingerprint.clj" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/joodo/joodo/2.0.0/joodo-2.0.0.jar!/joodo/middleware/asset_fingerprint.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.hiccup.clj" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/joodoweb/view/layout.hiccup.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="26" selection-start="2152" selection-end="2152" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project.clj" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="129" selection-start="641" selection-end="641" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="docs_controller_spec.clj" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/joodoweb/controller/docs_controller_spec.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="core.clj" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/joodoweb/core.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="59" selection-start="1311" selection-end="1311" vertical-scroll-proportion="0.0">
+            <state line="53" column="0" selection-start="2809" selection-end="2809" vertical-scroll-proportion="0.7847976">
               <folding />
             </state>
           </provider>
@@ -302,6 +130,8 @@
         <option value="$PROJECT_DIR$/src/joodoweb/core.clj" />
         <option value="$PROJECT_DIR$/project.clj" />
         <option value="$PROJECT_DIR$/src/joodoweb/view/docs/ns_doc.hiccup.clj" />
+        <option value="$PROJECT_DIR$/src/joodoweb/controller/docs_controller.clj" />
+        <option value="$PROJECT_DIR$/src/joodoweb/docs/usage_docs.clj" />
       </list>
     </option>
   </component>
@@ -315,8 +145,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="2560" />
-    <option name="height" value="1414" />
+    <option name="width" value="1920" />
+    <option name="height" value="1174" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -857,24 +687,44 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2560" height="1414" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32998455" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40512335" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15955175" sideWeight="0.45635673" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1662689" sideWeight="0.67001545" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15955175" sideWeight="0.5426945" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1000,9 +850,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/joodoweb/view/docs/not_found.hiccup.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="55" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/joodo/joodo/2.0.0/joodo-2.0.0.jar!/joodo/middleware/asset_fingerprint.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/joodoweb/view/docs/ns_doc.hiccup.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="78" selection-start="320" selection-end="320" vertical-scroll-proportion="0.13157895">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/joodo/joodo/2.0.0/joodo-2.0.0.jar!/joodo/middleware/keyword_cookies.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="462" selection-end="462" vertical-scroll-proportion="0.2777778">
           <folding />
         </state>
       </provider>
@@ -1014,23 +885,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/joodoweb/view/docs/ns_doc.hiccup.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="78" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/joodo/joodo/2.0.0/joodo-2.0.0.jar!/joodo/middleware/keyword_cookies.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="88" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/joodoweb/docs/usage_docs.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="5" selection-start="434" selection-end="434" vertical-scroll-proportion="-0.2723971">
+        <state line="53" column="0" selection-start="2809" selection-end="2809" vertical-scroll-proportion="0.7847976">
           <folding />
         </state>
       </provider>
