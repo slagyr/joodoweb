@@ -12,11 +12,13 @@
   ['joodo.controllers
    'joodo.env
    'joodo.middleware.asset-fingerprint
+   'joodo.middleware.favicon
    'joodo.middleware.keyword-cookies
    'joodo.middleware.locale
    'joodo.middleware.refresh
    'joodo.middleware.request
    'joodo.middleware.servlet-session
+   'joodo.middleware.util
    'joodo.middleware.verbose
    'joodo.middleware.view-context
    'joodo.spec-helpers.controller

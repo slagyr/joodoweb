@@ -20,9 +20,9 @@
 [:h4 "Setting Up Your Project.clj File"]
 [:p "The heart of any Leiningen project is the " [:b "project.clj"] " file. This file lists information about your project. You can add descriptions, change version numbers, add dependencies, and much more in this file. More info about the project.clj file can be found on the " [:a {:href "https://github.com/technomancy/leiningen/blob/master/README.md" :target "_blank"} "latest tutorial"] " on Leiningen's github account. " [:b "NOTE: "] "The project.clj file in the sample app includes set-up code for both Leiningen 1 and Leiningen 2. Delete the code for the version you are not using."]
 [:p "Let's add a logo. All images used by a Joodo application are stored in the public/images/ directory, and your views are located in src/sample_app/view. The latest version of Joodo uses the .hiccup extenstion for all view files, but also supports the older .hiccup.clj extension."]
-[:p "Place an image file with your logo into the images directory and then we can display it by editing our " [:b "src/sample_app/view/layout.hiccup.clj"] " file. Add the following inside the body of your layout file:"]
+[:p "Place an image file with your logo into the images directory and then we can display it by editing our " [:b "src/sample_app/view/layout.hiccup"] " file. Add the following inside the body of your layout file:"]
 [:pre {:class "brush: clojure"} "[:img {:src \"/images/logo.png\"}]"]
-[:p "As you'll notice, your page is displaying your logo and Joodo's starting page. Delete all of the markup in the src/sample_app/view/index.hiccup.clj file to clean up the page."]
+[:p "As you'll notice, your page is displaying your logo and Joodo's starting page. Delete all of the markup in the src/sample_app/view/index.hiccup file to clean up the page."]
 
 [:h3 "The Basics"]
 [:p "The most important file in your project is the " [:b "src/clj/sample_app/main.clj"] "."]

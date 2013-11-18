@@ -1,7 +1,7 @@
 [:h3 "All Done"]
 [:p "That's all there is to creating our sample application. We hope this was enough to get you familiar with the Joodo framework. There are a lot of features that we didn't cover. To get more familair with other parts of Joodo, review our " [:a {:href "/docs/index"} "API Documentation"] " section. If you have any ideas for how this site or Joodo can be better, join our " [:a {:href "/community"} "community"] " and let us know."]
 [:p "Just for your reference, here are all of the files that we outlined throughout this tutorial:"]
-[:h4 "src/sample_app/view/layout.hiccup.clj"]
+[:h4 "src/sample_app/view/layout.hiccup"]
 [:pre {:class "brush: clojure"}
 "(doctype :html5)
 [:html
@@ -172,7 +172,7 @@
         date (first this-posts-parts)
         title (second this-posts-parts)]
     (str \"/post/\" date \"_\" title)))"]
-[:h4 "src/sample_app/view/index.hiccup.clj"]
+[:h4 "src/sample_app/view/index.hiccup"]
 [:pre {:class "brush: clojure"}
 "[:div
  [:h1 \"Posts\"]
@@ -182,7 +182,7 @@
           (get-post-name current-post-filename)]
       [:span \" - \" (.toString (get-post-date current-post-filename))]
       [:br]))]"]
-[:h4 "src/sample_app/view/not_found.hiccup.clj"]
+[:h4 "src/sample_app/view/not_found.hiccup"]
 [:pre {:class "brush: clojure"}
 "[:h1 \"Not Found\"]
 (if-let [error (:error *view-context*)]

@@ -114,7 +114,7 @@
         title (second this-posts-parts)]
     (str \"/post/\" date \"_\" title)))"]
 [:p "All this function does is use our existing post-parts function to split up the file name and take the pieces we need when creating our route string."]
-[:p "Now that all of that is done, we can list our blog posts by adding the following code into our index.hiccup.clj file:"]
+[:p "Now that all of that is done, we can list our blog posts by adding the following code into our index.hiccup file:"]
 [:pre {:class "brush: clojure"}
 "[:h1 \"Posts\"]
 (for [current-post-filename (order-posts (blog-post-filenames))]
@@ -124,7 +124,7 @@
     [:span \" - \" (.toString (get-post-date current-post-filename))]
     [:br]))"]
 [:p "This is all of the code we will need to list all of our blog posts on our index page. To see this in action, create some blog posts in the src/sample_app/view/posts/ directory with the expected formatting of YYYYMMDD_post-title.hiccup. Then fire up the local server and look at the site in your favorite browser."]
-[:p "The last bit of code we want to add is a bit of error handling. Add the following code to the not_found.hiccup.clj file to display the errors specified by our controller:"]
+[:p "The last bit of code we want to add is a bit of error handling. Add the following code to the not_found.hiccup file to display the errors specified by our controller:"]
 [:pre {:class "brush: clojure"}
 "[:h1 \"Not Found\"]
 (if-let [error (:error *view-context*)]

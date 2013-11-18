@@ -10,9 +10,9 @@
 [:pre {:class "brush: clojure"}
 "lein deps
 joodo server"]
-[:p "Now we should add a logo. All images used by a Joodo application are stored in the public/images/ directory. Once you add your image there, we can display it by editing our src/sample_app/view/layout.hiccup.clj file. Add the following inside the body of your layout file:"]
+[:p "Now we should add a logo. All images used by a Joodo application are stored in the public/images/ directory. Once you add your image there, we can display it by editing our src/sample_app/view/layout.hiccup file. Add the following inside the body of your layout file:"]
 [:pre {:class "brush: clojure"} "[:img {:src \"/images/logo.png\"}]"]
-[:p "As you'll notice, your page is displaying your logo and Joodo's starting page. Delete all of the markup in the src/sample_app/view/index.hiccup.clj file to clean up the page."]
+[:p "As you'll notice, your page is displaying your logo and Joodo's starting page. Delete all of the markup in the src/sample_app/view/index.hiccup file to clean up the page."]
 [:p "The heart of any Leiningen project is the project.clj file. This file lists information about your project. You can add descriptions, change version numbers, add dependencies, and much more in this file. More info about the project.clj file can be found on the " [:a {:href "https://github.com/technomancy/leiningen/blob/master/README.md" :target "_blank"} "latest tutorial"] " on Leiningen's github account."]
 
 
@@ -252,7 +252,7 @@ joodo server"]
         title (second this-posts-parts)]
     (str \"/post/\" date \"_\" title)))"]
 [:p "All this funciton does is use our existing post-parts function to split up the file name and take the pieces we need when creating our route string."]
-[:p "Now that all of that is done, we can list our blog posts by adding the following code into our index.hiccup.clj file:"]
+[:p "Now that all of that is done, we can list our blog posts by adding the following code into our index.hiccup file:"]
 [:pre {:class "brush: clojure"}
 "[:h1 \"Posts\"]
 (for [current-post-filename (order-posts (blog-post-filenames))]
@@ -262,7 +262,7 @@ joodo server"]
     [:span \" - \" (.toString (get-post-date current-post-filename))]
     [:br]))"]
 [:p "This is all of the code we will need to list all of our blog posts on our index page. To see this in action, create some blog posts in the src/sample_app/view/posts/ directory with the expected formatting of YYYYMMDD_post-title.hiccup.clj. Then fire up the local server and look at the site in your favorite browser."]
-[:p "The last bit of code we want to add is a bit of error handling. Add the following code to the not_found.hiccup.clj file to display the errors specified by our controller:"]
+[:p "The last bit of code we want to add is a bit of error handling. Add the following code to the not_found.hiccup file to display the errors specified by our controller:"]
 [:pre {:class "brush: clojure"}
 "[:h1 \"Not Found\"]
 (if-let [error (:error *view-context*)]
@@ -271,7 +271,7 @@ joodo server"]
 [:h3 "All Done"]
 [:p "That's all there is to creating our sample application. We hope this was enough to get you familiar with the Joodo framework. There are a lot of features that we didn't cover. To get more familair with other parts of Joodo, review our " [:a {:href "/docs/index"} "API Documentation"] " section. If you have any ideas for how this site or Joodo can be better, join our " [:a {:href "/community"} "community"] " and let us know."]
 [:p "Just for your reference, here are all of the files that we outlined throughout this tutorial:"]
-[:h4 "src/sample_app/view/layout.hiccup.clj"]
+[:h4 "src/sample_app/view/layout.hiccup"]
 [:pre {:class "brush: clojure"}
 "(doctype :html5)
 [:html
@@ -428,7 +428,7 @@ joodo server"]
         date (first this-posts-parts)
         title (second this-posts-parts)]
     (str \"/post/\" date \"_\" title)))"]
-[:h4 "src/sample_app/view/index.hiccup.clj"]
+[:h4 "src/sample_app/view/index.hiccup"]
 [:pre {:class "brush: clojure"}
 "[:h1 \"Posts\"]
 (for [current-post-filename (order-posts (blog-post-filenames))]
@@ -437,7 +437,7 @@ joodo server"]
         (get-post-name current-post-filename)]
     [:span \" - \" (.toString (get-post-date current-post-filename))]
     [:br]))"]
-[:h4 "src/sample_app/view/not_found.hiccup.clj"]
+[:h4 "src/sample_app/view/not_found.hiccup"]
 [:pre {:class "brush: clojure"}
 "[:h1 \"Not Found\"]
 (if-let [error (:error *view-context*)]
