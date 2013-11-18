@@ -9,8 +9,7 @@
             [joodoweb.docs.usage_docs :refer (usage-docs)]))
 
 (def documented-namespaces
-  ['joodo.controllers
-   'joodo.env
+  ['joodo.env
    'joodo.middleware.asset-fingerprint
    'joodo.middleware.favicon
    'joodo.middleware.keyword-cookies

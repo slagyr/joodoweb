@@ -2,18 +2,18 @@
 	(:use
 	    [speclj.core]
 	    [joodoweb.view.view-helpers]))
-	
+
 (defn get-10-random-icons []
 	(loop [icon-list []
 		   n 0]
 		(if (= n 10)
 			icon-list
 			(recur (conj icon-list (get-random-icon)) (inc n)))))
-	
+
 (describe "View Helper"
 	(it "converts a namespace to a url friendly string"
 		(should= "joodo_env" (ns->url-safe 'joodo.env)))
-	
+
 	(it "converts a url friendly string to a namespace symbol"
 		(should= 'joodo.env (url-safe->ns "joodo_env")))
 
