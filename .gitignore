@@ -2,6 +2,7 @@ lib/
 target/
 *.DS_Store
 .lein-failures
+.idea
 joodoweb.iml
 pom.xml
 speclj.main

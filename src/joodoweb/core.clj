@@ -10,6 +10,7 @@
             [joodo.middleware.request :refer [wrap-bind-request]]
             [joodo.middleware.util :refer [wrap-development-maybe]]
             [joodo.middleware.view-context :refer [wrap-view-context]]
+            [joodo.middleware.view-context :refer [wrap-view-context]]
             [joodo.views :refer [render-template render-html]]
             [ring.middleware.file-info :refer [wrap-file-info]]
             [ring.middleware.flash :refer [wrap-flash]]

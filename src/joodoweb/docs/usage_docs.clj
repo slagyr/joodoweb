@@ -19,6 +19,15 @@
 		"(production-env?)"
 	}
 
+  :joodo.middleware.favicon {
+      :wrap-favicon-bouncer
+      {:how
+      ";Include wrap-favicon-bouncer in your app-handler:\n(def app-handler (-> app-routes wrap-favicon-bouncer))\n; Now your app will respond to all favicon requests with a 404 file not found"
+        :why
+        "Because Sometime You Might not Want To Waste Resource responding to favicon requests"
+       }
+   }
+
 	:joodo.middleware.keyword-cookies {
 		:wrap-keyword-cookies
 		";Include wrap-keyword-cookies in your app-handler:\n(def app-handler (-> app-routes wrap-keyword-cookies))\n;Then you can create a cookie with the following syntax:\n(assoc\n  (redirect \"/route\")\n  :cookies {:cookie-name {:value \"stuff\" :path \"/\" :expires (days-from-now 30)}})\n;To access the cookie info, do the following:\n(:cookie-name (:cookies *request*))"

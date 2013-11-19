@@ -7,15 +7,21 @@
     [:br ] [:br ]
     [:ul {}
      (for [current-fn listed-fns]
-       (if (contains? (meta (second current-fn)) :doc)
+       (if (contains? (meta (second current-fn)) :doc )
          (let [fn-doc (:doc (meta (second current-fn)))]
            (list [:li [:div.toggle_documentation [:h4 (first current-fn)]]
                   ;[:div.documentation
                   [:div {}
-                   [:div.description [:p fn-doc]]
+                   [:div.description
+                    [:p "What Can It Do?: " [:b fn-doc]]
+                    [:p "How Can It Help Me?: "
+                      [:b (:why ((keyword (first current-fn)) ((keyword (ns-name joodo-ns)) usage-docs)))]]
+                    [:p "How Do I Use It?: "]]
                    [:div.usage {}
                     [:pre {:class "brush: clojure"}
-                     ((keyword (first current-fn)) ((keyword (ns-name joodo-ns)) usage-docs))]]
+                     ;                     ((keyword (first current-fn)) ((keyword (ns-name joodo-ns)) usage-docs))
+                     (:how ((keyword (first current-fn)) ((keyword (ns-name joodo-ns)) usage-docs)))
+                     ]]
                    [:div.toggle_source [:h5 "source"]]
                    [:div ;[:div.source
                     [:pre {:class "brush: clojure"}
