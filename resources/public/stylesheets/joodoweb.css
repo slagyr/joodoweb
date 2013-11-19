@@ -170,6 +170,14 @@ td.content p b {
   padding-top: 10px;
 }
 
+/****upgrade and sample app lists*****/
+
+ul.tutorial_list li {
+  font-size:0.8em;
+  line-height:1.5em;
+  color:#3b1d0f;
+}
+
 /********** faux footer *************/
 
 .faux_footer {

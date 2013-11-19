@@ -1,0 +1,187 @@
+[:h2 "upgrading from Joodo 1.2 to Joodo 2.x"]
+[:p [:b "Joodo 2.0 includes a number of significant changes from Joodo 1.2.  This section highlights some of the most important changes and provides information on how to update a Joodo 1.2 app to 2.x"]]
+
+[:h3 "Summary Of Changes"]
+
+[:h4 "Joodo as a Library"]
+[:p "Most notably, Joodo 2.0 is designed to be a web library while Joodo 1.2 was designed to be a web framework."]
+
+[:h4 "Controllers"]
+[:p "Joodo 2.0 introduces a new method of interacting with controllers"]
+
+[:h4 "Joodo Plugin and How To Run You App"]
+[:p "Joodo 2.0 removes the now extraneous Joodo plugin and instead simplifies the server start process by leverage preexisting Ring commands"]
+
+[:h3 "Step 1: Update Project.clj"]
+
+[:p "A Joodo 1.2 Project.clj file should look something like this:"]
+[:pre {:class "brush: clojure"}
+ "(defproject joodoweb \"0.0.1\"
+   :description \"A website deployable to AppEngine\"
+   :dependencies [[org.clojure/clojure \"1.5.1\"]
+                  [joodo \"1.2.2\"]
+                  [speclj \"2.8.0\"]]
+   :dev-dependencies [[speclj \"2.5.0\"]]
+   :min-lein-version \"2.0.0\"
+   :test-paths [\"spec/\"]
+   :java-source-paths [\"src/\"]
+   :repl-init-script \"config/development/repl_init.clj\"
+   :profiles {:dev {:dependencies [[speclj \"2.8.0\"]]}}
+   :plugins [[speclj \"2.8.0\"]
+             [joodo/lein-joodo \"1.1.2\"]
+
+   :joodo-core-namespace joodoweb.core
+   :ring {:handler joodoweb.core/app}
+  )"]
+
+[:p "Now Let's update it:"]
+[:ul.tutorial_list [:li "update your Joodo dependency from 1.2 to 2.0 (or higher)"]
+ [:li "remove :joodo-core-namespace"]
+ [:li "remove the 'joodo-lein-joodo plugin from :plugins"]
+ [:li "add [lein-ring \"0.8.x\"] (or higher) to :plugins"]
+ [:li "add :ring {:handler <path-to-core-namespace/entry-function>}"]
+ [:li "this also might be a good time to get the latest version of clojure and speclj"]]
+
+[:p "Heres what your Project.clj file should look like after the update:"]
+[:pre {:class "brush: clojure"}
+ "(defproject joodoweb \"0.0.1\"
+    :description \"A website deployable to AppEngine\"
+    :dependencies [[org.clojure/clojure \"1.5.1\"]
+                  [joodo \"2.0.0\"]
+                 [speclj \"2.8.0\"]]
+    :dev-dependencies [[speclj \"2.5.0\"]]
+    :min-lein-version \"2.0.0\"
+    :test-paths [\"spec/\"]
+    :java-source-paths [\"src/\"]
+    :repl-init-script \" config/development/repl_init.clj \"
+    :profiles {:dev {:dependencies [[speclj \"2.8.0\"]]}}
+    :plugins [[speclj \"2.8.0\"]
+             [lein-ring \"0.8.8\"]]
+     :ring {:handler joodoweb.core/app}
+  )"]
+
+[:h3 "Step 2: Update Core.clj"]
+[:p "Now that your project.clj fild is up-to-date, you'll need to update your core.clj file."]
+[:p "The main difference in Joodo 2.0 is how the core interacts with controllers"]
+[:p "A Joodo 1.2 core.clj file should look something like this:"]
+
+[:pre {:class "brush: clojure"}
+ " (ns joodoweb.core
+    (:require
+      [compojure.core :only (defroutes GET)]
+      [compojure.route :only (notfound)]
+      [joodo.middleware.viewcontext :only (wrapviewcontext)]
+      [joodo.middleware.request :only (wrapbindrequest)]
+      [ring.middleware.params :only (wrapparams)]
+      [ring.middleware.keywordparams :only (wrapkeywordparams)]
+      [ring.middleware.multipartparams :only [wrapmultipartparams]]
+      [ring.middleware.multipartparams.bytearray :refer [bytearraystore]]
+      [joodo.views :only (rendertemplate renderhtml)]
+      [joodo.controllers :only (controllerrouter)]))
+
+
+(defroutes joodoweb-routes
+   (GET \"/\" [] (render-template \"index\"))
+   (GET \"/about\" [] (render-template \"about\"))
+   (GET \"/community\" [] (render-template \"community\"))
+   (GET \"/license\" [] (render-template \"license\"))
+   (controller-router 'joodoweb.controller)
+   (not-found (render-template \"not_found\" :template-root \"joodoweb/view\" :ns `joodoweb.view.view-helpers)))
+
+ (def app-handler
+  (->
+     joodoweb-routes
+     wrap-keyword-params
+     wrap-params
+     (wrap-multipart-params {:store (byte-array-store)})
+     wrap-bind-request
+     (wrap-view-context :template-root \"joodoweb/view\" :ns `joodoweb.view.view-helpers)))
+   "]
+
+[:p "Now let's update it:"]
+[:ul.tutorial_list
+  [:li "remove [joodo.controllers] from your namespace dependencies, since the controller namespace no longer exists"]
+  [:li "add the [joodo.middleware.refresh] controller to namespace dependencies. We recommend aliasing the namespace as \"refresh\""]
+  [:li "remove (controller-router 'joodoweb.controller) from your (defroutes my-routes) function"]
+  [:li "for EACH controller namespace you wish to use in the app do the following"]
+   [:ol
+    [:li "call the refresh/handle function with the entire controller namespace and top-level controller function as the single argument"]
+    [:li "example:  (refresh/handler 'myapp.controller.my-controller/my-controller)"]]
+  [:li "add any or all of the joodo.middleware namespaces provided in joodo.  More information on each middleware can be found in the "
+   [:a {:href "/docs" :target "_blank"} "API section"]]
+  [:li "we recommend creating a separate function for your app handler and your app entry point.  In the example below you'll see we have the function app which call app-handler.  This may help with organization"]
+  [:li "we also recommend aliasing your namespaces.  Below, we've aliased compojure.route as route"]]
+
+[:pre {:class "brush: clojure"}
+ "(ns joodoweb.core
+  (:require [compojure.core :refer :all ]
+            [compojure.handler :as handler]
+            [compojure.route :as route]
+            [joodo.env :as env]
+            [joodo.middleware.asset-fingerprint :refer [wrap-asset-fingerprint]]
+            [joodo.middleware.favicon :refer [wrap-favicon-bouncer]]
+            [joodo.middleware.keyword-cookies :refer [wrap-keyword-cookies]]
+            [joodo.middleware.refresh :as refresh]
+            [joodo.middleware.request :refer [wrap-bind-request]]
+            [joodo.middleware.util :refer [wrap-development-maybe]]
+            [joodo.middleware.view-context :refer [wrap-view-context]]
+            [joodo.middleware.view-context :refer [wrap-view-context]]
+            [joodo.views :refer [render-template render-html]]
+            [ring.middleware.file-info :refer [wrap-file-info]]
+            [ring.middleware.flash :refer [wrap-flash]]
+            [ring.middleware.head :refer [wrap-head]]
+            [ring.middleware.keyword-params :refer [wrap-keyword-params]]
+            [ring.middleware.multipart-params :refer [wrap-multipart-params]]
+            [ring.middleware.multipart-params.byte-array :refer [byte-array-store]]
+            [ring.middleware.params :refer [wrap-params]]
+            [ring.middleware.resource :refer [wrap-resource]]
+            [ring.middleware.session :refer [wrap-session]]))
+
+(env/load-configurations)
+
+(defroutes joodoweb-routes
+  (GET \"/\" [] (render-template \"index\"))
+  (GET \"/about\" [] (render-template \"about\"))
+  (GET \"/community\" [] (render-template \"community\"))
+  (GET \"/license\" [] (render-template \"license\"))
+   ;note how each controller is listed
+  (refresh/handler 'joodoweb.controller.docs-controller/docs-controller)
+  (refresh/handler 'joodoweb.controller.tutorial-controller/tutorial-controller)
+  (route/not-found (render-template \"not_found\" :template-root \"joodoweb/view\" :ns `joodoweb.view.view-helpers)))
+
+(def app-handler
+  (-> joodoweb-routes
+    (wrap-view-context :template-root \"joodoweb/view\" :ns `joodoweb.view.view-helpers)))
+
+(def app
+  (-> app-handler
+    wrap-development-maybe
+    wrap-bind-request
+    wrap-keyword-params
+    wrap-params
+    wrap-multipart-params
+    wrap-flash
+    wrap-keyword-cookies
+    wrap-session
+    wrap-favicon-bouncer
+    (wrap-resource \"public\")
+    wrap-asset-fingerprint
+    wrap-file-info
+    wrap-head))"
+ ]
+
+[:p "That's it!  The big change in core.clj is the switch from the controller namespace to the refresh namespace.  However, once updated, all of your previous controller code should run just like it used to."]
+
+
+[:h3 "Step 3: Run Your App"]
+[:p "In Joodo 1.2, an application was started by running:"]
+[:pre {:class "brush:clojure"}
+  "lein joodo server -optional_port_number-"]
+
+[:p "However in 2.0 Joodo leverages the awesome Ring library, so starting your app is accomplished by running:"]
+[:pre {:class "brush: clojure"} "lein ring server -optional_port_number-"]
+[:p "Your app should automatically come up in your default browser.  As you might have noticed, the old Joodo default port was 8080 while the new default port is ring's default of 3000"]
+[:p "If your app doesn't automatically open, you can always go to " [:a {:href "http://localhost:3000" :target "_blank"} "http://localhost:3000"] " in your favorite browser"]
+
+[:p "If you would like to set a default port other than Ring's 3000, edit your project.clj file to the following:"]
+[:pre {:class "brush: clojure"} ":ring {:handler my-app.core/app :port your_port_number_here}"]
