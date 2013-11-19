@@ -1,5 +1,19 @@
 [:h2 "sample application"]
-[:p "In this section, we will be building a very simple blogging platform to show you how easy it is to build a site with Joodo. This application will not have any bells or whistles, as it is meant for the sole purpose of teaching you how to use Joodo."]
+
+[:h4 "What Is The Goal Of This Tutorial?"]
+[:p "In this section, we will build a very simple blogging platform to show you how easy it is to build a site with Joodo.
+This application won't be a face-melting, fully-features web app, but it will teach you the basics of Joodo, so that you're one step closer to making that fully-features app of your dreams."]
+
+[:h4 "What Do I Gain from Completing This Tutorial?"]
+[:p "Here are just a few things that you will learning by completing this tutorial:"]
+[:ul.tutorial_list
+  [:li "increase your clojure skills - clojure a powerful, beautiful, and increasingly popular development language."]
+  [:li "learn about the clojure web stack - the clojure web stack a powerful tool that can be written almost entirely in a single language: clojure. That's crazy!"]
+  [:li "Smooth Test Driven Development - TDD can be hard, especially when testing web stacks.  This tutorial introduces you to fast web stack development where tests come first and the quality of your code is always high"]
+  [:li "Speclj - speclj is a high quality clojure testing framework that can be applied not just web development but any clojure project"]
+  [:li "MVC with a twist - Joodo's MVC design does things a little differently than Rails.  Discovering those differences can help you become a better web developer, even if you're the biggest of Rails fans"]
+ ]
+
 
 [:h3 "Creating the App Skeleton"]
 [:h4 "Creating A New App"]

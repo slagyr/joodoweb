@@ -32,6 +32,7 @@
   ;  (controller-router 'joodoweb.controller)
   (refresh/handler 'joodoweb.controller.docs-controller/docs-controller)
   (refresh/handler 'joodoweb.controller.tutorial-controller/tutorial-controller)
+  (refresh/handler 'joodoweb.controller.upgrade-controller/upgrade-controller)
   (route/not-found (render-template "not_found" :template-root "joodoweb/view" :ns `joodoweb.view.view-helpers)))
 
 (def app-handler

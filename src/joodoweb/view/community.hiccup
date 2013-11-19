@@ -1,7 +1,7 @@
 [:h2 "Community"]
 
 [:h3 "Mailing List"]
-[:p "We invite you to join our <a href=\"https://groups.google.com/group/joodo?pli=1\" target=\"blank\">mailing list</a> for news, updates, and cookies. (Well, photos of cookies.)"]
+[:p "We invite you to join our <a href=\"https://groups.google.com/group/joodo?pli=1\" target=\"blank\">mailing list</a> for news, updates, and cookies. (Well, photos of cookies.).  Indeed, many of the creators of Joodo actively respond to the mailing list"]
 
 [:h3 "Contributing"]
 [:p "If you have <a href=\"https://github.com/technomancy/leiningen\" target=\"_blank\">Leiningen</a> and <a href=\"http://git-scm.com\" target=\"_blank\">Git</a>, it is easy to contribute to the Joodo project. Start by inputting these commands in your terminal:"]
