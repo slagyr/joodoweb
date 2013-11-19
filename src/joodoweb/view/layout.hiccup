@@ -30,7 +30,7 @@
      [:a {:href "/license"} "License Info"]
      " | "
      [:a {:href "https://github.com/slagyr/joodo" :target "_blank"} "Git Repository"]
-     [:p "Copyright &copy; 2011 Micah Martin"]
+     [:p "Copyright &copy; 2014 Micah Martin"]
      [:p "All Rights Reserved"]]]
    (if (re-matches #"^/tutorial.*" (or (:uri *request*) ""))
      (list
