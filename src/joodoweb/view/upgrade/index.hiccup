@@ -184,4 +184,5 @@
 [:p "If your app doesn't automatically open, you can always go to " [:a {:href "http://localhost:3000" :target "_blank"} "http://localhost:3000"] " in your favorite browser"]
 
 [:p "If you would like to set a default port other than Ring's 3000, edit your project.clj file to the following:"]
+
 [:pre {:class "brush: clojure"} ":ring {:handler my-app.core/this-doesnt-change :port your_port_number_here}"]
