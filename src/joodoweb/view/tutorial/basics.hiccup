@@ -43,7 +43,7 @@ This application won't be a face-melting, fully-features web app, but it will te
 [:pre {:class "brush: clojure"} "[:img {:src \"/images/logo.png\"}]"]
 [:p "As you'll notice, your page is displaying your logo and Joodo's starting page. Delete all of the markup in the src/sample_app/view/index.hiccup file to clean up the page."]
 
-[:h3 "Step 2: Setup Your Project.clj File"]
+[:h3 "Step 2: Set up Your Main.clj File"]
 [:p "The most important file in your project is the " [:b "src/clj/sample_app/main.clj"] "."]
 [:pre {:class "brush: clojure"}
  "(ns sample_app.main

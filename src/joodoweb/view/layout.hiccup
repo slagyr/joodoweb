@@ -24,8 +24,7 @@
      [:li [:a {:href "/tutorial"}  [:span "sample application"]]]
      [:li [:a {:href "/upgrade"} "upgrading 1.2 to 2.0"]]
      [:li [:a {:href "/about"}     [:span "about"]]]
-     [:li [:a {:href "/community"} [:span "community"]]]
-     ]
+     [:li [:a {:href "/community"} [:span "community"]]]]
     [:div.footer
      [:a {:href "/license"} "License Info"]
      " | "

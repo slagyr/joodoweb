@@ -1,1 +1,1 @@
-web: lein joodo server -e production -a 0.0.0.0 -p $PORT
+web: JOODO_ENV=production lein ring server-headless
