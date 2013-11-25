@@ -172,8 +172,14 @@
 
 [:p "That's it!  The big change in core.clj is the switch from the controller namespace to the refresh namespace.  However, once updated, all of your previous controller code should run just like it used to."]
 
+[:h3 "Step 3: Check You Config and Public Folder Location"]
+[:p "Most Joodo 1.2 applications have the config/ and public/ files at the root directory level,
+    however for Joodo 2.0, these files should go inside the resources directory."]
 
-[:h3 "Step 3: Run Your App"]
+[:p "This change is very app-specific so we recommend that you run your tests and check functionality after you update your folder locations"]
+
+
+[:h3 "Step 4: Run Your App"]
 [:p "In Joodo 1.2, an application was started by running:"]
 [:pre {:class "brush:clojure"}
   "lein joodo server -optional_port_number-"]

@@ -20,7 +20,8 @@
             [ring.middleware.multipart-params.byte-array :refer [byte-array-store]]
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.resource :refer [wrap-resource]]
-            [ring.middleware.session :refer [wrap-session]]))
+            [ring.middleware.session :refer [wrap-session]]
+            ))
 
 (env/load-configurations)
 
@@ -53,5 +54,6 @@
     (wrap-resource "public")
     wrap-asset-fingerprint
     wrap-file-info
-    wrap-head))
+    wrap-head
+    ))
 

@@ -14,7 +14,7 @@
 
 [:h3 "usage"]
 [:p "Part of the beauty of Joodo is how easy it is to build a new project. If you run the following command from your terminal (replacing _proj_name_ with the name of your project), Joodo will do all the heavy lifting and create a joodo project for you:"]
-[:pre {:class "brush: clojure"} "lein joodo new _proj_name_"]
+[:pre {:class "brush: clojure"} "lein new jood _proj_name_"]
 [:p "By default, Joodo projects have dependencies on external libraries. Before you run your project, you have to get those libraries. Fortunately, Leiningen makes this as easy as running the following command from your terminal when in your project's directory:"]
 [:pre {:class "brush: clojure"} "lein deps"]
 [:p "Since Joodo runs atop Ring, you can start your Joodo server by simply running the normal Ring server start command from within your joodo project:"]
