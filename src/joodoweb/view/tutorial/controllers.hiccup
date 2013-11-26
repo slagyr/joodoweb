@@ -49,13 +49,13 @@
 ";* Add 'blog-post-directory' to the refer array for sample-app.controller.post-controller
 ;* at the top of your post_controller_spec.clj file.
 
-;* Also, create a test_posts directory as described in the instructions below
+;* Also, create a test_posts directory as described in the instructions above
 ;* to make these tests to pass.
 
 (around [it]
   (binding [blog-post-directory (clojure.java.io/file (str
              (. (java.io.File. \".\") getCanonicalPath)
-             \"/spec/sample_app/view/test_posts\"))]
+             \"/spec/clj/sample_app/view/test_posts\"))]
     (it)))
 
 (it \"directs to the blog post if the post exists\"
@@ -100,7 +100,7 @@
 
 (defn- render-post [post-route]
   (if (blog-post-exists? post-route)
-    (render-template (str \"posts/\" post-route))
+    (render-template (str \"view/posts/\" post-route))
     (render-not-found \"Blog post does not exist.\")))
 
 (defroutes post-controller
@@ -111,6 +111,6 @@
 [:p "We are testing that our controller handles routes for all existing blog post files. Our tests pass because we created a test blog post. Note that we had to explicitly declare the blog-post-directory var " [:b "^:dynamic"] " so that we could re-bind it in our test. This is a change in Clojure 1.2. In earlier versions vars were dynamic by default."]
 [:p "To get a real blog post to serve up, lets make a real blog post called " [:b "20111215_first-post.hiccup"] " in the " [:b "/src/sample_app/view/posts"] " directory. Now if you open up your browser with your local server running (type " [:b "lein joodo server"] " in the command line) and go to " [:a {:href "http://localhost:3000/post/20111215_first-post" :target "_blank"} "http://localhost:3000/post/20111215_first-post"] ", you will see your blog post."]
 [:br][:br]
-[:a {:href "/tutorial/basics"} "<-- Previous Step"]
+[:a {:href "/tutorial/basics"} "<-- Previous Step (Basics)"]
 [:span " | "]
-[:a {:href "/tutorial/views"} "Next Step -->"]
+[:a {:href "/tutorial/views"} "Next Step (Views) -->"]
