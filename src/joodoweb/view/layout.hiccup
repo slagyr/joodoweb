@@ -6,14 +6,14 @@
 	[:link {:href "http://fonts.googleapis.com/css?family=EB+Garamond" :rel "stylesheet" :type "text/css"}]
 	[:link {:href "http://fonts.googleapis.com/css?family=Open+Sans:300" :rel "stylesheet" :type "text/css"}]
   [:title "Joodo | Clojure Web Framework"]
-  (include-css "/stylesheets/reset.css")
-  (include-css "/stylesheets/joodoweb.css")
-  (include-css "/stylesheets/shCore.css")
-  (include-css "/stylesheets/shThemeDefault.css")
-  (include-js "/javascript/jquery-1.7.1.min.js")
-  (include-js "/javascript/joodoweb.js")
-  (include-js "/javascript/shCore.js")
-  (include-js "/javascript/shBrushClojure.js")]
+  (include-css (path-with-fingerprint "/stylesheets/reset.css"))
+  (include-css (path-with-fingerprint "/stylesheets/joodoweb.css"))
+  (include-css (path-with-fingerprint "/stylesheets/shCore.css"))
+  (include-css (path-with-fingerprint "/stylesheets/shThemeDefault.css"))
+  (include-js (path-with-fingerprint "/javascript/jquery-1.7.1.min.js"))
+  (include-js (path-with-fingerprint "/javascript/joodoweb.js"))
+  (include-js (path-with-fingerprint "/javascript/shCore.js"))
+  (include-js (path-with-fingerprint "/javascript/shBrushClojure.js"))]
  [:body
   [:table.body [:tr
    [:td.sidebar

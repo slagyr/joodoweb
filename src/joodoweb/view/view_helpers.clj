@@ -4,6 +4,7 @@
             [hiccup.page :refer :all ]
             [hiccup.form :refer :all ]
             [joodo.middleware.request :refer (*request*)]
+            [joodo.middleware.asset-fingerprint :refer [path-with-fingerprint]]
             [clojure.string :as string]
             [clojure.repl :refer (source-fn)]
             [joodoweb.docs.usage_docs :refer (usage-docs)]))

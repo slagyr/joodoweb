@@ -30,7 +30,6 @@
   (GET "/about" [] (render-template "about"))
   (GET "/community" [] (render-template "community"))
   (GET "/license" [] (render-template "license"))
-  ;  (controller-router 'joodoweb.controller)
   (refresh/handler 'joodoweb.controller.docs-controller/docs-controller)
   (refresh/handler 'joodoweb.controller.tutorial-controller/tutorial-controller)
   (refresh/handler 'joodoweb.controller.upgrade-controller/upgrade-controller)
