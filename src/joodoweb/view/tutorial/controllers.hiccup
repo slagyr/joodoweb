@@ -1,7 +1,16 @@
-[:h3 "Building Our Controller"]
-[:p "By default our controller directory is empty. However as projects grow, this directory becomes more and more important. The files that go here contain additional routes that are related to each other. For our purposes, we will want to create a posts controller that has all of the routing information for our blog posts."]
-[:p "To make our posts controller and posts controller tester, create these two files: " [:b "src/sample_app/clj/controller/post_controller.clj"] " and " [:b "spec/clj/sample_app/controller/post_controller_spec.clj"]]
-[:p "In the controller tester paste the following code:"]
+[:h3 "Building A Controller"]
+
+[:h4 "Controllers in Joodo"]
+[:p "Joodo's project template does include a controller directory, since it embraces all types of project design patterns.  However, MVC is a common and popular pattern, and it takes little effort to change the default Joodo template into an MVC design."]
+[:p "Let's start by creating a controller directory inside src/clj/. Our controller directory can be empty for now. However as projects grow, this directory will become more and more important."]
+[:p "Each controller file will not only contain \"normal\" controller functions but will also contain the routes that are related to that controller. This means that, unlike rails, each controller is responsible for its own routes."]
+
+[:h4 "Making Our First Controller"]
+[:p "For our purposes, we will want to create a posts controller that has all of the routing information for our blog posts."]
+
+[:h5 "Step 1: Create Our Files"]
+[:p "Since we are using TDD, let's make our src and our spec file - create these two files: " [:b "src/sample_app/clj/controller/post_controller.clj"] " and " [:b "spec/clj/sample_app/controller/post_controller_spec.clj"]]
+[:p "In the 'post_controller_spec.clj' file add the following code:"]
 [:pre {:class "brush: clojure"}
 "(ns sample-app.controller.post-controller-spec
   (:require [speclj.core :refer [describe around it should= run-specs]]
@@ -19,9 +28,17 @@
       (should= \"not_found\" @rendered-template)
       (should= \"You must specify a blog post.\" (:error @rendered-context)))))"]
 
-[:p "This file uses Speclj along with Joodo spec helpers to test out the post controller page. The call to the 'with-mock-rendering' function tells Joodo to keep track of all files rendered without actually rendering them. The with-routes function tells Joodo to use the routes listed in the specified var (in our case it is post-controller). We also need to ':refer' to the controller functions we'll be using to test our controller."]
-[:p "Within our test we are asserting that if a client sends a get request to the /post uri, they will get a response with a status of 404, the not_found page will display, and an error message will get passed."]
-[:p "Now run your tests from the terminal by using the " [:b "lein spec -a"] " command"]
+[:p "Now let's see how Speclj and Joodo spec helpder are helping us test our controller:"]
+[:p "First, let's look at (with-mock-rendering).  This function call tells Joodo to keep track of all files rendered without actually rendering them."]
+[:p "Second, let's look at (with-routes).  This function tells Joodo to use the routes listed in the specified var (in our case it is post-controller). We also need to ':refer' the controller functions we'll be using to test our controller."]
+[:p "Third, let's look at our test.  Within our test we are asserting that if a client sends a get request to the /post uri, they will get a response with a status of 404, the not_found page will display, and an error message will get passed."]
+
+[:h5 "Step 2: Run Our Test"]
+[:p "Before you run your test, make sure you understand the TDD development work flow.  For <b>every</b> test we write, it should first <b>fail</b>, then you should write the source code that makes it <b>pass</b>, and finally you should go back and <b>refactor</b> your code and and your tests so that they are clean and efficient. The shortened term for this process is \"Red-Green-Refactor\""]
+[:p "Now run your tests from the terminal by using Speclj.  Speclj will look in your spec/ directory for all files with '_spec' in its name, much like Ruby's rspec.  If you want to simply run your tests once, the command will be:"]
+[:pre {:class "brush: clojure"} "lein spec"]
+[:p "However Speclj has an autorun feature that will run your failing tests after the test or its related source file changes.  This is great for a TDD workflow since you can immediately see how your changes affected your tests.  This is the recommended approach.  To start Speclj autorun type:"]
+[:pre {:class "brush: clojure"} "lein spec -a"]
 [:p "You should get an error message stating that no namespace called sample-app.controller.post-controller exists. Let's remedy that by pasting the following code into the " [:b "src/sample_app/controller/post_controller.clj"] " file we created:"]
 [:pre {:class "brush: clojure"}
 "(ns sample-app.controller.post-controller
