@@ -110,4 +110,4 @@ This application won't be a face-melting, fully-features web app, but it will te
 [:p "The " [:b "third section"] " wraps information around the request. By default, the only property explicitly being wrapped is the view context. It sets the template root to the view directory and sets all of the view's namespaces to a view-helper. It is important to note that the template-root represents the location of view pages with a relative path starting at your project's src directory."]
 [:p "Since our sample application will be pretty standard, we don't need to modify this file."]
 [:br][:br]
-[:a {:href "/tutorial/controllers"} "Next Step -->"]
+[:a {:href "/tutorial/controllers"} "Next Step (Controllers) -->"]

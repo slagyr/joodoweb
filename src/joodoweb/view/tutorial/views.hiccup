@@ -130,6 +130,6 @@
 (if-let [error (:error *view-context*)]
   [:p error])"]
 [:br][:br]
-[:a {:href "/tutorial/controllers"} "<-- Previous Step"]
+[:a {:href "/tutorial/controllers"} "<-- Previous Step (Controllers)"]
 [:span " | "]
-[:a {:href "/tutorial/reference"} "Next Step -->"]
+[:a {:href "/tutorial/reference"} "Next Step (References) -->"]
