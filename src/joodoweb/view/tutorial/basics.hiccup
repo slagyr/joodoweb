@@ -9,20 +9,20 @@
 ;[:h6 "To Become A Joodo Master You Must Know the Ways Of The Master"]
 
 [:h4 "What Is The Goal Of This Tutorial?"]
-[:p "In this section, we will build a very simple blogging platform to show you how easy it is to build a site with Joodo.
-This application won't be a face-melting, fully-features web app, but it will teach you the basics of Joodo, so that you're one step closer to making that fully-features app of your dreams."]
+[:p "In this section, we will build a simple blogging platform to show you how easy it is to build a site with Joodo.
+This application won't be a fully-features web app, but it will teach you the basics of Joodo.  "]
 
 [:h4 "What Do I Gain from Completing This Tutorial?"]
 [:p "Here are just a few things that you will learning by completing this tutorial:"]
 [:ul.tutorial_list
- [:li "increase your clojure skills - clojure a powerful, beautiful, and increasingly popular development language."]
- [:li "learn about the clojure web stack - the clojure web stack a powerful tool that can be written almost entirely in a single language: clojure. That's crazy!"]
+ [:li "Increase your clojure skills - clojure a powerful, beautiful, and increasingly popular development language."]
+ [:li "Learn about the clojure web stack - the clojure web stack a powerful tool that can be written almost entirely in a single language: clojure"]
  [:li "Smooth Test Driven Development - TDD can be hard, especially when testing web stacks.  This tutorial introduces you to fast web stack development where tests come first and the quality of your code is always high"]
  [:li "Speclj - speclj is a high quality clojure testing framework that can be applied not just web development but any clojure project"]
  [:li "MVC with a twist - Joodo's MVC design does things a little differently than Rails.  Discovering those differences can help you become a better web developer, even if you're the biggest of Rails fans"]
  ]
 [:h4 "Understanding the Tutorial Work Flow"]
-[:p "This tutorial uses Test Driven Develo  pment Techniques.  That means that before writing any code we'll write tests for that code first.  This takes a little getting used to but it reaps huge rewards in terms of generating high quality code."]
+[:p "This tutorial uses Test Driven Development Techniques.  That means that before writing any code we'll write tests for that code first.  This takes a little getting used to but it reaps huge rewards in terms of generating high quality code."]
 
 
 [:h3 "Step 1: Create the App Skeleton"]
@@ -39,14 +39,13 @@ This application won't be a face-melting, fully-features web app, but it will te
 [:h4 "Directory Structure"]
 [:p "Open up the sample app directory to take a look at the files. Your directory should look like this:"]
 [:div.body-image [:img {:src "/images/directory.jpg"}]]
-[:p "As you can see, both your /src and /spec directories are already created, with clojure (clj) and clojurescript (cljs) subdirectories"]
+[:p "As you can see, both your /src and /spec (test) directories are already created, with clojure (clj) and clojurescript (cljs) subdirectories"]
+[:p "you should note (1) the project.clj file found at the root directory level and (2) the src/clj/sample_app/core.clj file, which is the most important file in your Joodo project."]
 
 [:h4 "Setting Up Your Project.clj File"]
-[:p "The heart of any Leiningen project is the " [:b "project.clj"] " file. This file lists information about your project. You can add descriptions, change version numbers, add dependencies, and much more in this file. More info about the project.clj file can be found on the " [:a {:href "https://github.com/technomancy/leiningen/blob/master/README.md" :target "_blank"} "latest tutorial"] " on Leiningen's github account. " [:b "NOTE: "] "The project.clj file in the sample app includes set-up code for both Leiningen 1 and Leiningen 2. Delete the code for the version you are not using."]
-[:p "Let's add a logo. All images used by a Joodo application are stored in the public/images/ directory, and your views are located in src/sample_app/view. The latest version of Joodo uses the .hiccup extenstion for all view files, but also supports the older .hiccup.clj extension."]
-[:p "Place an image file with your logo into the images directory and then we can display it by editing our " [:b "src/sample_app/view/layout.hiccup"] " file. Add the following inside the body of your layout file:"]
-[:pre {:class "brush: clojure"} "[:img {:src \"/images/logo.png\"}]"]
-[:p "As you'll notice, your page is displaying your logo and Joodo's starting page. Delete all of the markup in the src/sample_app/view/index.hiccup file to clean up the page."]
+[:p "The heart of any Leiningen project is the " [:b "project.clj"] " file. This file lists information about your project. You can add descriptions, change version numbers, add dependencies, and much more in this file. More info about the project.clj file can be found on the " [:a {:href "https://github.com/technomancy/leiningen/blob/master/README.md" :target "_blank"} "latest tutorial"] " on Leiningen's github account. Joodo's default project.clj is adequate for this tutorial."]
+
+
 
 [:h3 "Step 2: Set up Your Main.clj File"]
 [:p "The most important file in your project is the " [:b "src/clj/sample_app/main.clj"] "."]
@@ -105,9 +104,10 @@ This application won't be a face-melting, fully-features web app, but it will te
 
 [:p "By default there are three sections of main.clj. It is important to keep in mind that you can modify/add sections to fit your project's needs. These are just there to get you started."]
 [:p "The " [:b "first section"] " declares the file's namespace and lists all of the file's dependencies. If you want a deeper look into what root.clj does you can find the method/macro definitions that are being used in this section."]
-[:p "The " [:b "second section"] " calls a macro called defroutes. This macro is responsible for defining the routes of the website. By default it sets a GET request on the '/' route to render a pre-made index page. It also tells the application to render a pre-made 404 page if a non-existent route is accessed."]
-[:p "The most interesting part of the second section tells Joodo to look for any files with namespaces starting with 'sample-app.controller and add the routes that they define to the list of routes. We'll cover this more deeply in a later section."]
-[:p "The " [:b "third section"] " wraps information around the request. By default, the only property explicitly being wrapped is the view context. It sets the template root to the view directory and sets all of the view's namespaces to a view-helper. It is important to note that the template-root represents the location of view pages with a relative path starting at your project's src directory."]
+[:p (str "The <b> second section</b> is the (defroutes app-routes) function. This function is your top level routing function."
+    "By default it sets a GET request on the '/' route to render a pre-made index page."
+    "It also tells the application to render a pre-made 404 page if a non-existent route is accessed.")]
+[:p "The " [:b "third section"] " is the app and app-handler functions.  They wraps information around the request. By default, the only property explicitly being wrapped is the view context. It sets the template root to the view directory and sets all of the view's namespaces to a view-helper. It is important to note that the template-root represents the location of view pages with a relative path starting at your project's src directory."]
 [:p "Since our sample application will be pretty standard, we don't need to modify this file."]
 [:br][:br]
 [:a {:href "/tutorial/controllers"} "Next Step (Controllers) -->"]

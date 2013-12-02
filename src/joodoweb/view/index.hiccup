@@ -20,6 +20,9 @@
 [:p "Since Joodo runs atop Ring, you can start your Joodo server by simply running the normal Ring server start command from within your joodo project:"]
 [:pre {:class "brush: clojure"} "lein ring server"]
 
+[:p "Joodo will default to port 3000 but you can easily specificy your own port number by adding it as an option to the server start command.  For example:"]
+[:pre {:class "brush: clojure"} "lein ring server 8180"]
+
 [:h3 "deployment"]
 [:p "If you use git and want to deploy on Heroku, pushing your project to production is as easy as creating a git repo, making a commit, creating a repo on heroku, and pushing to it:"]
 [:pre {:class "brush: clojure"}

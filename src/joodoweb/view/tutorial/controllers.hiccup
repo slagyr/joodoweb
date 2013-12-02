@@ -1,15 +1,18 @@
 [:h2 "Building A Controller"]
 
 [:h4 "Controllers in Joodo"]
-[:p "Joodo's project template does include a controller directory, since it embraces all types of project design patterns.  However, MVC is a common and popular pattern, and it takes little effort to change the default Joodo template into an MVC design."]
-[:p "Let's start by creating a controller directory inside src/clj/. Our controller directory can be empty for now. However as projects grow, this directory will become more and more important."]
-[:p "Each controller file will not only contain \"normal\" controller functions but will also contain the routes that are related to that controller. This means that, unlike rails, each controller is responsible for its own routes."]
+[:p "Joodo's project template does not include a default controller directory, since it embraces all types of project design patterns.  However, MVC is a common and popular pattern, and it takes little effort to change the default Joodo template into an MVC design."]
+[:p (str  "Each controller file will not only contain \"normal\" controller functions but will also contain the routes that are related to that controller. This means that, unlike rails, each controller is responsible for its own routes.  "
+          "Later, we'll add code to the main.clj 'app-routes' function so that the routes you define in your controllers work with the app as a whole."
+      )]
 
 [:h3 "Step 1: Make Your First Controller"]
-[:p "For our purposes, we will want to create a posts controller that has all of the routing information for our blog posts."]
+[:p "For our purposes, we will want to create a posts controller that has all of the routing information for your blog posts."]
 
 [:h5 "Create Your Files"]
-[:p "Since we are using TDD, let's make our src and our spec file - create these two files: " [:b "src/sample_app/clj/controller/post_controller.clj"] " and " [:b "spec/clj/sample_app/controller/post_controller_spec.clj"]]
+[:p "Since we are using TDD, lets create get our test and source file ready."]
+[:p "First create a controller folder in both your spec and src directories: " [:b "src/sample_app/clj/controller/"] " and " [:b "spec/clj/sample_app/controller/"]]
+[:p "Now create the src and spec files: " [:b "src/sample_app/clj/controller/post_controller.clj"] " and " [:b "spec/clj/sample_app/controller/post_controller_spec.clj"]]
 [:p "In the 'post_controller_spec.clj' file add the following code:"]
 [:pre {:class "brush: clojure"}
 "(ns sample-app.controller.post-controller-spec
@@ -28,16 +31,16 @@
       (should= \"not_found\" @rendered-template)
       (should= \"You must specify a blog post.\" (:error @rendered-context)))))"]
 
-[:p "Now let's see how Speclj and Joodo spec helper are helping us test our controller:"]
+[:p "Now let's see how Speclj and Joodo's Spec Helper help us test our controller:"]
 [:p "First, let's look at (with-mock-rendering).  This function call tells Joodo to keep track of all files rendered without actually rendering them."]
 [:p "Second, let's look at (with-routes).  This function tells Joodo to use the routes listed in the specified var (in our case it is post-controller). We also need to ':refer' the controller functions we'll be using to test our controller."]
 [:p "Third, let's look at our test.  Within our test we are asserting that if a client sends a get request to the /post uri, they will get a response with a status of 404, the not_found page will display, and an error message will get passed."]
 
 [:h5 "Run Your Test"]
-[:p "Before you run your test, make sure you understand the TDD development work flow.  For <b>every</b> test we write, it should first <b>fail</b>, then you should write the source code that makes it <b>pass</b>, and finally you should go back and <b>refactor</b> your code and and your tests so that they are clean and efficient. The shortened term for this process is \"Red-Green-Refactor\""]
+[:p "Before you run your test, make sure you understand the TDD development work flow.  For <b>every</b> test we write, it should first <b>fail</b>.  After that you should write the source code that makes it <b>pass</b>.  Finally you should go back and <b>refactor</b> your code and and your tests so that they are clean and efficient. The shortened term for this process is <b>\"Red-Green-Refactor\"</b>"]
 [:p "Now run your tests from the terminal by using Speclj.  Speclj will look in your spec/ directory for all files with '_spec' in its name, much like Ruby's rspec.  If you want to simply run your tests once, the command will be:"]
 [:pre {:class "brush: clojure"} "lein spec"]
-[:p "However Speclj has an autorun feature that will run your failing tests after the test or its related source file changes.  This is great for a TDD workflow since you can immediately see how your changes affected your tests.  This is the recommended approach.  To start Speclj autorun type:"]
+[:p "However Speclj has an autorun feature that will rerun your any failing tests after its test file or its related source file changes.  This is great for a TDD workflow since you can immediately see how your latest changes affect your tests.  We recommend uinsg the autorun feature, especially if you're new to TDD.  To start Speclj autorun type:"]
 [:pre {:class "brush: clojure"} "lein spec -a"]
 [:p "You should get an error message stating that no namespace called sample-app.controller.post-controller exists. Let's remedy that by adding the following code into the " [:b "src/sample_app/controller/post_controller.clj"] " file we created:"]
 [:pre {:class "brush: clojure"}
@@ -52,18 +55,18 @@
 
 (defroutes post-controller
   (GET \"/post\" [] (render-not-found \"You must specify a blog post.\")))"]
-[:p "This code defines our post-controller var and populates it with one route. When the " [:b "/post"] " route hits, the response is sent back with a status of 404, a body filled with the data stored in the not_found template, and an error message gets passed through as a flash message."]
+[:p "Now your test should pass.  But what did we do?  The code we added defines our post-controller var and populates it with one route. When the " [:b "/post"] " route hits, the response is sent back with a status of 404, a body filled with the data stored in the not_found template, and an error message gets passed through as a flash message."]
 
-[:h5 "Note: Your defroutes function must have the same name as your controller file - In this example the post-controller namespace has the function '(defroutes post-controller)'"]
-[:p "A common mistake for controllers is not starting your route with the controller name. For example, we can't list routes in our post controller that start with anything other than post. Another important thing to note is that if we don't include a var named post-controller, none of our routes will get loaded. So if you had a controller named happy_controller.clj, Joodo will expect a var called happy-controller to exist and contain all of the routes from that controller."]
+[:h5 "Note: your defroutes function must have the same name as your controller file - In this example the post-controller namespace has the function '(defroutes post-controller)'"]
+;[:p "A common mistake for controllers is not starting your route with the controller name. For example, we can't list routes in our post controller that start with anything other than post. Another important thing to note is that if we don't include a var named post-controller, none of our routes will get loaded. So if you had a controller named happy_controller.clj, Joodo will expect a var called happy-controller to exist and contain all of the routes from that controller."]
 
 [:h3 "Step 2: Beyond the First Test To Something More Complicated"]
+[:h4 "Test a More Complex Route"]
 
 [:p "Now that we have our first passing test, it is time to create a route that will display the specified blog post. But first, let's add the tests for that code to our existing post-controller-spec:"]
 
-[:p "To create our tests we'll need to create two folders.  Create <b>spec/clj/view/</b> and within this folder create <b>test_posts/</b>"]
-
-[:p "Next, Add 'blog-post-directory' to the :refer array for sample-app.controller.post-controller at the top of your post_controller_spec.clj file. "]
+[:p "Next, add 'blog-post-directory' to the :refer array for sample-app.controller.post-controller at the top of your <b>post_controller_spec.clj</b> file. Your post_controller_spec.clj namespace should now have this line in it:"]
+[:pre {:class "brush: clojure"} "[sample-app.controller.post-controller :refer [post-controller blog-post-controller]]"]
 
 [:p "Now we're ready to write our tests. Add the code below to your existing post-controller-spec.clj file:"]
 [:pre {:class "brush: clojure"}
@@ -82,7 +85,7 @@
 (it \"directs to the blog post if the post exists\"
   (let [result (do-get \"/post/20111215_test-post\")]
     (should= 200 (:status result))
-    (should= \"posts/20111215_test-post\" @rendered-template)))
+    (should= \"view/posts/20111215_test-post\" @rendered-template)))
 
 (it \"directs to the not_found page if the post doesn't exist\"
   (let [result (do-get \"/post/20111215_invalid\")]
@@ -91,19 +94,19 @@
     (should= \"Blog post does not exist.\" (:error @rendered-context))))"
 ]
 
-[:p "That's a lot of code so let's talk about it:"]
-[:p "What does this assert? Our new tests assert that if a blog post exists, a route will be created for it. This test fails because there is no such var called blog-post-directory."]
+[:p "Speclj should now show a failing test with this error: <b>java.lang.IllegalAccessError: blog-post-directory does not exist</b>. Now before we move on, let's talk about the code we just wrote:"]
+[:p "What does this new test assert? Our new tests assert that if a blog post exists, a route will be created for it. This test fails because there is no such var called blog-post-directory."]
 [:p "What is that 'around' function doing? The around function binds any calls to blog-post-directory to a test_posts directory that we use to create mock blog posts.  Thus, we are effectively replacing the blog-post-directory path with a test path."]
 
-
-[:p "Let's now make a test blog file that we can test against.  Let's call it " [:b "20111215_test-post.hiccup"] " in let's put it in the " [:b "/spec/clj/sample_app/view/test_posts"] " directory. Now we have a test blog that we can assert against in our tests!"]
+[:h4 "Create a Mock Blog Post"]
+[:p "To create our blog post tests we will \"mock out\" a fake blog post and test against that file.  For this we need to create two folders: <b>spec/clj/view/</b> and within this folder create <b>test_posts/</b>"]
+[:p "Let's now make a test blog file that we can test against.  Call it " [:b "20111215_test-post.hiccup"] " and put it in the " [:b "/spec/clj/sample_app/view/test_posts"] " directory. Now we have a test blog that we can assert against in our tests!"]
 [:p "In the test-post file add:"]
 [:pre {:class "brush: clojure"}
   "[:h1 \"Hello World, this is a Test Post for my new Joodo App\"]
-   [:p \"heres some more content, do you notice that :h1 and :p look a lot like HTML tags?\"]
-   [:br]
-   [:p \"Actually, that's what\" [:b \"hiccup\"] \" does. It allows you to write HTML as if it was all just clojure data structures! That's crazy!\"]"
- ]
+   [:h3 \"heres some more content, do you notice that :h1 and :p look a lot like HTML tags?\"]
+   [:p \"Actually, that's what \" [:b \"hiccup\"] \" does. It allows you to write HTML as if it was all just clojure data structures! That's crazy!\"]
+   [:p \"Hmm, I wonder what else clojure can do?!\"]"]
 
 [:p "After we have our mock test file, we are ready to write the controller logic to make those failing tests pass. Update the code in your post-controller so that it now looks like this:"]
 [:pre {:class "brush: clojure"}
@@ -141,14 +144,60 @@
   (GET \"/post\" [] (render-not-found \"You must specify a blog post.\"))
   (context \"/post\" []
     (GET \"/:post-route\" [post-route] (render-post post-route))))"]
-[:p "Now if you run the tests they should pass."]
-[:p "Whoa, that was a lot of code again.  Let's break it down:"]
+[:p "Now if you run the tests they should <b>pass</b>.  But whoa, that was a lot of code again.  Let's break it down:"]
 [:p "What are we doing? We are testing that our controller handles routes for all existing blog post files. Our tests pass because we created a test blog post. Note that we had to explicitly declare the blog-post-directory var " [:b "^:dynamic"] " so that we could re-bind it in our test. This is a change in Clojure 1.2. In earlier versions vars were dynamic by default."]
 [:p "So why do we even need a mock blog file?  Why not use a real blog post?  By creating a test file and rebinding blog-post-directory we can isolate our tests to a known (and hopefully unchanging) file.  Actual production files can change.  This removes the risk of a production change inintentionally breaking tests"]
 [:p "And why is that .hiccup file titled with all those numbers?  Those numbers are a specific date.  Later we can use that information to sort multiple blog posts by date.  In other words, just go with it for now."]
-[:h3 "Step 3: Tests Pass! Now Let's Make A Real Blog Post!"]
-[:p "To get a real blog post to serve up, lets make a real blog post called " [:b "20111215_first-post.hiccup"] " and put it in the " [:b "/src/sample_app/view/posts"] " directory.  Since the \"around\" rebinding only occurs in the test file, the normal blog-post-directory path will work."]
-[:p "Now, if you open up your browser with your local server running (type " [:b "lein ring server"] " in the command line) and go to " [:a {:href "http://localhost:3000/post/20111215_first-post" :target "_blank"} "http://localhost:3000/post/20111215_first-post"] ", you will see your blog post."]
+
+
+[:h3 "Connect You Controller Routes To Your Main.clj File"]
+[:p "Our controller routes work!  The only problem now is that our Main.clj 'app-routes' function doesn't currently transfer requests to our new controller.  Let's fix that."]
+[:p "Go to your Main.clj file and add 'joodo.middleware.refresh' to your namespace :require statement. We recommend adding it like so:"]
+[:pre {:class "brush: clojure"} "[joodo.middleware.refresh :as refresh]"]
+[:p "You entire main.clj namespace should now look like this:"]
+[:pre {:class "brush: clojure"}
+"(ns sample_app.main
+   (:require [compojure.core :refer :all]
+             [compojure.handler :as handler]
+             [compojure.route :as route]
+             [joodo.env :as env]
+             [joodo.middleware.asset-fingerprint :refer [wrap-asset-fingerprint]]
+             [joodo.middleware.favicon :refer [wrap-favicon-bouncer]]
+             [joodo.middleware.keyword-cookies :refer [wrap-keyword-cookies]]
+             [joodo.middleware.request :refer [wrap-bind-request]]
+             [joodo.middleware.util :refer [wrap-development-maybe]]
+             [joodo.middleware.view-context :refer [wrap-view-context]]
+             [joodo.middleware.refresh :as refresh]
+             [joodo.views :refer [render-template render-html]]
+             [ring.middleware.file-info :refer [wrap-file-info]]
+             [ring.middleware.flash :refer [wrap-flash]]
+             [ring.middleware.head :refer [wrap-head]]
+             [ring.middleware.keyword-params :refer [wrap-keyword-params]]
+             [ring.middleware.multipart-params :refer [wrap-multipart-params]]
+             [ring.middleware.params :refer [wrap-params]]
+             [ring.middleware.resource :refer [wrap-resource]]
+             [ring.middleware.session :refer [wrap-session]]
+             [shoreleave.middleware.rpc :refer [wrap-rpc]]
+             ))"]
+
+[:p "Now, for each controller with routes you want to access, add: (refresh/handler 'full-qualified-controller-namespace/defroutes-function)'"]
+[:p "For example, after we've added our post-controller, our app-routes should look like this:"]
+[:pre {:class "brush: clojure"}
+"(defroutes app-routes
+   (GET "/" [] (render-template \"inde\"))
+   (refresh/handler 'sample-app.controller.post-controller/post-controller)
+   (route/not-found (render-template \"not_found\" :template-root \"sample_app\" :ns `sample_app.view-helpers)))"]
+[:h4 "Note 1: refresh/handler needs the entire namespace (sample-app.controller.post-controller) as well as the name of the defroutes function (/post-controller)"]
+[:h4 "Note 2: for EACH controller a separate (refresh/handler call is needed"]
+
+[:p "So what is the value of the refresh/handler.  It allows you to choose where you controllers are located."]
+
+[:p "Now your post-controller routes are connected to your main.clj!"]
+
+[:h3 "Step 4: Tests Pass! Now Let's Make A Real Blog Post!"]
+[:p "To get a real blog post to serve up, lets make a real blog post.  First create the src/clj/sample_app/view/ folder and within that create the /posts folder. With in the /posts folder create a file named " [:b "20111215_first-post.hiccup"] ". Note that since the \"around\" rebinding only occurs in our test file, the normal blog-post-directory path will work"]
+[:p "Now let's add the same content found in our 20111215_test-post.hiccup file to our first-post.hiccup file. If you open up your browser with your local server running (type " [:b "lein ring server"] " in the command line) and go to " [:a {:href "http://localhost:3000/post/20111215_first-post" :target "_blank"} "http://localhost:3000/post/20111215_first-post"] ", you will see your blog post."]
+[:p "One cool feature joodo/hiccup feature is that if you change your .hiccup file, all you need to do is refresh your browser and your new changes will be reflected.  This allows you to change you views with easy.  Try it out on your first blog post.  Add some hiccup syntax and refresh your browser!"]
 [:br][:br]
 [:a {:href "/tutorial/basics"} "<-- Previous Step (Basics)"]
 [:span " | "]
