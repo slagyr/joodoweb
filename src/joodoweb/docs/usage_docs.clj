@@ -9,23 +9,29 @@
 	}
 
 	:joodo.env {
+    :alter-env!
+    "(alter-env!)"
 		:*env*
 		"(get @*env* :joodo-env)"
 		:env
 		"(env :joodo-env)"
-		:development-env?
-		"(development-env?)"
-		:production-env?
-		"(production-env?)"
+		:development?
+		"(development?)"
+		:production?
+		"(production?)"
+    :load-config
+    "(load-config path-to-joodo-config)"
+    :load-config?
+    "(load-config? path-to-config)"
+    :load-configurations
+    "(load-configurations path-to-config)"
+    :load-configurations-unchecked
+    "(load-config-unchecked path-to-config)"
 	}
 
   :joodo.middleware.favicon {
       :wrap-favicon-bouncer
-      {:how
       ";Include wrap-favicon-bouncer in your app-handler:\n(def app-handler (-> app-routes wrap-favicon-bouncer))\n; Now your app will respond to all favicon requests with a 404 file not found"
-        :why
-        "Because Sometime You Might not Want To Waste Resource responding to favicon requests"
-       }
    }
 
 	:joodo.middleware.keyword-cookies {
@@ -49,7 +55,9 @@
 	:joodo.middleware.refresh {
 		:wrap-refresh
 		";Include wrap-refresh in your app-handler:\n(def app-handler (-> app-routes wrap-refresh))"
-	}
+    :handler
+    ";Include refresh in your main defroutes.  Its argument should be an unqualified namespace and function name:\n(defroutes app-routes (handler 'full-namespace.more-namespace/function-name))"
+    }
 
 	:joodo.middleware.request {
 		:*request*
@@ -62,6 +70,11 @@
 		:wrap-servlet-session
 		";Include wrap-servlet-session in your app-handler:\n(def app-handler (-> app-routes wrap-servlet-session))\n;Then you can create a session with the following syntax\n(assoc\n  (redirect \"/route\")\n  :session {:session-name {:value \"stuff\" :expires (hours-from-now 1)}})\n;To access session info, use the following syntax:\n(:session *request*)"
 	}
+
+  :joodo.middleware.util {
+    :attempt-wrap
+    ";Include attempt-wrap in your app-handler:\n(def app-handler (-> app-routes (wrap-bind-request middleware-to-wrap))"
+   }
 
 	:joodo.middleware.verbose {
 		:wrap-verbose
