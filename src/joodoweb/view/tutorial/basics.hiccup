@@ -6,7 +6,6 @@
 [:h2 "sample application"]
 
 [:h3 "Before You Start"]
-;[:h6 "To Become A Joodo Master You Must Know the Ways Of The Master"]
 
 [:h4 "What Is The Goal Of This Tutorial?"]
 [:p "In this section, we will build a simple blogging platform to show you how easy it is to build a site with Joodo.
