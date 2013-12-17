@@ -24,7 +24,7 @@
     :load-config?
     "(load-config? path-to-config)"
     :load-configurations
-    "(load-configurations path-to-config)"
+    "(load-configurations)"
     :load-configurations-unchecked
     "(load-config-unchecked path-to-config)"
 	}
