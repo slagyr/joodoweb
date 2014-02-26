@@ -40,9 +40,9 @@
 [:p "Before you run your test, make sure you understand the TDD development work flow.  For <b>every</b> test we write, it should first <b>fail</b>.  After that you should write the source code that makes it <b>pass</b>.  Finally you should go back and <b>refactor</b> your code and and your tests so that they are clean and efficient. The shortened term for this process is <b>\"Red-Green-Refactor\"</b>"]
 [:p "Now run your tests from the terminal by using Speclj.  Speclj will look in your spec/ directory for all files with '_spec' in its name, much like Ruby's rspec.  If you want to simply run your tests once, the command will be:"]
 [:pre {:class "brush: clojure"} "lein spec"]
-[:p "However Speclj has an autorun feature that will rerun your any failing tests after its test file or its related source file changes.  This is great for a TDD workflow since you can immediately see how your latest changes affect your tests.  We recommend uinsg the autorun feature, especially if you're new to TDD.  To start Speclj autorun type:"]
+[:p "However Speclj has an autorun feature that will rerun your any failing tests after its test file or its related source file changes.  This is great for a TDD workflow since you can immediately see how your latest changes affect your tests.  We recommend using the autorun feature, especially if you're new to TDD.  To start Speclj autorun type:"]
 [:pre {:class "brush: clojure"} "lein spec -a"]
-[:p "You should get an error message stating that no namespace called sample-app.controller.post-controller exists. Let's remedy that by adding the following code into the " [:b "src/sample_app/controller/post_controller.clj"] " file we created:"]
+[:p "You should get an error message stating that no namespace called sample-app.controller.post-controller exists. Let's remedy that by adding the following code into the " [:b "src/sample_app/clj/controller/post_controller.clj"] " file we created:"]
 [:pre {:class "brush: clojure"}
 "(ns sample-app.controller.post-controller
   (:require [compojure.core :refer (GET defroutes)]
